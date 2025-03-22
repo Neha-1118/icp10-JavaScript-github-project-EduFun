@@ -4,10 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KG section</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lemon&family=Lobster&family=Pacifico&display=swap');
+    </style>
+   <style>
+    
+        body {
+            font-family: Arial, sans-serif;
+            background-color: bisque;
+        }
+        .container{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            
+        }
+        .images{
+            display: inline-block;
+            height: 300px;
+            width: 300px;
+            border-radius: 10px;
+            margin: 30px 20px;
+            
+        }
+        .images:hover{
+            transform: scale(1.1);
+            box-shadow: 10px 8px 12px rgba(0,0,0,0.2);
+        }
+    </style>
 </head>
 <body>
     <div>
-        <h1>Learn & Play🤩</h1>
+        <h1 style="text-align: center; font-family:Lemon, serif;
+        font-weight: 400;
+        font-style: normal;; color: crimson;">Learn & Play🤩</h1>
     </div>
+    <div class="container">
+        <a href="funquiz.html"><img src="../images/fruite-veg.webp" alt="quize-img" class="images"></a>
+         <a href="alphabets.html"><img src="../images/alphabets.webp" alt="alphabet-img" class="images"></a>
+         <a href="color.html"><img src="../images/color.webp" alt="color-img" class="images"></a>
+         <a href="animal.html"><img src="../images/animal.webp" alt="animal-img" class="images"></a>
+    </div><hr><hr>
+
+    
 </body>
 </html>
