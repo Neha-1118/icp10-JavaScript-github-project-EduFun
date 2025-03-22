@@ -7,115 +7,6 @@
     <link rel="stylesheet" href="./../css/style.css" />
     <link rel="stylesheet" href="./../css/higher_education.css" />
     <script src="./../js/script.js"></script>
-    <style>
-      body {
-        background-color: #a7c7e722;
-      }
-      .higher-edu-heading {
-        margin-top: 70px;
-        text-align: center;
-      }
-      .box-container {
-        width: 100%;
-        height: auto;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-      }
-      .box {
-        height: 350px;
-        width: 70%;
-        margin: 25px;
-        border-radius: 15px;
-        border: 2px solid rgba(0, 0, 0, 0.336);
-        display: flex;
-        align-items: center;
-        position: relative;
-        justify-content: space-around;
-        box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.075);
-        cursor: pointer;
-        transition: box-shadow 0.3s ease-out, scale 0.9s;
-      }
-      .box:hover {
-        box-shadow: 0 0 10px 10px rgba(0, 26, 255, 0.185);
-        transform: scale(1.02);
-      }
-
-      .box-1 {
-        width: 25%;
-        height: 80%;
-      }
-      .box-1 img {
-        height: 100%;
-        width: 100%;
-        border-radius: 10px;
-      }
-      .box-2 {
-        width: 70%;
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        position: relative;
-      }
-      .get-started {
-        color: white;
-        height: 50px;
-        width: 150px;
-        border: 2px double white;
-        outline: 2px solid #5733ff; /* Outer blue border */
-        border-radius: 20px;
-        font-size: 18px;
-        font-weight: 400;
-        background-color: #5733ff;
-        cursor: pointer;
-        transition: background-color 0.3s ease-in-out;
-      }
-      .get-started:hover {
-        background-color: #5833ff37;
-        color: black;
-      }
-      .higher-edu-btn {
-        display: flex;
-        justify-content: center;
-        gap: 25px;
-        justify-content: space-around;
-        position: absolute;
-        width: 250px;
-        align-items: center;
-        bottom: 15px;
-      }
-      h2 {
-        position: absolute;
-        top: 10px;
-        font-size: 40px;
-      }
-      .domain-gif {
-        height:150px;
-        width:150px;
-        position: absolute;
-        right: 10px;
-      }
-      .box-2 ul {
-        position: absolute;
-        left: 30px;
-        font-size: 20px;
-      }
-      .box-2 li {
-        margin: 10px;
-        cursor: pointer;
-        transition: underline 0.7s ease-in-out, color;
-      }
-      .box-2 li:hover {
-        color: rgba(0, 26, 255, 0.829);
-        text-decoration: underline;
-        text-decoration-thickness: 3px;
-        text-underline-offset: 5px;
-        font-weight: 600;
-      }
-    </style>
   </head>
   <body>
     <nav class="navbar" id="navbar">
@@ -152,68 +43,19 @@
     <!--main cards-->
     <div class="higher-edu-heading"><h1>🎓 Higher Education 👩🏻‍🎓</h1></div>
     <div class="box-container">
-      <div class="box">
+      <div
+        class="box"
+        onmouseover="changeImg1(`./../images/p-gif.gif`)"
+        onmouseout="changeImg1(`./../images/static-programming.png`)"
+      >
         <div class="box-1"><img src="./../images/programming.jpg" /></div>
         <div class="box-2">
-          <h2>💻 IT Industri 👨🏻‍💻</h2>
-          <img src="./../images/p-gif.gif" class="domain-gif" />
-          <ul>
-            <h3>Topics</h3>
-            <li>Coding Questions</li>
-            <li>Opreting System</li>
-            <li>DataBase</li>
-            <li>Data Structure And Algorithm</li>
-            <li>Computer Network</li>
-          </ul>
-          <div class="higher-edu-btn">
-            <button class="get-started" type="button">Notes</button>
-            <button class="get-started" type="button">get-started</button>
-          </div>
-        </div>
-      </div>
-      <div class="box">
-        <div class="box-1"><img src="./../images/finance.jpg" /></div>
-        <div class="box-2">
-          <h2>📈 Finance 💸</h2>
-          <img src="./../images/f.gif" class="domain-gif" />
-          <ul>
-            <h3>Topics</h3>
-            <li>Coding Questions</li>
-            <li>Opreting System</li>
-            <li>DataBase</li>
-            <li>Data Structure And Algorithm</li>
-            <li>Computer Network</li>
-          </ul>
-          <div class="higher-edu-btn">
-            <button class="get-started" type="button">Notes</button>
-            <button class="get-started" type="button">get-started</button>
-          </div>
-        </div>
-      </div>
-      <div class="box">
-        <div class="box-1"><img src="./../images/law.jpg" /></div>
-        <div class="box-2">
-          <h2>⚖️ Law 👩🏻‍⚖️</h2>
-          <img src="./../images/L.gif" id="image" class="domain-gif" />
-          <ul>
-            <h3>Topics</h3>
-            <li>Coding Questions</li>
-            <li>Opreting System</li>
-            <li>DataBase</li>
-            <li>Data Structure And Algorithm</li>
-            <li>Computer Network</li>
-          </ul>
-          <div class="higher-edu-btn">
-            <button class="get-started" type="button">Notes</button>
-            <button class="get-started" type="button">get-started</button>
-          </div>
-        </div>
-      </div>
-      <div class="box">
-        <div class="box-1"><img src="./../images/civil-sevices.jpg" /></div>
-        <div class="box-2">
-          <h2>📚 Civil Services 👮🏻</h2>
-          <img src="./../images/police.gif" class="domain-gif" />
+          <h2>💻 IT Industry 👨🏻‍💻</h2>
+          <img
+            src="./../images/static-programming.png"
+            class="domain-gif"
+            id="main-image-1"
+          />
           <ul>
             <h3>Topics</h3>
             <li>Coding Questions</li>
@@ -230,12 +72,98 @@
       </div>
       <div
         class="box"
-        onmousemove="changeImg(`./../images/dc.gif`)"
-        onmouseout="changeImg(`./../images/static-dc.png`)">
+        onmouseover="changeImg2(`./../images/f.gif`)"
+        onmouseout="changeImg2(`./../images/static-money.png`)"
+      >
+        <div class="box-1"><img src="./../images/finance.jpg" /></div>
+        <div class="box-2">
+          <h2>📈 Finance 💸</h2>
+          <img
+            src="./../images/static-money.png"
+            class="domain-gif"
+            id="main-image-2"
+          />
+          <ul>
+            <h3>Topics</h3>
+            <li>Coding Questions</li>
+            <li>Opreting System</li>
+            <li>DataBase</li>
+            <li>Data Structure And Algorithm</li>
+            <li>Computer Network</li>
+          </ul>
+          <div class="higher-edu-btn">
+            <button class="get-started" type="button">Notes</button>
+            <button class="get-started" type="button">get-started</button>
+          </div>
+        </div>
+      </div>
+      <div
+        class="box"
+        onmouseover="changeImg3(`./../images/l.gif`)"
+        onmouseout="changeImg3(`./../images/static-law.png`)"
+      >
+        <div class="box-1"><img src="./../images/law.jpg" /></div>
+        <div class="box-2">
+          <h2>⚖️ Law 👩🏻‍⚖️</h2>
+          <img
+            src="./../images/static-law.png"
+            class="domain-gif"
+            id="main-image-3"
+          />
+          <ul>
+            <h3>Topics</h3>
+            <li>Coding Questions</li>
+            <li>Opreting System</li>
+            <li>DataBase</li>
+            <li>Data Structure And Algorithm</li>
+            <li>Computer Network</li>
+          </ul>
+          <div class="higher-edu-btn">
+            <button class="get-started" type="button">Notes</button>
+            <button class="get-started" type="button">get-started</button>
+          </div>
+        </div>
+      </div>
+      <div
+        class="box"
+        onmouseover="changeImg4(`./../images/police.gif`)"
+        onmouseout="changeImg4(`./../images/static-police.png`)"
+      >
+        <div class="box-1"><img src="./../images/civil-sevices.jpg" /></div>
+        <div class="box-2">
+          <h2>📚 Civil Services 👮🏻</h2>
+          <img
+            src="./../images/static-police.png"
+            class="domain-gif"
+            id="main-image-4"
+          />
+          <ul>
+            <h3>Topics</h3>
+            <li>Coding Questions</li>
+            <li>Opreting System</li>
+            <li>DataBase</li>
+            <li>Data Structure And Algorithm</li>
+            <li>Computer Network</li>
+          </ul>
+          <div class="higher-edu-btn">
+            <button class="get-started" type="button">Notes</button>
+            <button class="get-started" type="button">get-started</button>
+          </div>
+        </div>
+      </div>
+      <div
+        class="box"
+        onmouseover="changeImg5(`./../images/dc.gif`)"
+        onmouseout="changeImg5(`./../images/static-dc.png`)"
+      >
         <div class="box-1"><img src="./../images/pharma.jpg" /></div>
         <div class="box-2">
           <h2>💊 Pharma 👨🏻‍⚕️</h2>
-          <img src="./../images/static-dc.png"  class="domain-gif" id="main-image" />
+          <img
+            src="./../images/static-dc.png"
+            class="domain-gif"
+            id="main-image-5"
+          />
           <ul>
             <h3>Topics</h3>
             <li>Coding Questions</li>
@@ -251,11 +179,6 @@
         </div>
       </div>
     </div>
-    <script>
-      const mainImage = document.getElementById("main-image");
-      function changeImg(changeImg) {
-        mainImage.src = changeImg;
-      }
-    </script>
+    <script src="./../js/higher_education.js"></script>
   </body>
 </html>
