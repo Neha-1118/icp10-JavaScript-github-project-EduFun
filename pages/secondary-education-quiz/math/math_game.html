@@ -3,177 +3,138 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Advanced Math Quiz & Calculator</title>
+    <title>Math Quiz</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
-        
         body {
-            font-family: 'Poppins', sans-serif;
+            font-family: Arial, sans-serif;
             text-align: center;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            padding: 20px;
-            color: #fff;
+            background: url('https://www.transparenttextures.com/patterns/math-formulas.png'), linear-gradient(to right, #6a11cb, #2575fc);
+            color: white;
+            margin: 0;
+            padding: 0;
         }
-        .quiz-container {
-            max-width: 600px;
-            background: rgba(255, 255, 255, 0.9);
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
+        .container {
+            background: white;
+            color: black;
+            width: 50%;
             margin: auto;
+            margin-top: 50px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .options button {
+            display: block;
+            width: 80%;
+            margin: 10px auto;
+            padding: 10px;
+            background: orange;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+        .options button:hover {
+            background: darkorange;
         }
         .calculator {
-            max-width: 300px;
-            background: rgba(255, 255, 255, 0.9);
+            background: white;
+            color: black;
+            width: 40%;
+            margin: auto;
+            margin-top: 20px;
             padding: 20px;
-            border-radius: 15px;
-            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
-            margin: 20px auto;
-        }
-        .calc-display {
-            width: 100%;
-            padding: 10px;
-            font-size: 22px;
-            border: none;
             border-radius: 10px;
-            background: #fff;
-            color: #333;
-            text-align: right;
-            margin-bottom: 15px;
         }
-        .calc-buttons button {
+        .calculator input {
+            width: 90%;
             padding: 10px;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .calculator button {
+            width: 22%;
+            padding: 10px;
+            font-size: 18px;
             margin: 5px;
-            font-size: 18px;
+            background: orange;
             border: none;
-            border-radius: 10px;
-            background: #ff9f43;
-            color: white;
+            border-radius: 5px;
             cursor: pointer;
         }
-        h2 {
-            color: #333;
-            font-weight: 600;
-        }
-        .question {
-            font-size: 22px;
-            margin-bottom: 15px;
-            font-weight: bold;
-            color: #222;
-        }
-        .option {
-            display: block;
-            background: #ff9f43;
-            color: #fff;
-            padding: 12px;
-            margin: 10px 0;
-            border-radius: 10px;
-            cursor: pointer;
-            font-size: 18px;
-        }
-        #score {
-            font-size: 24px;
-            font-weight: bold;
-            color: #ff4757;
+        .calculator button:hover {
+            background: darkorange;
         }
     </style>
 </head>
 <body>
-    <div class="quiz-container">
+    <div class="container">
         <h2>Advanced Math Quiz</h2>
-        <p id="score">Score: 0</p>
-        <p class="question" id="question">Loading...</p>
-        <div id="options"></div>
-        <button id="next-btn">Next Question</button>
+        <h3>Score: <span id="score">0</span></h3>
+        <p id="question">If x² = 49, what is x?</p>
+        <div class="options">
+            <button onclick="checkAnswer('7')">7</button>
+            <button onclick="checkAnswer('-7')">-7</button>
+            <button onclick="checkAnswer('Both')">Both 7 and -7</button>
+            <button onclick="checkAnswer('None')">None</button>
+        </div>
+        <button onclick="nextQuestion()">Next Question</button>
     </div>
-
     <div class="calculator">
-        <h2>Calculator</h2>
-        <input type="text" id="calc-display" class="calc-display" readonly>
-        <div class="calc-buttons">
-            <button onclick="addToCalc('1')">1</button>
-            <button onclick="addToCalc('2')">2</button>
-            <button onclick="addToCalc('3')">3</button>
-            <button onclick="addToCalc('+')">+</button>
-            <br>
-            <button onclick="addToCalc('4')">4</button>
-            <button onclick="addToCalc('5')">5</button>
-            <button onclick="addToCalc('6')">6</button>
-            <button onclick="addToCalc('-')">-</button>
-            <br>
-            <button onclick="addToCalc('7')">7</button>
-            <button onclick="addToCalc('8')">8</button>
-            <button onclick="addToCalc('9')">9</button>
-            <button onclick="addToCalc('*')">*</button>
-            <br>
-            <button onclick="addToCalc('0')">0</button>
-            <button onclick="clearCalc()">C</button>
+        <h3>Calculator</h3>
+        <input type="text" id="calc-display" disabled>
+        <div>
+            <button onclick="calcInput('1')">1</button>
+            <button onclick="calcInput('2')">2</button>
+            <button onclick="calcInput('3')">3</button>
+            <button onclick="calcInput('+')">+</button>
+        </div>
+        <div>
+            <button onclick="calcInput('4')">4</button>
+            <button onclick="calcInput('5')">5</button>
+            <button onclick="calcInput('6')">6</button>
+            <button onclick="calcInput('-')">-</button>
+        </div>
+        <div>
+            <button onclick="calcInput('7')">7</button>
+            <button onclick="calcInput('8')">8</button>
+            <button onclick="calcInput('9')">9</button>
+            <button onclick="calcInput('*')">*</button>
+        </div>
+        <div>
+            <button onclick="calcInput('0')">0</button>
             <button onclick="calculateResult()">=</button>
-            <button onclick="addToCalc('/')">/</button>
+            <button onclick="calcInput('/')">/</button>
+            <button onclick="clearCalc()">C</button>
         </div>
     </div>
-
     <script>
-        const questions = [
-            { question: "If x² = 49, what is x?", options: ["7", "-7", "Both 7 and -7", "None"], answer: "Both 7 and -7" },
-            { question: "What is the derivative of x²?", options: ["x", "2x", "x²", "None"], answer: "2x" },
-            { question: "Solve for x: 2x + 3 = 9", options: ["2", "3", "4", "5"], answer: "3" },
-            { question: "What is the area of a circle with radius 5?", options: ["25π", "10π", "20π", "None"], answer: "25π" }
-        ];
-        
-        let currentQuestionIndex = 0;
         let score = 0;
-        
-        function loadQuestion() {
-            let currentQuestion = questions[currentQuestionIndex];
-            document.getElementById("question").textContent = currentQuestion.question;
-            let optionsContainer = document.getElementById("options");
-            optionsContainer.innerHTML = "";
-            
-            currentQuestion.options.forEach(option => {
-                const button = document.createElement("button");
-                button.classList.add("option");
-                button.textContent = option;
-                button.onclick = () => checkAnswer(option);
-                optionsContainer.appendChild(button);
-            });
-        }
-
-        function checkAnswer(selectedAnswer) {
-            if (selectedAnswer === questions[currentQuestionIndex].answer) {
-                alert("Correct!");
-                score++;
-                document.getElementById("score").textContent = `Score: ${score}`;
+        function checkAnswer(answer) {
+            if (answer === 'Both') {
+                score += 10;
+                alert('Correct!');
             } else {
-                alert("Wrong! The correct answer is " + questions[currentQuestionIndex].answer);
+                alert('Wrong answer!');
             }
-            nextQuestion();
+            document.getElementById('score').innerText = score;
         }
-
         function nextQuestion() {
-            currentQuestionIndex++;
-            if (currentQuestionIndex < questions.length) {
-                loadQuestion();
-            } else {
-                alert(`Quiz Completed! Your final score is ${score}/${questions.length}`);
-            }
+            document.getElementById('question').innerText = 'What is the square root of 64?';
         }
-
-        function addToCalc(value) {
-            document.getElementById("calc-display").value += value;
-        }
-        function clearCalc() {
-            document.getElementById("calc-display").value = "";
+        function calcInput(value) {
+            document.getElementById('calc-display').value += value;
         }
         function calculateResult() {
             try {
-                document.getElementById("calc-display").value = eval(document.getElementById("calc-display").value);
+                document.getElementById('calc-display').value = eval(document.getElementById('calc-display').value);
             } catch {
-                alert("Invalid input");
+                alert('Invalid Calculation');
             }
         }
-        
-        loadQuestion();
+        function clearCalc() {
+            document.getElementById('calc-display').value = '';
+        }
     </script>
 </body>
 </html>

@@ -1,326 +1,89 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gaming Quiz</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Learn and Play Quiz</title>
     <style>
-   
-body {
-    margin:0px;
-    padding:0px;
-  }
-  * {
-    font-family: sans-serif;
-    margin:0;
-    padding:0;
-  }
-  .navbar {
-    background-color: antiquewhite;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 70px;
-    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.24);
-    
-    
-    position:fixed;
-    top:0px;
-    width:100%;
-    z-index:1;
-  }
-  .navbar ul {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    margin-right: 10px;
-  }
-  .navbar li {
-    font-size: 20px;
-    margin: 20px;
-    list-style-type: none;
-    font-weight: 600;
-    color: rgba(0, 0, 0, 0.71);
-    text-decoration: none;
-    cursor: pointer;
-    transition: underline 0.7s ease-in-out, color;
-  }
-  .navbar li:hover {
-    color: rgba(0, 26, 255, 0.829);
-    text-decoration: underline;
-    text-decoration-thickness: 3px;
-    text-underline-offset: 5px;
-  }
-  .edufun-logo {
-    margin-right: auto;
-  }
-  .edufun-logo img {
-    height: 70px;
-  }
-  #logo-heading {
-    height: 50px;
-  }
-  .ham-nav {
-    display: none;
-    flex-direction: column;
-    background-color: antiquewhite;
-    border: none;
-    width: 100%;
-    height: 200px;
-    top:65px;
-    position: absolute;
-    box-shadow: 0 10px 10px -5px rgba(0, 0, 0, 0.24);
-  }
-  .ham-nav ul {
-    border: 2px solid gray;
-    background-color: rgba(165, 203, 250, 0.183);
-    backdrop-filter: blur(10px);
-    width: 70%;
-    display: block;
-    margin: 10px auto;
-    border-radius: 10px;
-  }
-  .ham-nav li {
-    list-style: none;
-    margin: 10px;
-    font-size: 18px;
-    font-weight: bold;
-    cursor: pointer;
-    color: rgba(0, 0, 0, 0.71);
-    transition: color 0.3s ease-in-out;
-  }
-  .ham-nav li:hover {
-    color: rgba(0, 26, 255, 0.829);
-    text-decoration: underline;
-    text-decoration-thickness: 3px;
-    text-underline-offset: 5px;
-  }
-  .show {
-    display: flex;
-  }
-  @media (max-width: 700px) {
-    .edufun-logo img {
-      height: 50px;
-    }
-    #logo-heading {
-      height: 40px;
-    }
-    .edufun-logo {
-      display: flex;
-    }
-    .navbar li {
-      display: none;
-    }
-    .navbar {
-      box-shadow: none;
-    }
-    .hamburger button {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border: 2px solid gray;
-      border-radius: 10px;
-      margin-right:15px;
-    }
-    .hamburger img {
-      height: 35px;
-      width: 35px;
-      margin-top: 5px;
-    }
-  }
-  @media (min-width: 701px) and (max-width: 880px) {
-    .hamburger {
-      display: none;
-    }
-    .edufun-logo img {
-      height: 40px;
-    }
-    #logo-heading {
-      height: 40px;
-    }
-    .navbar li {
-      margin: 7px;
-    }
-    .edufun-logo {
-      display: flex;
-    }
-    .ham-nav li {
-      display: none;
-    }
-    .ham-nav{
-        display: none;
-    }
-  }
-  @media (min-width: 700px) and (max-width: 1024px) {
-    .hamburger {
-      display: none;
-    }
-    .ham-nav li {
-      display: none;
-    }
-    .ham-nav{
-        display: none;
-    }
-  }
-  @media (min-width: 1024px) {
-    .hamburger {
-      display: none;
-    }
-    .ham-nav li {
-      display: none;
-    }
-    .ham-nav{
-        display: none;
-    }
-  }
- 
-  
-  .higher-edu-heading {
-    margin-top:80px;
-    text-align: center;
-  }
-  
-body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #f5f5f5;
-    text-align: center;
-    margin: 0;
-    padding: 0;
-}
+      
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: navajowhite;
+        }
+       .button{
+       margin-right: 1200px;
 
-/* Card Container */
-.card-container {
-    display: flex;
-    justify-content: center;
-    gap: 45px;
-    flex-wrap: wrap;
-    margin-top: 50px;
-    margin-bottom: 70px;
-}
 
-/* Individual Card */
-.card {
-    width: 250px;
-    background-color: #ffeb3b; /* Change for different cards */
-    border-radius: 15px;
-    padding: 15px;
-    text-align: center;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease-in-out;
-}
-
-.card:nth-child(2) { background-color: #f8bbd0; } /* Pink for Grades 1-3 */
-.card:nth-child(3) { background-color: #c8e6c9; } /* Green for Grades 4-5 */
-
-.card:hover {
-    transform: scale(1.05);
-}
-
-/* Card Image */
-.card img {
-    width: 100%;
-    border-radius: 10px;
-}
-
-/* Card Title */
-.card h2 {
-    font-size: 20px;
-    color: #333;
-    margin: 10px 0;
-    font-weight: bold;
-}
-
-/* Card Description */
-.card p {
-    font-size: 14px;
-    color: #555;
-}
-
-/* Explore Button */
-.card button {
-    background-color: #ff5722;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
-    font-weight: bold;
-    cursor: pointer;
-    margin-top: 10px;
-}
-
-.card button:hover {
-    background-color: #e64a19;
-}
-
-        </style>
-    
+       }
+        .quiz-container {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            margin-top: 50px;
+        }
+        .quiz-container a img {
+            width: 200px;
+            height: auto;
+            border-radius: 10px;
+            transition: transform 0.3s ease-in-out;
+        }
+        .quiz-container a img:hover {
+            transform: scale(1.1);
+        }
+        .btn {
+            display: block;
+            margin-top: 10px;
+            padding: 10px;
+            background: #007BFF;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .btn:hover {
+            background: #0056b3;
+        }
+        
+    </style>
 </head>
 <body>
-    
-    
-  <nav class="navbar" id="navbar">
-    <div class="edufun-logo">
-      <img src="./../../icons/head-logo.png" alt="edufun-logo" />
-      <img
-        src="./../../icons/nav-heading.png"
-        id="logo-heading"
-        alt="logo-heading"
-      />
-    </div>
-    <ul>
-      <li>Home</li>
-      <li>Spaceship</li>
-      <li>About</li>
-      <li>contact</li>
-      <li>Log In</li>
-    </ul>
-    <div class="hamburger">
-      <button type="button" id="hamburger-btn" onclick="hamburgerMenu()">
-        <img src="./../../icons/hamburger-menu.png" />
-      </button>
-    </div>
-  </nav>
-  <nav class="ham-nav" id="ham-nav">
-    <ul>
-      <li>Home</li>
-      <li>Spaceship</li>
-      <li>About</li>
-      <li>contact</li>
-      <li>Log In</li>
-    </ul>
-  </nav>
-  <!--main cards-->
-  <div class="higher-edu-heading"><h1 class="heading-img"> Secondary Education..📚📚 </h1></div>
-  
-          
+
+    <h2>Learn and Play Quizzes...🥰✔</h2>
+    <a class="button" href="../secondary.html">🔙Back</a>
     <div class="quiz-container">
-        
-        <!-- <h1>Gaming Quiz</h1> -->
-        <!-- <h1> Secondary Education 8th To 10th</h1> -->
-        <div class="card-container">
-            <div class="card" id="math-card">
-                <h2>Math Quiz</h2>
-                <img src="./../.././images/math1.jpg" />
-                <p>Test your math skills with challenging questions.</p>
-                <button> <a href="../secondary-education-quiz/math/math_game.html" >Start</a></button>
-                <!-- <a href="grades1-3.html" class="btn">Explore</a> -->
-         
-            </div>
-            <div class="card" id="game-card">
-                <h2>Science Quiz</h2>
-                <img src="./../.././images/sci.jpg" />
-                <p>Test your Science skills with challenging questions.</p>
-                <button onclick="startQuiz('game')">Start</button>
-            </div>
-            <div class="card" id="gk-card">
-                <h2>General Knowledge Quiz</h2>
-                <img src="./../.././images/gk.jpg" />
-                <p>Challenge yourself with general knowledge questions.</p>
-                <button onclick="startQuiz('gk')">Start</button>
-            </div>
+        <!-- Math Quiz -->
+        <div>
+            <a href="math_learn.html">
+                <img src="./../../images/math2.jpg" alt="Math Quiz">
+            </a>
+            <a class="btn" href="../secondary-education-quiz/math/math_game.html">Play Quiz</a>
         </div>
-       
+
+        <!-- Science Quiz -->
+        <div>
+            <a href="science_learn.html">
+                <img src="./../../images/sci.jpg" alt="Science Quiz">
+            </a>
+            <a class="btn" href="../secondary-education-quiz/science/science_quiz.html">Play Quiz</a>
+        </div>
+
+        <!-- General Knowledge Quiz -->
+        <div>
+            <a href="gk_learn.html">
+                <img src="./../../images/gk.jpg" alt="General Knowledge Quiz">
+            </a>
+            <a class="btn" href="../secondary-education-quiz/general-knowledge/GK.html">Play Quiz</a>
+        </div>
+    
+
+
+    <div>
+      <a href="../secondary-education-quiz/funny-game/funny_game.html">
+          <img src="./../../images/dice.jpg" alt="General Knowledge Quiz">
+      </a>
+      <a class="btn" href="../secondary-education-quiz/funny-game/funny_game.html">Play Quiz</a>
+  </div>
+</div>
+</div>
 </body>
 </html>
