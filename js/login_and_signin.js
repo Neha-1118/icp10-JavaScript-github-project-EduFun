@@ -63,13 +63,18 @@ function login() {
   logInUserPassword.value = "";
 }
 
-// Display logged-in user
-window.onload = function () //its run after a page is fully loaded
-{
-  const presentUser = document.getElementById("UserlogIn");
+// Run this function when the page fully loads
+window.onload = function () {
+  const presentUserDesktop = document.getElementById("UserlogIn");
+  const presentUserMobile = document.getElementById("pn-UserlogIn");
   const savedUsername = localStorage.getItem("loggedInUser");
 
   if (savedUsername) {
-    presentUser.innerText = `${savedUsername}`;
+    if (presentUserDesktop) { //for the desktop
+      presentUserDesktop.innerText = `${savedUsername}`;
+    }
+    if (presentUserMobile) { //for the mobile
+      presentUserMobile.innerText = `${savedUsername}`;
+    }
   }
 };

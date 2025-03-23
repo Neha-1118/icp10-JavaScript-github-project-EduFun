@@ -65,6 +65,9 @@ body {
     position: absolute;
     box-shadow: 0 10px 10px -5px rgba(0, 0, 0, 0.24);
   }
+  .ham-nav a{
+    text-decoration:none;
+  }
   .ham-nav ul {
     border: 2px solid gray;
     background-color: rgba(165, 203, 250, 0.183);
