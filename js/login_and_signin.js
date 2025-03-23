@@ -13,7 +13,7 @@ function addData() {
   }
 
   // Check if user already exists
-  if (userInfo.some(user => user.name === userName)) {
+  if (userInfo.some((user) => user.name === userName)) {
     alert("Username already taken. Please choose another.");
     return;
   }
@@ -64,9 +64,12 @@ function login() {
 }
 
 // Display logged-in user
-const presentUser = document.getElementById("UserlogIn");
-const savedUsername = localStorage.getItem("loggedInUser");
+window.onload = function () //its run after a page is fully loaded
+{
+  const presentUser = document.getElementById("UserlogIn");
+  const savedUsername = localStorage.getItem("loggedInUser");
 
-if (savedUsername) {
-  presentUser.innerText = `Welcome, ${savedUsername}`;
-}
+  if (savedUsername) {
+    presentUser.innerText = `${savedUsername}`;
+  }
+};
