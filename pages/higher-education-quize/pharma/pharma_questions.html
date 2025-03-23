@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>IT quiz</title>
+    <title>Pharma quiz</title>
     <style>
       * {
         margin: 0;
@@ -111,8 +111,8 @@
         justify-content: center;
         position: absolute;
         top: 25px;
-        left:40%;
-        border-radius:20px;
+        left: 40%;
+        border-radius: 20px;
       }
     </style>
   </head>
@@ -139,6 +139,29 @@
     </div>
 
     <script>
+      //timer
+      const comeDownTimer = document.getElementById("timer");
+      let statrtingMin = 10;
+      let time = statrtingMin * 60;
+      setInterval(updateComedown, 1000);
+      function updateComedown() {
+        const min = Math.floor(time / 60);
+        const sec = time % 60;
+
+        const minText = min < 10 ? `0${min}` : min;
+        const secText = sec < 10 ? `0${sec}` : sec;
+
+        comeDownTimer.innerText = `${minText}:${secText}`;
+        if (time > 0) {
+          time--;
+        }
+        const timeInt = Math.floor(parseInt(time/60));
+        if(timeInt <=9)
+        {
+          timer.style.backgroundColor="yellow";
+        }
+      
+      }
       //create object for the questions
       const questions = [
         {
