@@ -25,7 +25,7 @@ body {
     justify-content: space-around;
     box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.075);
     cursor: pointer;
-    transition: box-shadow 0.3s ease-out, scale 0.9s;
+    transition: all 0.3s;
   }
   .box:hover {
     box-shadow: 0 0 10px 10px rgba(0, 26, 255, 0.185);
@@ -61,7 +61,7 @@ body {
     font-weight: 400;
     background-color: #5733ff;
     cursor: pointer;
-    transition: background-color 0.3s ease-in-out;
+    transition: all 0.3s;
   }
   .get-started:hover {
     background-color: #5833ff37;
@@ -96,7 +96,7 @@ body {
   .box-2 li {
     margin: 10px;
     cursor: pointer;
-    transition: underline 0.7s ease-in-out, color;
+    transition: all 0.3s;
   }
   .box-2 li:hover {
     color: rgba(0, 26, 255, 0.829);
