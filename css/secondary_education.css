@@ -18,6 +18,8 @@ body {
     align-items: center;
     justify-content: center;
     gap: 15px;
+    margin-bottom: 30px;
+    margin-top: 50px;
 }
 .icon{
     width: 50px;
@@ -27,19 +29,21 @@ body {
 .container {
     display: flex;
     gap: 20px;
+    justify-content: center;
     margin-top: 20px;
 }
 .card {
     width: 250px;
     height: 420px;
     padding: 20px;
+    margin: 0 20px;
     border-radius: 10px;
     text-align: center;
     color: white;
     box-shadow: 0px 4px 10px rgba(0.2, 0.2, 0.2, 0.4);
-    display: flex;
+    display:flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content:space-around;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     
 }
