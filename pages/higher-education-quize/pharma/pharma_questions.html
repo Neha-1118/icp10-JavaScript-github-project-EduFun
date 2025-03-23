@@ -76,7 +76,7 @@
         background-color: #ff9393;
       }
       .exit {
-        background-color: red;
+        background-color:red;
         border: none;
         height: 40px;
         width: 80px;
@@ -101,7 +101,7 @@
         width: 15px;
         padding-left: 10px;
       }
-      .timer {
+      #timer {
         background-color: rgba(34, 139, 34, 0.769);
         width: 100px;
         height: 35px;
@@ -156,9 +156,13 @@
           time--;
         }
         const timeInt = Math.floor(parseInt(time/60));
-        if(timeInt <=9)
+        if(timeInt <=5)
         {
           timer.style.backgroundColor="yellow";
+        }
+        else if(timeInt <=3)
+        {
+          timer.style.backgroundColor="tomato";
         }
       
       }
