@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Higher ducation</title>
+    <link rel="stylesheet" href="./../../css/style.css" />
+    <link rel="stylesheet" href="./../../css/higher_education.css" />
+    <script src="./../../js/script.js"></script>
+  </head>
+  <body>
+    <nav class="navbar" id="navbar">
+      <div class="edufun-logo">
+        <img src="./../../icons/head-logo.png" alt="edufun-logo" />
+        <img
+          src="./../../icons/nav-heading.png"
+          id="logo-heading"
+          alt="logo-heading"
+        />
+      </div>
+      <ul>
+        <li>Home</li>
+        <li>Spaceship</li>
+        <li>About</li>
+        <li>contact</li>
+        <li>Log In</li>
+      </ul>
+      <div class="hamburger">
+        <button type="button" id="hamburger-btn" onclick="hamburgerMenu()">
+          <img src="./../../icons/hamburger-menu.png" />
+        </button>
+      </div>
+    </nav>
+    <nav class="ham-nav" id="ham-nav">
+      <ul>
+        <li>Home</li>
+        <li>Spaceship</li>
+        <li>About</li>
+        <li>contact</li>
+        <li>Log In</li>
+      </ul>
+    </nav>
+    <!--main cards-->
+    <div class="higher-edu-heading"><h1 class="heading-img"><img src="./../../images/higher-education-1.png"> Higher Education <img src="./../../images/higher-education-2.png"></h1></div>
+    <div class="box-container">
+      <div
+        class="box"
+        onmouseover="changeImg1(`./../../images/p-gif.gif`)"
+        onmouseout="changeImg1(`./../../images/static-programming.png`)"
+      >
+        <div class="box-1"><img src="./../../images/programming.jpg" /></div>
+        <div class="box-2">
+          <h2>💻 IT Industry 👨🏻‍💻</h2>
+          <img
+            src="./../../images/static-programming.png"
+            class="domain-gif"
+            id="main-image-1"
+          />
+          <ul>
+            <h3>Topics</h3>
+            <li>Coding Questions</li>
+            <li>Operating System</li>
+            <li>DataBase</li>
+            <li>Data Structure And Algorithm</li>
+            <li>Computer Network</li>
+          </ul>
+          <div class="higher-edu-btn">
+            <button class="get-started" type="button">Notes</button>
+            <button class="get-started" type="button">get-started</button>
+          </div>
+        </div>
+      </div>
+      <div
+        class="box"
+        onmouseover="changeImg2(`./../../images/f.gif`)"
+        onmouseout="changeImg2(`./../../images/static-money.png`)"
+      >
+        <div class="box-1"><img src="./../../images/finance.jpg" /></div>
+        <div class="box-2">
+          <h2>📈 Finance 💸</h2>
+          <img
+            src="./../../images/static-money.png"
+            class="domain-gif"
+            id="main-image-2"
+          />
+          <ul>
+            <h3>Topics</h3>
+            <li>Financial Markets & Instruments</li>
+            <li>Corporate Finance</li>
+            <li>Investment & Portfolio Management</li>
+            <li>Financial Risk Management</li>
+            <li>Banking & Monetary Policy</li>
+          </ul>
+          <div class="higher-edu-btn">
+            <button class="get-started" type="button">Notes</button>
+            <button class="get-started" type="button">get-started</button>
+          </div>
+        </div>
+      </div>
+      <div
+        class="box"
+        onmouseover="changeImg3(`./../../images/l.gif`)"
+        onmouseout="changeImg3(`./../../images/static-law.png`)"
+      >
+        <div class="box-1"><img src="./../../images/law.jpg" /></div>
+        <div class="box-2">
+          <h2>⚖️ Law 👩🏻‍⚖️</h2>
+          <img
+            src="./../../images/static-law.png"
+            class="domain-gif"
+            id="main-image-3"
+          />
+          <ul>
+            <h3>Topics</h3>
+            <li>Constitutional Law</li>
+            <li>Contract Law</li>
+            <li>Criminal Law </li>
+            <li>Tort Law</li>
+            <li>Legal Reasoning & Interpretation</li>
+          </ul>
+          <div class="higher-edu-btn">
+            <button class="get-started" type="button">Notes</button>
+            <button class="get-started" type="button">get-started</button>
+          </div>
+        </div>
+      </div>
+      <div
+        class="box"
+        onmouseover="changeImg4(`./../../images/police.gif`)"
+        onmouseout="changeImg4(`./../../images/static-police.png`)"
+      >
+        <div class="box-1"><img src="./../../images/civil-sevices.jpg" /></div>
+        <div class="box-2">
+          <h2>📚 Civil Services 👮🏻</h2>
+          <img
+            src="./../../images/static-police.png"
+            class="domain-gif"
+            id="main-image-4"
+          />
+          <ul>
+            <h3>Topics</h3>
+            <li>Modern Indian History & Freedom Struggle</li>
+            <li>Geography & Environment </li>
+            <li>Economy & Development</li>
+            <li>Current Affairs & General Knowledge</li>
+            <li>Indian Polity & Governance</li>
+          </ul>
+          <div class="higher-edu-btn">
+            <button class="get-started" type="button">Notes</button>
+            <button class="get-started" type="button">get-started</button>
+          </div>
+        </div>
+      </div>
+      <div
+        class="box"
+        onmouseover="changeImg5(`./../../images/dc.gif`)"
+        onmouseout="changeImg5(`./../../images/static-dc.png`)"
+      >
+        <div class="box-1"><img src="./../../images/pharma.jpg" /></div>
+        <div class="box-2">
+          <h2>💊 Pharma 👨🏻‍⚕️</h2>
+          <img
+            src="./../../images/static-dc.png"
+            class="domain-gif"
+            id="main-image-5"
+          />
+          <ul>
+            <h3>Topics</h3>
+            <li>Pharmacology</li>
+            <li>Pharmaceutics</li>
+            <li>Pharmaceutical Chemistry</li>
+            <li>Pharmacognosy</li>
+            <li>Hospital & Clinical Pharmacy</li>
+          </ul>
+          <div class="higher-edu-btn">
+            <button class="get-started" type="button">Notes</button>
+            <button class="get-started" type="button">get-started</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./../../js/higher_education.js"></script>
+  </body>
+</html>
