@@ -6,9 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gaming Quiz</title>
     <link rel="stylesheet" href="styles.css">
-    <style>/* General Styles */
-     /* General Styles */
-/* General Styling */
+    <style>
+   
 body {
     margin:0px;
     padding:0px;
@@ -176,6 +175,13 @@ body {
         display: none;
     }
   }
+ 
+  
+  .higher-edu-heading {
+    margin-top:80px;
+    text-align: center;
+  }
+  
 body {
     font-family: 'Poppins', sans-serif;
     background-color: #f5f5f5;
@@ -190,7 +196,7 @@ body {
     justify-content: center;
     gap: 45px;
     flex-wrap: wrap;
-    margin-top: 100px;
+    margin-top: 50px;
     margin-bottom: 70px;
 }
 
@@ -252,39 +258,42 @@ body {
     
 </head>
 <body>
-    <nav class="navbar" id="navbar">
-        <div class="edufun-logo">
-          <img src="../icons/head-logo.png" alt="edufun-logo" />
-          <img
-            src="../icons/nav-heading.png"
-            id="logo-heading"
-            alt="logo-heading"
-          />
-        </div>
-        <ul>
-          <li>Home</li>
-          <li>Spaceship</li>
-          <li>About</li>
-          <li>contact</li>
-          <li>Log In</li>
-        </ul>
-        <div class="hamburger">
-          <button type="button" id="hamburger-btn" onclick="hamburgerMenu()">
-            <img src="../icons/hamburger-menu.png" />
-          </button>
-        </div>
-      </nav>
-      <nav class="ham-nav" id="ham-nav">
-        <ul>
-          <li>Home</li>
-          <li>Spaceship</li>
-          <li>About</li>
-          <li>contact</li>
-          <li>Log In</li>
-        </ul>
-      </nav>
     
     
+  <nav class="navbar" id="navbar">
+    <div class="edufun-logo">
+      <img src="./../../icons/head-logo.png" alt="edufun-logo" />
+      <img
+        src="./../../icons/nav-heading.png"
+        id="logo-heading"
+        alt="logo-heading"
+      />
+    </div>
+    <ul>
+      <li>Home</li>
+      <li>Spaceship</li>
+      <li>About</li>
+      <li>contact</li>
+      <li>Log In</li>
+    </ul>
+    <div class="hamburger">
+      <button type="button" id="hamburger-btn" onclick="hamburgerMenu()">
+        <img src="./../../icons/hamburger-menu.png" />
+      </button>
+    </div>
+  </nav>
+  <nav class="ham-nav" id="ham-nav">
+    <ul>
+      <li>Home</li>
+      <li>Spaceship</li>
+      <li>About</li>
+      <li>contact</li>
+      <li>Log In</li>
+    </ul>
+  </nav>
+  <!--main cards-->
+  <div class="higher-edu-heading"><h1 class="heading-img"> Secondary Education..📚📚 </h1></div>
+  
           
     <div class="quiz-container">
         
@@ -292,20 +301,22 @@ body {
         <!-- <h1> Secondary Education 8th To 10th</h1> -->
         <div class="card-container">
             <div class="card" id="math-card">
-                <h2>Math Questions</h2>
-                <img src="../images/math1.jpg" />
+                <h2>Math Quiz</h2>
+                <img src="./../.././images/math1.jpg" />
                 <p>Test your math skills with challenging questions.</p>
-                <button onclick="startQuiz('math')">Start</button>
+                <button> <a href="../secondary-education-quiz/math/math_game.html" >Start</a></button>
+                <!-- <a href="grades1-3.html" class="btn">Explore</a> -->
+         
             </div>
             <div class="card" id="game-card">
-                <h2>Game Trivia</h2>
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoUSSxXz-6vVS7qh1FEVDr73w6dpCBcgNYbA&s" />
-                <p>How well do you know your favorite games?</p>
+                <h2>Science Quiz</h2>
+                <img src="./../.././images/sci.jpg" />
+                <p>Test your Science skills with challenging questions.</p>
                 <button onclick="startQuiz('game')">Start</button>
             </div>
             <div class="card" id="gk-card">
-                <h2>General Knowledge</h2>
-                <img src="../images/general-knowledge.jpg" />
+                <h2>General Knowledge Quiz</h2>
+                <img src="./../.././images/gk.jpg" />
                 <p>Challenge yourself with general knowledge questions.</p>
                 <button onclick="startQuiz('gk')">Start</button>
             </div>
