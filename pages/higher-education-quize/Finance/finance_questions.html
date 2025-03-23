@@ -156,6 +156,7 @@
           time--;
         }
         const timeInt = Math.floor(parseInt(time/60));
+        const secInt = Math.floor(parentInt(time % 60));
         if(timeInt <=5)
         {
           timer.style.backgroundColor="yellow";
@@ -163,6 +164,10 @@
         else if(timeInt <=3)
         {
           timer.style.backgroundColor="tomato";
+        }
+        else if (timeInt == 9 && secInt == 0) {
+          alert("Time is over, Try Next Time");
+          window.location.href = `./../higher_education.html`;
         }
       
       }
