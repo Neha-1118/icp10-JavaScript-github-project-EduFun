@@ -20,6 +20,7 @@
         margin: 100px auto 0;
         border-radius: 10px;
         padding: 30px;
+        position: relative;
       }
       .app h1 {
         font-size: 25px;
@@ -74,11 +75,41 @@
       .incorrect {
         background-color: #ff9393;
       }
+      .exit
+      {
+          background-color:red;
+          border:none;
+          height:40px;
+          width:80px;
+          font-size:18px; 
+          font-weight:400;
+          position:absolute;
+          right:25px;
+          top:25px;
+          color:white;
+          border-radius:10px;
+          cursor:pointer;
+          transition:all 0.3s;
+          border:2px solid white;
+          outline:2px solid red;
+          
+      }
+      .exit:hover{
+        background-color: #ff000047;
+        color:black;
+      }
+      .exit img
+      {
+          height:15px;
+          width:15px;
+          padding-left:10px;
+        }
     </style>
   </head>
   <body>
     <div class="app">
-      <h1>Simple Quiz</h1>
+      <h1>IT industry</h1>
+      <a href="./../higher_education.html"><button class="exit">Exit<img src="./../../../images/exit.png"></button></a>
       <div class="quiz">
         <h2 id="question">questions goes here</h2>
         <div id="answer-buttons">
@@ -95,39 +126,98 @@
       //create object for the questions
       const questions = [
         {
-          question: "what is your name ?",
+          question: "what is the output of this code console.log(5<10>6) ?",
           answers: [
-            { text: "shivam", correct: false },
-            { text: "satyam", correct: true },
-            { text: "saurav", correct: false },
-            { text: "saurav", correct: false },
+            { text: "1", correct: false },
+            { text: "flase", correct: true },
+            { text: "0", correct: false },
+            { text: "undefine", correct: false },
+          ],
+        },
+        {
+          question:
+            "Which of the following is NOT an example of an operating system ?",
+          answers: [
+            { text: "Microsoft Office", correct: true },
+            { text: "Windows", correct: false },
+            { text: "Linux", correct: false },
+            { text: "macOS", correct: false },
+          ],
+        },
+        {
+          question: "Shortest Job Next (SJN) ?",
+          answers: [
+            { text: "Tree Model", correct: false },
+            { text: "Linear Model", correct: false },
+            { text: "Sequential Model", correct: false },
+            { text: " Hierarchical Model", correct: true },
+          ],
+        },
+        {
+          question: "what is the output of this code console.log(0 || 1) ?",
+          answers: [
+            { text: "1", correct: true },
+            { text: "true", correct: false },
+            { text: "0", correct: false },
+            { text: "false", correct: false },
+          ],
+        },
+        {
+          question:
+            "Which scheduling algorithm is based on the principle of executing the shortest job first ?",
+          answers: [
+            { text: "Shortest Job Next (SJN)", correct: true },
+            { text: " First-Come, First-Served (FCFS)", correct: false },
+            { text: "Round Robin (RR)v", correct: false },
+            { text: " Priority Scheduling", correct: false },
+          ],
+        },
+        {
+          question:
+            "Which SQL statement is used to retrieve data from a database ?",
+          answers: [
+            { text: "INSERT", correct: false },
+            { text: "SELECT", correct: true },
+            { text: "UPDATE", correct: false },
+            { text: "DELETE", correct: false },
+          ],
+        },
+        {
+          question:
+            "Which layer of the OSI model is responsible for end-to-end communication and error recovery ?",
+          answers: [
+            { text: "Network Layer", correct: false },
+            { text: "Transport Layer", correct: true },
+            { text: "Data Link Layer", correct: false },
+            { text: "Physical Layer", correct: false },
+          ],
+        },
+        {
+          question: `what is the output of this code console.log(1+2+"3") ?`,
+          answers: [
+            { text: "True", correct: false },
+            { text: "6", correct: false },
+            { text: "123", correct: false },
+            { text: "33", correct: true },
           ],
         },
         {
           question: "what is your name ?",
           answers: [
-            { text: "shivam", correct: false },
-            { text: "satyam", correct: true },
-            { text: "saurav", correct: false },
-            { text: "saurav", correct: false },
+            { text: "HTTP", correct: false },
+            { text: "SMTP", correct: false },
+            { text: "FTP", correct: true },
+            { text: "DHCP", correct: false },
           ],
         },
         {
-          question: "what is your name ?",
+          question:
+            "Which of the following is an example of a network topology ?",
           answers: [
-            { text: "shivam", correct: false },
-            { text: "satyam", correct: true },
-            { text: "saurav", correct: false },
-            { text: "saurav", correct: false },
-          ],
-        },
-        {
-          question: "what is your name ?",
-          answers: [
-            { text: "shivam", correct: false },
-            { text: "satyam", correct: true },
-            { text: "saurav", correct: false },
-            { text: "saurav", correct: false },
+            { text: "HTTP", correct: false },
+            { text: "Star", correct: true },
+            { text: "IP Address", correct: false },
+            { text: "Router", correct: false },
           ],
         },
       ];
@@ -187,23 +277,19 @@
         });
         nextButton.style.display = "block";
       }
-      function showScore()
-      {
+      function showScore() {
         resetState();
         questionElement.innerHTML = `You scored ${score} out of ${questions.length} !`;
         nextButton.innerHTML = "play again";
-        nextButton.style.display="block";
+        nextButton.style.display = "block";
       }
-      function handleNextButton() 
-      {
+      function handleNextButton() {
         currentquestionIndex++;
-        if(currentquestionIndex < questions.length)
-      {
-        showQuestion();
-      }
-      else{
-        showScore();
-      }
+        if (currentquestionIndex < questions.length) {
+          showQuestion();
+        } else {
+          showScore();
+        }
       }
       nextButton.addEventListener("click", () => {
         //check the length of the max questions to display the score
