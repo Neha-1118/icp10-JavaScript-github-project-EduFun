@@ -76,7 +76,7 @@
         background-color: #ff9393;
       }
       .exit {
-        background-color:red;
+        background-color: red;
         border: none;
         height: 40px;
         width: 80px;
@@ -155,16 +155,16 @@
         if (time > 0) {
           time--;
         }
-        const timeInt = Math.floor(parseInt(time/60));
-        if(timeInt <=5)
-        {
-          timer.style.backgroundColor="yellow";
+        const timeInt = Math.floor(parseInt(time / 60));
+        const secInt = Math.floor(parentInt(time % 60));
+        if (timeInt <= 5) {
+          timer.style.backgroundColor = "yellow";
+        } else if (timeInt <= 3) {
+          timer.style.backgroundColor = "tomato";
+        } else if (timeInt == 9 && secInt == 0) {
+          alert("Time is over, Try Next Time");
+          window.location.href = `./../higher_education.html`;
         }
-        else if(timeInt <=3)
-        {
-          timer.style.backgroundColor="tomato";
-        }
-      
       }
       //create object for the questions
       const questions = [
