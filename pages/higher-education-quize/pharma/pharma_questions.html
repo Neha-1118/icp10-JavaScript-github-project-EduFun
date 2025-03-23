@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>IT quiz</title>
+    <title>Pharma quiz</title>
     <style>
       * {
         margin: 0;
@@ -76,7 +76,7 @@
         background-color: #ff9393;
       }
       .exit {
-        background-color: red;
+        background-color:red;
         border: none;
         height: 40px;
         width: 80px;
@@ -101,6 +101,19 @@
         width: 15px;
         padding-left: 10px;
       }
+      #timer {
+        background-color: rgba(34, 139, 34, 0.769);
+        width: 100px;
+        height: 35px;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 25px;
+        left: 40%;
+        border-radius: 20px;
+      }
     </style>
   </head>
   <body>
@@ -120,9 +133,39 @@
         </div>
         <button id="next-btn">Next</button>
       </div>
+      <div class="timer">
+        <h2 id="timer">10:00</h2>
+      </div>
     </div>
 
     <script>
+      //timer
+      const comeDownTimer = document.getElementById("timer");
+      let statrtingMin = 10;
+      let time = statrtingMin * 60;
+      setInterval(updateComedown, 1000);
+      function updateComedown() {
+        const min = Math.floor(time / 60);
+        const sec = time % 60;
+
+        const minText = min < 10 ? `0${min}` : min;
+        const secText = sec < 10 ? `0${sec}` : sec;
+
+        comeDownTimer.innerText = `${minText}:${secText}`;
+        if (time > 0) {
+          time--;
+        }
+        const timeInt = Math.floor(parseInt(time/60));
+        if(timeInt <=5)
+        {
+          timer.style.backgroundColor="yellow";
+        }
+        else if(timeInt <=3)
+        {
+          timer.style.backgroundColor="tomato";
+        }
+      
+      }
       //create object for the questions
       const questions = [
         {
