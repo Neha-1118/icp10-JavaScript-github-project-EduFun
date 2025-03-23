@@ -82,44 +82,8 @@
         .sub-products img:hover {
             border: 2px solid #007bff;
         }
-        .container {
-            max-width: 600px;
-            margin: 50px auto;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-        }
+        
 
-        /* Buttons */
-        .buttons {
-            margin-top: 20px;
-        }
-
-        button {
-            background: white;
-            color: #0072ff;
-            border: none;
-            padding: 10px 15px;
-            margin: 5px;
-            font-size: 16px;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        button:hover {
-            background: #0072ff;
-            color: white;
-        }
-
-        /* Formula Box */
-        .formula-box {
-            margin-top: 20px;
-            padding: 15px;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 5px;
-        }
     </style>
 </head>
 <body>
@@ -161,49 +125,14 @@
   </div>
 </div>
 </div>
-<div class="container">
-    <h1>Math Formulas</h1>
-    <div class="buttons">
-        <button onclick="showFormulas('algebra')">Algebra</button>
-        <button onclick="showFormulas('geometry')">Geometry</button>
-        <button onclick="showFormulas('trigonometry')">Trigonometry</button>
-    </div>
-    <div id="formula-box" class="formula-box">
-        <h2>Select a category to view formulas</h2>
-    </div>
+
 </div>
 <script>
     function changeImage(imageSrc) {
         document.getElementById('mainImage').src = imageSrc;
     }
    
-        const formulas = {
-            algebra: [
-                { name: "Quadratic Formula", formula: "x = (-b ± √(b² - 4ac)) / 2a" },
-                { name: "Sum of Arithmetic Series", formula: "S = (n/2) * (2a + (n-1)d)" },
-                { name: "Pythagorean Theorem", formula: "a² + b² = c²" }
-            ],
-            geometry: [
-                { name: "Area of a Circle", formula: "A = πr²" },
-                { name: "Perimeter of a Rectangle", formula: "P = 2(l + w)" },
-                { name: "Volume of a Sphere", formula: "V = (4/3)πr³" }
-            ],
-            trigonometry: [
-                { name: "Sine Rule", formula: "a/sin(A) = b/sin(B) = c/sin(C)" },
-                { name: "Cosine Rule", formula: "c² = a² + b² - 2ab cos(C)" },
-                { name: "Tangent Identity", formula: "tan(θ) = sin(θ) / cos(θ)" }
-            ]
-        };
-
-        function showFormulas(category) {
-            const formulaBox = document.getElementById("formula-box");
-            formulaBox.innerHTML = `<h2>${category.charAt(0).toUpperCase() + category.slice(1)} Formulas</h2>`;
-            
-            formulas[category].forEach(item => {
-                formulaBox.innerHTML += `<p><strong>${item.name}:</strong> ${item.formula}</p>`;
-            });
-        }
-    </script>
+          </script>
    
 
 </body>
