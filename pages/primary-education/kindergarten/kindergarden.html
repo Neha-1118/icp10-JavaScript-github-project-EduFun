@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KG section</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lemon&family=Lobster&family=Pacifico&display=swap');
+    </style>
+   <style>
+    
+        body {
+            font-family: Arial, sans-serif;
+            background-color: bisque;
+        }
+        .container{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            display: block;
+            justify-content:space-evenly;
+            
+            
+        }
+        .images{
+            display: inline-block;
+            height: 300px;
+            width: 300px;
+            border-radius: 10px;
+            margin: 30px 20px;
+            
+        }
+        .images:hover{
+            transform: scale(1.1);
+            box-shadow: 10px 8px 12px rgba(0,0,0,0.2);
+        }
+        
+     section {
+    margin: 20px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
+    .searchBox{
+         font-size: 50px;
+        }
+     .product-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: space-evenly;
+    padding: 20px;
+    }
+
+    .product {
+    background: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 300px;
+    
+    }
+
+    .product img {
+    width: 100%;
+     border-radius: 10px;
+    }
+    .product-img{
+            height: 50px;
+            width: 50px;
+            object-fit: cover;
+            border: 1px solid black;
+            border-radius: 5px;
+            margin:10px;
+            cursor: pointer;
+
+     }
+     .main-img{
+        height: 300px;
+        object-fit: cover;
+     }
+     .product-img:hover{
+            transform: scale(1.1);
+            box-shadow: 1px white;
+
+      }
+        .product-container{
+            display: flex;
+            justify-content: center;
+     }
+     .button{
+    background-color: #ff9800;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+    border-radius: 5px;
+
+     }
+     .button:hover {
+    background-color: #e68900;
+}
+#cart {
+    margin-top: 20px;
+}
+
+#cartItems p {
+    background: #e3f2fd;
+    padding: 10px;
+    border-radius: 5px;
+}
+#spin button {
+    font-size: 18px;
+    padding: 15px;
+    background-color:tomato;
+    color: white;
+    margin:0 650px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#spin button:hover {
+    color: black;
+    box-shadow: 2px 2px 5px black;
+}
+
+#spinResult {
+    font-weight: bold;
+    margin-top: 10px;
+    text-align: center;
+    
+}
+#cart button{
+    margin: 0 10px;
+    background-color: rgb(230, 117, 117);
+}
+#cart button:hover{
+    background-color:coral
+}
+    </style>
+</head>
+<body>
+    <div>
+        <h1 style="text-align: center; font-family:Lemon, serif;
+        font-weight: 400;
+        font-style: normal;; color: crimson;">Learn & Play🤩</h1>
+    </div>
+    <div class="container">
+        <a href="funquiz.html"><img src="./../../../images/fruite-veg.webp" alt="quize-img" class="images"></a>
+         <a href="alphabets.html"><img src="./../../../images/alphabets.webp" alt="alphabet-img" class="images"></a>
+         <a href="color.html"><img src="./../../../images/color.webp" alt="color-img" class="images"></a>
+         <a href="animal.html"><img src="./../../../images/animal.webp" alt="animal-img" class="images"></a>
+    </div><hr><hr>
+
+    <section id="products">
+        <h2 style="text-align: center;">Our Products</h2>
+        <input type="text" id="searchBox" placeholder="Search products..." onkeyup="filterProducts()">
+        <div class="product-list" id="productList">
+            <div class="product">
+                <img src="./../../../images/puzzle.jpg" class="main-img"alt="puzzle" id="main">
+                <div class="product-container">
+                 <img src="./../../../images/puzzle.jpg" class="product-img" onclick="changeImage('./../../../images/puzzle.jpg','main')">
+                 <img src="./../../../images/puzzle1.jpg" class="product-img" onclick="changeImage('./../../../images/puzzle1.jpg','main')">
+                 <img src="./../../../images/puzzle2.jpg" class="product-img" onclick="changeImage('./../../../images/puzzle2.jpg','main')">
+                 <img src="./../../../images/puzzle3.jpg" class="product-img" onclick="changeImage('./../../../images/puzzle3.jpg','main')">
+                </div>
+                <h3>Puzzle Toy</h3>
+                <p>Challenge your brain with our puzzle toy!</p>
+               <b> <p>₹350/-</p></b>
+                <button class="button"onclick="addToCart('Alphabet Flashcards', 350)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="./../../../images/clock.jpg" class="main-img"alt="Math Learning Toy" id="main2">
+                <div class="product-container">
+                    <img src="./../../../images/clock.jpg" class="product-img" onclick="changeImage('./../../../images/clock.jpg','main2')">
+                    <img src="./../../../images/clock1.jpg" class="product-img" onclick="changeImage('./../../../images/clock1.jpg','main2')">
+                    <img src="./../../../images/clock2.jpg" class="product-img" onclick="changeImage('./../../../images/clock2.jpg','main2')">
+                    <img src="./../../../images/clock3.jpg" class="product-img" onclick="changeImage('./../../../images/clock3.jpg','main2')">
+              </div>
+                <h3>Math Learning Toy</h3>
+                <p>My Clock, Shape Sorting Clock Puzzle</p>
+                <b><p>₹600/-</p></b>
+                <button  class="button" onclick="addToCart('Math Learning Toy', 600)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="./../../../images/digital.jpg"class="main-img" alt="digital alphabets" id="main3">
+            <div class="product-container">
+                <img src="./../../../images/digital.jpg" class="product-img" onclick="changeImage('./../../../images/digital.jpg','main3')">
+                <img src="./../../../images/digital1.jpg" class="product-img" onclick="changeImage('./../../../images/digital1.jpg','main3')">
+                <img src="./../../../images/digital2.jpg" class="product-img" onclick="changeImage('./../../../images/digital2.jpg','main3')">
+                <img src="./../../../images/digital3.jpg" class="product-img" onclick="changeImage('./../../../images/digital3.jpg','main3')">
+                
+            </div>
+                <h3>Alphabets game</h3>
+                <p>Help your character learn and play with our digital alphabets game!</p>
+               <b> <p>₹850/-</p> </b>  
+               <button class="button" onclick="addToCart('Educational Storybook', 850)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="./../../../images/story.jpg"class="main-img" alt="digital alphabets" id="main4">
+            <div class="product-container">
+                <img src="./../../../images/story.jpg" class="product-img" onclick="changeImage('./../../../images/story.jpg','main4')">
+                <img src="./../../../images/story1.jpg" class="product-img" onclick="changeImage('./../../../images/story1.jpg','main4')">
+                <img src="./../../../images/story2.jpg" class="product-img" onclick="changeImage('./../../../images/story2.jpg','main4')">
+                <img src="./../../../images/story3.jpg" class="product-img" onclick="changeImage('./../../../images/story3.jpg','main4')">
+                
+            </div>
+                <h3>Storybooks</h3>
+                <p>Get ready to explore the most incredible stories!</p>
+               <b> <p>₹450/-</p> </b>  
+               <button class="button" onclick="addToCart('Storybooks', 450)">Add to Cart</button>
+            </div>
+
+            <div class="product">
+                <img src="./../../../images/sketchpen.jpg"class="main-img" alt="digital alphabets" id="main5">
+            <div class="product-container">
+                <img src="./../../../images/sketchpen.jpg" class="product-img" onclick="changeImage('./../../../images/sketchpen.jpg','main5')">
+                <img src="./../../../images/sketchpen1.jpg" class="product-img" onclick="changeImage('./../../../images/sketchpen1.jpg','main5')">
+                <img src="./../../../images/sketchpen2.jpg" class="product-img" onclick="changeImage('./../../../images/sketchpen2.jpg','main5')">
+                <img src="./../../../images/sketchpen3.jpg" class="product-img" onclick="changeImage('./../../../images/sketchpen3.jpg','main5')">
+                
+            </div>
+                <h3>Sketchpen Box</h3>
+                <p>Stay organized and creative with our Sketchpen Box!</p>
+               <b> <p>₹500/-</p> </b>  
+               <button class="button" onclick="addToCart('Sketchpen Box', 500)">Add to Cart</button>
+            </div>
+
+            <div class="product">
+                <img src="./../../../images/book.jpg"class="main-img" alt="digital alphabets" id="main6">
+            <div class="product-container">
+                <img src="./../../../images/book.jpg" class="product-img" onclick="changeImage('./../../../images/book.jpg','main6')">
+                <img src="./../../../images/book1.jpg" class="product-img" onclick="changeImage('./../../../images/book1.jpg','main6')">
+                <img src="./../../../images/book2.jpg" class="product-img" onclick="changeImage('./../../../images/book2.jpg','main6')">
+                <img src="./../../../images/book3.jpg" class="product-img" onclick="changeImage('./../../../images/book3.jpg','main6')">
+                
+            </div>
+                <h3>Amazing Storybooks</h3>
+                <p> Get ready to explore the most incredible stories!</p>
+               <b> <p>₹730/-</p> </b>  
+               <button class="button" onclick="addToCart('Amazing Storybooks', 730)">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+    <section id="cart">
+        <h2>Shopping Cart</h2>
+        <div id="cartItems"></div>
+        <button onclick="checkout()">Checkout</button>
+    </section>
+    <section id="spin">
+        <h2 style="text-align: center;font-family: Georgia, 'Times New Roman', Times, serif;">Spin & Win a Discount!💥</h2>
+        <button onclick="spinWheel()">Spin Now</button>
+        <p id="spinResult"></p>
+    </section>
+    
+    <script>
+        function changeImage(imgName,mainId){
+            const mainImg = document.getElementById(mainId);
+            
+            mainImg.src = imgName;
+            
+
+        }
+        function checkout() {
+            alert("Checkout functionality will be implemented soon!");
+        }
+
+        function spinWheel() {
+            const discounts = ["10% off", "20% off", "5% off", "No discount, try again!", "50% off"];
+            const result = discounts[Math.floor(Math.random() * discounts.length)];
+            document.getElementById("spinResult").innerText = "You won: " + result;
+        }
+
+        function addToCart(productName, price) {
+            const cart = document.getElementById("cartItems");
+            const item = document.createElement("p");
+            item.innerText = `${productName} - ₹${price}`;
+            cart.appendChild(item);
+        }
+
+        function filterProducts() {
+            const searchBox = document.getElementById("searchBox").value.toLowerCase();
+            const products = document.getElementsByClassName("product");
+            
+            for (let product of products) {
+                let productName = product.getElementsByTagName("h3")[0].innerText.toLowerCase();
+                if (productName.includes(searchBox)) {
+                    product.style.display = "block";
+                } else {
+                    product.style.display = "none";
+                }
+            }
+        }
+    </script>
+</body>
+</html>
