@@ -49,9 +49,12 @@
         cursor: pointer;
         transition: all 0.3s;
       }
-      .btn:hover {
+      .btn:hover:not([disabled]) {
         background-color: #222;
         color: #fff;
+      }
+      .btn:disabled {
+        cursor: no-drop;
       }
       #next-btn {
         background-color: #001e4d;
@@ -63,15 +66,13 @@
         margin: 10px auto 0;
         border-radius: 4px;
         cursor: pointer;
-        display:none;
+        display: none;
       }
-      .correct
-      {
-        background-color:#9aeabc;
+      .correct {
+        background-color: #9aeabc;
       }
-      .incorrect
-      {
-        background-color:#ff9393;
+      .incorrect {
+        background-color: #ff9393;
       }
     </style>
   </head>
@@ -90,119 +91,129 @@
       </div>
     </div>
 
-
     <script>
-         //create object for the questions
-         const questions =
-         [
-            {
-                question: "what is your name ?",
-                answers :
-                [
-                    { text:"shivam", correct:false},
-                    {text:"satyam", correct:true},
-                    {text:"saurav", correct:false},
-                    {text:"saurav", correct:false}
-                ]
-            },
-            {
-                question: "what is your name ?",
-                answers :
-                [
-                    { text:"shivam", correct:false},
-                    {text:"satyam", correct:true},
-                    {text:"saurav", correct:false},
-                    {text:"saurav", correct:false}
-                ]
-            },
-            {
-                question: "what is your name ?",
-                answers :
-                [
-                    { text:"shivam", correct:false},
-                    {text:"satyam", correct:true},
-                    {text:"saurav", correct:false},
-                    {text:"saurav", correct:false}
-                ]
-            },
-            {
-                question: "what is your name ?",
-                answers :
-                [
-                    { text:"shivam", correct:false},
-                    {text:"satyam", correct:true},
-                    {text:"saurav", correct:false},
-                    {text:"saurav", correct:false}
-                ]
-            }
-         ];
-         const  questionElement = document.getElementById("question");
-         const answerButton = document.getElementById("answer-buttons");
-         const nextButton = document.getElementById("next-btn");
+      //create object for the questions
+      const questions = [
+        {
+          question: "what is your name ?",
+          answers: [
+            { text: "shivam", correct: false },
+            { text: "satyam", correct: true },
+            { text: "saurav", correct: false },
+            { text: "saurav", correct: false },
+          ],
+        },
+        {
+          question: "what is your name ?",
+          answers: [
+            { text: "shivam", correct: false },
+            { text: "satyam", correct: true },
+            { text: "saurav", correct: false },
+            { text: "saurav", correct: false },
+          ],
+        },
+        {
+          question: "what is your name ?",
+          answers: [
+            { text: "shivam", correct: false },
+            { text: "satyam", correct: true },
+            { text: "saurav", correct: false },
+            { text: "saurav", correct: false },
+          ],
+        },
+        {
+          question: "what is your name ?",
+          answers: [
+            { text: "shivam", correct: false },
+            { text: "satyam", correct: true },
+            { text: "saurav", correct: false },
+            { text: "saurav", correct: false },
+          ],
+        },
+      ];
+      const questionElement = document.getElementById("question");
+      const answerButton = document.getElementById("answer-buttons");
+      const nextButton = document.getElementById("next-btn");
 
-         let currentquestionIndex = 0;
-         let score = 0;
+      let currentquestionIndex = 0;
+      let score = 0;
 
-         function startQuiz()
-         {
-             currentquestionIndex = 0;
-             score = 0;
-             nextButton.innerHTML = "Next"
-             showQuestion();
-         }
-         function showQuestion()
-         {  
-            //reset the questions and options
-            resetState();
-            //display the question
-            let currentQuestion = questions[currentquestionIndex];
-            let questionNo = currentquestionIndex +1;
-          
-            questionElement.innerHTML = `${questionNo}. ${currentQuestion.question} `
-            //display the answer
-            currentQuestion.answers.forEach(answers => 
-                {
-                    const button = document.createElement("button");
-                    button.innerHTML = answers.text;
-                    button.classList.add("btn");
-                    answerButton.appendChild(button);
-                    if(answers.correct)
-                {
-                    button.dataset.correct = answers.correct;
-                }
-                    button.addEventListener("click",selectAnswer);
-                }
-            );
-         }
-         function resetState()
-         {
-              nextButton.style.display="none";
-              while(answerButton.firstChild)
-              {
-                answerButton.removeChild(answerButton.firstChild);
-              }
-         }
-         function selectAnswer(e)
-         {
-            const selectedBtn = e.target;
-            const isCorrect = selectedBtn.dataset.correct === "true";
-            if(isCorrect)
-         {
-            selectedBtn.classList.add("correct");
-         }
-         else{
-            selectedBtn.classList.add("incorrect");
-         }
-         Array.from(answerButton.children).forEach(button => {
-            if(button.dataset.correct === "true")
-         {
+      function startQuiz() {
+        currentquestionIndex = 0;
+        score = 0;
+        nextButton.innerHTML = "Next";
+        showQuestion();
+      }
+      function showQuestion() {
+        //reset the questions and options
+        resetState();
+        //display the question
+        let currentQuestion = questions[currentquestionIndex];
+        let questionNo = currentquestionIndex + 1;
+
+        questionElement.innerHTML = `${questionNo}. ${currentQuestion.question} `;
+        //display the answer
+        currentQuestion.answers.forEach((answers) => {
+          const button = document.createElement("button");
+          button.innerHTML = answers.text;
+          button.classList.add("btn");
+          answerButton.appendChild(button);
+          if (answers.correct) {
+            button.dataset.correct = answers.correct;
+          }
+          button.addEventListener("click", selectAnswer);
+        });
+      }
+      function resetState() {
+        nextButton.style.display = "none";
+        while (answerButton.firstChild) {
+          answerButton.removeChild(answerButton.firstChild);
+        }
+      }
+      function selectAnswer(e) {
+        const selectedBtn = e.target;
+        const isCorrect = selectedBtn.dataset.correct === "true";
+        if (isCorrect) {
+          selectedBtn.classList.add("correct");
+          score++;
+        } else {
+          selectedBtn.classList.add("incorrect");
+        }
+        Array.from(answerButton.children).forEach((button) => {
+          if (button.dataset.correct === "true") {
             button.classList.add("correct");
-         }
-         button.disabled = true;
-         });
-         nextButton.style.display = "block";
-         }
-         startQuiz();
+          }
+          button.disabled = true;
+        });
+        nextButton.style.display = "block";
+      }
+      function showScore()
+      {
+        resetState();
+        questionElement.innerHTML = `You scored ${score} out of ${questions.length} !`;
+        nextButton.innerHTML = "play again";
+        nextButton.style.display="block";
+      }
+      function handleNextButton() 
+      {
+        currentquestionIndex++;
+        if(currentquestionIndex < questions.length)
+      {
+        showQuestion();
+      }
+      else{
+        showScore();
+      }
+      }
+      nextButton.addEventListener("click", () => {
+        //check the length of the max questions to display the score
+        if (currentquestionIndex < questions.length) {
+          handleNextButton();
+        } else {
+          startQuiz();
+        }
+      });
+      startQuiz();
     </script>
   </body>
 </html>
