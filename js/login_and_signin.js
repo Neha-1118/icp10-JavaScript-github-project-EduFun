@@ -1,12 +1,20 @@
-//sign in functionality
+// Sign-in functionality
 let userInfo = JSON.parse(localStorage.getItem("userInfo")) || [];
 let userNameInput = document.getElementById("sign-in-username");
 let passWordInput = document.getElementById("sign-in-password");
+
 function addData() {
   let userName = userNameInput.value.trim();
   let pass = passWordInput.value.trim();
+
   if (userName === "" || pass === "") {
-    alert("plese enter a username or password");
+    alert("Please enter a username or password.");
+    return;
+  }
+
+  // Check if user already exists
+  if (userInfo.some(user => user.name === userName)) {
+    alert("Username already taken. Please choose another.");
     return;
   }
 
@@ -14,35 +22,51 @@ function addData() {
     name: userName,
     password: pass,
   };
+
   userInfo.push(userData);
   localStorage.setItem("userInfo", JSON.stringify(userInfo));
   console.log(userInfo);
 
   userNameInput.value = "";
   passWordInput.value = "";
+  alert("Sign-up successful! You can now log in.");
 }
 
-//log in functionality
-const logInUSerName = document.getElementById("log-in-username");
+// Log-in functionality
+const logInUserName = document.getElementById("log-in-username");
 const logInUserPassword = document.getElementById("log-in-password");
+
 function login() {
-  let logInName = logInUSerName.value.trim();
+  let logInName = logInUserName.value.trim();
   let logInPassword = logInUserPassword.value.trim();
+
   if (logInName === "" || logInPassword === "") {
-    alert("please enter a username or password");
+    alert("Please enter a username or password.");
     return;
   }
-  //find username and password
+
   let userFind = userInfo.find(
     (user) => user.name === logInName && user.password === logInPassword
   );
-  console.log("User found:", userFind); // Debugging
+
+  console.log("User found:", userFind);
+
   if (userFind) {
-    alert("log in successfull");
-    window.location.href = "/index.html";
+    alert("Login successful!");
+    localStorage.setItem("loggedInUser", logInName); // Save the logged-in user
+    window.location.href = "/index.html"; // Redirect after login
   } else {
-    alert("log in failed");
+    alert("Login failed. Incorrect username or password.");
   }
-  logInUSerName.value = "";
+
+  logInUserName.value = "";
   logInUserPassword.value = "";
+}
+
+// Display logged-in user
+const presentUser = document.getElementById("UserlogIn");
+const savedUsername = localStorage.getItem("loggedInUser");
+
+if (savedUsername) {
+  presentUser.innerText = `Welcome, ${savedUsername}`;
 }
