@@ -123,7 +123,35 @@ h2 {
 .play-again-btn:active {
     transform: scale(0.95);  
 }
-
+ 
+@media screen  and (max-width: 600px) {
+    .exit{
+        background-color:red;
+        border: none;
+        height: 30px;
+        width: 50px;
+        font-size: 12px;
+        font-weight: 200;
+        left: 5px;
+        top: 10px;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all 0.3s;
+        border: 2px solid white;
+        outline: 2px solid red;
+      }
+      .exit:hover {
+        background-color: #ff000047;
+        color: black;
+      }
+      .exit img {
+        height: 10px;
+        width: 10px;
+        
+        
+      }
+}
 
     </style>
 </head>
