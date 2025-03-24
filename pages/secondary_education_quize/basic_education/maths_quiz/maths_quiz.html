@@ -74,7 +74,7 @@ h2 {
     background: #f44336 !important;
     color: white;
 }
-next-btn, .submit-btn, .restart {
+.next-btn, .submit-btn, .restart {
     display: inline-block;
     padding: 10px 20px;
     margin-top: 10px;
@@ -89,6 +89,24 @@ next-btn, .submit-btn, .restart {
 .next-btn:hover, .submit-btn:hover, .restart:hover {
     background: #0056b3;
 }
+.result-box {
+    text-align: center;
+    padding: 20px;
+}
+.result-box hr {
+    border: none;
+    height: 2px;
+    background-color: #ccc; 
+    margin: 10px 0; 
+    width: 100%; 
+}
+.result-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+   
+}
 
     </style>
 </head>
@@ -97,7 +115,7 @@ next-btn, .submit-btn, .restart {
 
         <div class="quiz-heading">
             <div class="heading-icon">
-                <img src="calculator (1).png" alt="Quiz Icon">
+                <img src="./../../../../icons/calculator.png" alt="Quiz Icon">
                 <span class="quiz-text">Maths Quiz</span>
                 
             </div>
@@ -113,5 +131,35 @@ next-btn, .submit-btn, .restart {
         <button class="restart" onclick="restartQuiz()">Restart</button>
     </div>
     </div>
+    <script>
+      const quizData = [
+    {
+        question : "What is the square root of 144?",
+        options: ["10", "12", "14", "16"],
+        answer: 1
+    },
+    {
+        question: "If a triangle has angles of 50° and 60°, what is the measure of the third angle?",
+        options: ["70°", "80°", "90°", "100°"],
+        answer: 0
+    },
+    {
+        question: "What is 3/4 of 48?",
+        options: ["24", "30", "36", "40"],
+        answer: 2
+    },
+    {
+        question: "A train travels 60 km in 1 hour. How far will it travel in 4.5 hours at the same speed?",
+        options: ["240km", "270km", "280km", "300km"],
+        answer: 1
+    },
+    {
+        question: "What is the value of 12 * 8",
+        options: ["92", "96", "88", "104"],
+        answer: 1
+    }
+];
+  
+    </script>
 </body>
 </html>
