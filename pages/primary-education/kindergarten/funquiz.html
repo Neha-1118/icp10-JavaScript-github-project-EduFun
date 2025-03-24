@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fruit or vegetable quiz</title>
+    <style>
+    body {
+    font-family: Arial, sans-serif;
+    background-color: #1E3A8A;
+    color: black;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+.exit {
+        background-color:red;
+        border: none;
+        height: 40px;
+        width: 80px;
+        font-size: 18px;
+        font-weight: 400;
+        position: absolute;
+        left: 25px;
+        top: 25px;
+        color: white;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: all 0.3s;
+        border: 2px solid white;
+        outline: 2px solid red;
+      }
+      .exit:hover {
+        background-color: #ff000047;
+        color: black;
+      }
+      .exit img {
+        height: 15px;
+        width: 15px;
+        padding-left: 10px;
+      }
+
+.quiz-container {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 350px;
+}
+
+h2 {
+    margin-bottom: 10px;
+}
+
+.progress-bar {
+    height: 8px;
+    width: 100%;
+    background: #ddd;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+#progress {
+    height: 100%;
+    width: 0%;
+    background: #4CAF50;
+    border-radius: 5px;
+    transition: width 0.3s ease-in-out;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    color: white;
+    width: 100px;
+}
+
+.fruit {
+    background-color: #F44336;
+}
+
+.vegetable {
+    background-color: #1976D2;
+}
+
+.fruit:hover {
+    background-color: #D32F2F;
+}
+
+.vegetable:hover {
+    background-color: #1565C0;
+}
+.play-again-btn{
+    
+    background-color: #FF9800;  
+    color: white;
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+     margin-top: 15px;
+}
+
+.play-again-btn:hover {
+    background-color: #E68900;  
+    transform: scale(1.05);  
+}
+
+.play-again-btn:active {
+    transform: scale(0.95);  
+}
+ 
+@media screen  and (max-width: 600px) {
+    .exit{
+        background-color:red;
+        border: none;
+        height: 30px;
+        width: 50px;
+        font-size: 12px;
+        font-weight: 200;
+        left: 5px;
+        top: 10px;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all 0.3s;
+        border: 2px solid white;
+        outline: 2px solid red;
+      }
+      .exit:hover {
+        background-color: #ff000047;
+        color: black;
+      }
+      .exit img {
+        height: 10px;
+        width: 10px;
+        
+        
+      }
+}
+
+    </style>
+</head>
+<body>
+    <a href="./../.././primary-education/kindergarten/kindergarden.html"
+        ><button class="exit" onclick="confirmExit()">
+          Exit<img src="./../../../images/exit.png" /></button
+      ></a>
+    <div class="quiz-container">
+        <h2>Fruit or Vegetable? A Quiz</h2>
+        <div class="progress-bar">
+            <div id="progress"></div>
+        </div>
+        <p id="question-number"></p>
+        <h3 id="question-text"></h3>
+        <div class="buttons">
+            <button class="btn fruit" onclick="checkAnswer('Fruit')">Fruit</button>
+            <button class="btn vegetable" onclick="checkAnswer('Vegetable')">Vegetable</button>
+        </div>
+        <p id="score">Score: 0</p>
+    </div>
+    <script>
+        const questions = [
+            { item: "Apple", type: "Fruit" },
+            { item: "Carrot", type: "Vegetable" },
+            { item: "Banana", type: "Fruit" },
+            { item: "Potato", type: "Vegetable" },
+            { item: "Tomato", type: "Fruit" },
+            { item: "Spinach", type: "Vegetable" },
+            { item: "Grapes", type: "Fruit" },
+            { item: "Broccoli", type: "Vegetable" },
+            { item: "Pineapple", type: "Fruit" },
+            { item: "Lettuce", type: "Vegetable" }
+        ];
+
+let currentQuestion = 0;
+let score = 0;
+
+function loadQuestion() {
+    if (currentQuestion < questions.length) {
+        document.getElementById("question-number").textContent = `${currentQuestion + 1} of ${questions.length}`;
+        document.getElementById("question-text").textContent = `Fruit or vegetable: ${questions[currentQuestion].item}`;
+        document.getElementById("progress").style.width = `${(currentQuestion / questions.length) * 100}%`;
+    } else {
+        document.querySelector(".quiz-container").innerHTML = `<h2>Quiz Completed!</h2>
+            <p>Your final score is ${score} out of ${questions.length}.</p>
+            <button class="play-again-btn" onclick="restartQuiz()">Play Again</button>`;
+    }
+}
+
+function checkAnswer(answer) {
+    if (currentQuestion < questions.length) {
+        if (answer === questions[currentQuestion].type) {
+            score++;
+        }
+        currentQuestion++;
+        document.getElementById("score").textContent = `Score: ${score}`;
+        loadQuestion();
+    }
+}
+
+function restartQuiz() {
+    currentQuestion = 0;
+    score = 0;
+    document.querySelector(".quiz-container").innerHTML = `
+        <h2>Fruit or Vegetable? A Quiz</h2>
+        <div class="progress-bar"><div id="progress"></div></div>
+        <p id="question-number"></p>
+        <h3 id="question-text"></h3>
+        <div class="buttons">
+            <button class="btn fruit" onclick="checkAnswer('Fruit')">Fruit</button>
+            <button class="btn vegetable" onclick="checkAnswer('Vegetable')">Vegetable</button>
+        </div>
+        <p id="score">Score: 0</p>`;
+    loadQuestion();
+}
+
+           function confirmExit() {
+            let exitConfirm = confirm("Are you sure you want to exit?");
+            if (exitConfirm) {
+                window.location.href = "./../.././primary-education/kindergarten/kindergarden.html";
+            }
+        }
+
+window.onload = loadQuestion;
+
+    </script>
+</body>
+</html>
