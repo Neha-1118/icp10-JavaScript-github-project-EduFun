@@ -224,6 +224,30 @@ function submitQuiz() {
         </div>
     `;
 }
+function restartQuiz() {
+    currentQuestionIndex = 0;
+    score = 0;
+
+    
+    document.querySelector(".quiz-container").innerHTML = `
+        <div class="quiz-heading">
+            <div class="heading-icon">
+                <img src="calculator (1).png" alt="Quiz Icon">
+                <span class="quiz-text">Maths Quiz</span>
+            </div>
+        </div>
+        <hr>
+        <div class="quiz-content">
+            <h2 id="question"></h2>
+            <div class="options" id="options"></div>
+            <hr>
+            <button class="next-btn" onclick="nextQuestion()">Next</button>
+            <button class="submit-btn" onclick="submitQuiz()">Submit</button>
+        </div>
+    `;
+
+    loadQuestion(); 
+}
     </script>
 </body>
 </html>
