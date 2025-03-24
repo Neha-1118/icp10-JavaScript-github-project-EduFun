@@ -129,7 +129,7 @@ h2 {
 </head>
 <body>
     <a href="./../.././primary-education/kindergarten/kindergarden.html"
-        ><button class="exit">
+        ><button class="exit" onclick="confirmExit()">
           Exit<img src="./../../../images/exit.png" /></button
       ></a>
     <div class="quiz-container">
@@ -200,6 +200,13 @@ function restartQuiz() {
         <p id="score">Score: 0</p>`;
     loadQuestion();
 }
+
+           function confirmExit() {
+            let exitConfirm = confirm("Are you sure you want to exit?");
+            if (exitConfirm) {
+                window.location.href = "./../.././primary-education/kindergarten/kindergarden.html";
+            }
+        }
 
 window.onload = loadQuestion;
 

@@ -134,7 +134,7 @@ button:hover {
 </head>
 <body>
     <a href="./../.././primary-education/kindergarten/kindergarden.html"
-        ><button class="exit">
+        ><button class="exit" onclick="confirmExit()">
           Exit<img src="./../../../images/exit.png" /></button
       ></a>
 
@@ -221,7 +221,12 @@ function displayLetter(letter) {
   
     document.getElementById('word').textContent = alphabet[letter].word;
 }
-
+          function confirmExit() {
+            let exitConfirm = confirm("Are you sure you want to exit?");
+            if (exitConfirm) {
+                window.location.href = "./../.././primary-education/kindergarten/kindergarden.html";
+            }
+        }
 
 
     </script>
