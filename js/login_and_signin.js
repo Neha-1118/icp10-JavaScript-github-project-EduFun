@@ -54,7 +54,7 @@ function login() {
   if (userFind) {
     alert("Login successful!");
     localStorage.setItem("loggedInUser", logInName); // Save the logged-in user
-    window.location.href = "/index.html"; // Redirect after login
+    window.location.href = "../index.html"; // Redirect after login
   } else {
     alert("Login failed. Incorrect username or password.");
   }
@@ -70,10 +70,12 @@ window.onload = function () {
   const savedUsername = localStorage.getItem("loggedInUser");
 
   if (savedUsername) {
-    if (presentUserDesktop) { //for the desktop
+    if (presentUserDesktop) {
+      //for the desktop
       presentUserDesktop.innerText = `${savedUsername}`;
     }
-    if (presentUserMobile) { //for the mobile
+    if (presentUserMobile) {
+      //for the mobile
       presentUserMobile.innerText = `${savedUsername}`;
     }
   }

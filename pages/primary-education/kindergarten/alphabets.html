@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn Alphabets with fun</title>
+    <style>
+  body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color:bisque
+}
+.exit {
+        background-color:red;
+        border: none;
+        height: 50px;
+        width: 80px;
+        font-size: 18px;
+        font-weight: 400;
+        position: absolute;
+        left: 25px;
+        top: 25px;
+        color: white;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: all 0.3s;
+        border: 2px solid white;
+        outline: 2px solid red;
+      }
+      .exit:hover {
+        background-color: #ff000047;
+        color: black;
+      }
+      .exit img {
+        height: 15px;
+        width: 15px;
+        padding-left: 10px;
+      }
+
+
+.container {
+    margin-top: 20px;
+}
+
+input {
+    padding: 10px;
+    font-size: 18px;
+    text-align: center;
+    width: 200px;
+}
+
+.buttons {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+    justify-content: center;
+}
+
+button {
+    padding: 14px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    background-color: blue;
+    color: white;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: darkblue;
+}
+
+.display {
+    margin-top: 30px;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center; 
+    text-align: center; 
+}
+
+#image {
+    width: 200px;
+    height: auto;
+    margin-top: 10px;
+    object-fit: cover;
+}
+
+@media screen and (max-width:600px){
+    .display {
+        margin-top: 10px;
+
+    }
+   
+    button {
+      font-size: 14px;
+      padding: 10px;
+    }
+    .exit{
+        background-color:red;
+        border: none;
+        height: 30px;
+        width: 50px;
+        font-size: 12px;
+        font-weight: 200;
+        position: absolute;
+        left: 5px;
+        top: 10px;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all 0.3s;
+        border: 2px solid white;
+        outline: 2px solid red;
+      }
+      .exit:hover {
+        background-color: #ff000047;
+        color: black;
+      }
+      .exit img {
+        height: 10px;
+        width: 10px;
+        
+        
+      }
+        
+    }
+  
+
+
+    </style>
+</head>
+<body>
+    <a href="./../.././primary-education/kindergarten/kindergarden.html"
+        ><button class="exit" onclick="confirmExit()">
+          Exit<img src="./../../../images/exit.png" /></button
+      ></a>
+
+    <div class="container">
+        <h1 style="font-family:Verdana, Geneva, Tahoma, sans-serif; color: purple;">😍Alphabet Learning Game😍</h1>
+        <input type="text" id="letterInput" placeholder="Type a letter..." maxlength="1">
+        
+        <div class="buttons">
+            <button onclick="displayLetter('A')">A</button>
+<button onclick="displayLetter('B')">B</button>
+<button onclick="displayLetter('C')">C</button>
+<button onclick="displayLetter('D')">D</button>
+<button onclick="displayLetter('E')">E</button>
+<button onclick="displayLetter('F')">F</button>
+<button onclick="displayLetter('G')">G</button>
+<button onclick="displayLetter('H')">H</button>
+<button onclick="displayLetter('I')">I</button>
+<button onclick="displayLetter('J')">J</button>
+<button onclick="displayLetter('K')">K</button>
+<button onclick="displayLetter('L')">L</button>
+<button onclick="displayLetter('M')">M</button>
+<button onclick="displayLetter('N')">N</button>
+<button onclick="displayLetter('O')">O</button>
+<button onclick="displayLetter('P')">P</button>
+<button onclick="displayLetter('Q')">Q</button>
+<button onclick="displayLetter('R')">R</button>
+<button onclick="displayLetter('S')">S</button>
+<button onclick="displayLetter('T')">T</button>
+<button onclick="displayLetter('U')">U</button>
+<button onclick="displayLetter('V')">V</button>
+<button onclick="displayLetter('W')">W</button>
+<button onclick="displayLetter('X')">X</button>
+<button onclick="displayLetter('Y')">Y</button>
+<button onclick="displayLetter('Z')">Z</button>
+
+        </div>
+        <div class="display">
+            <h2 id="letter">
+
+            </h2>
+            <img id="image" src="" alt="">
+            <h3 id="word"></h3>
+        </div>
+    </div>
+
+    <script>
+        const alphabet = {
+    A: { word: "Apple", img:"./../../../images/apple.jpg" },
+    B: { word: "Ball", img: "./../../../images/ball.jpg" },
+    C: { word: "Cat", img: "./../../../images/cat.jpg" },
+    D: { word: "Dog", img: "./../../../images/dog.jpg" },
+    E: { word: "Elephant", img: "./../../../images/elephant.jpg" },
+    F: { word: "Fish", img: "./../../../images/fish.jpg" },
+    G: { word: "Grapes", img: "./../../../images/grapes.jpg" },
+    H: { word: "Hat", img: "./../../../images/hat.jpg" },
+    I: { word: "Ice Cream", img: "./../../../images/ice-cream.jpg" },
+    J: { word: "Jug", img: "./../../../images/jug.jpg" },
+    K: { word: "Kite", img: "./../../../images/kite.png" },
+    L: { word: "Lion", img: "./../../../images/lion.jpeg" },
+    M: { word: "Mango", img: "./../../../images/mango.png" },
+    N: { word: "Nest", img: "./../../../images/nest.jpg" },
+    O: { word: "Orange", img: "./../../../images/orange.jpeg" },
+    P: { word: "Parrot", img: "./../../../images/parrot.webp" },
+    Q: { word: "Queen", img: "./../../../images/queen.png" },
+    R: { word: "Rabbit", img: "./../../../images/rabbit.webp" },
+    S: { word: "Sun", img: "./../../../images/sun.jpeg" },
+    T: { word: "Tiger", img: "./../../../images/tiger.png" },
+    U: { word: "Umbrella", img: "./../../../images/umbrella.png" },
+    V: { word: "Van", img: "./../../../images/van.jpg" },
+    W: { word: "Watch", img:"./../../../images/watch.jpg" },
+    X: { word: "Xylophone", img: "./../../../images/Xylophone.webp" },
+    Y: { word: "Yogurt", img: "./../../../images/yoghurt.jpg" },
+    Z: { word: "Zebra", img: "./../../../images/zebra.png" }
+};
+
+function displayLetter(letter) {
+    document.getElementById('letterInput').value = letter;
+    document.getElementById('letter').textContent = "Letter: " + letter;
+
+    let imagePath = alphabet[letter].img; // Correct way to get image path
+    document.getElementById('image').src = imagePath;
+    document.getElementById('image').style.display = "block";
+
+  
+    document.getElementById('word').textContent = alphabet[letter].word;
+}
+          function confirmExit() {
+            let exitConfirm = confirm("Are you sure you want to exit?");
+            if (exitConfirm) {
+                window.location.href = "./../.././primary-education/kindergarten/kindergarden.html";
+            }
+        }
+
+
+    </script>
+
+</body>
+</html>
