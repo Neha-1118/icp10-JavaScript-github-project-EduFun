@@ -13,6 +13,32 @@
             font-family: Arial, sans-serif;
             background-color: bisque;
         }
+        .exit {
+        background-color:red;
+        border: none;
+        height: 40px;
+        width: 80px;
+        font-size: 18px;
+        font-weight: 400;
+        position: absolute;
+        left: 25px;
+        top: 25px;
+        color: white;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: all 0.3s;
+        border: 2px solid white;
+        outline: 2px solid red;
+      }
+      .exit:hover {
+        background-color: #ff000047;
+        color: black;
+      }
+      .exit img {
+        height: 15px;
+        width: 15px;
+        padding-left: 10px;
+      }
         .container{
             display: flex;
             flex-direction: row;
@@ -144,6 +170,10 @@
     </style>
 </head>
 <body>
+    <a href="./../primary.html"
+        ><button class="exit">
+          Exit<img src="./../../../images/exit.png" /></button
+      ></a>
     <div>
         <h1 style="text-align: center; font-family:Lemon, serif;
         font-weight: 400;
