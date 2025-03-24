@@ -9,7 +9,7 @@
         body {
             text-align: center;
             font-family: Arial, sans-serif;
-            background-color: navajowhite;
+            background-color: rgb(213, 148, 191);
         }
        .button{
        margin-right: 1200px;
@@ -43,7 +43,47 @@
         .btn:hover {
             background: #0056b3;
         }
+        /* body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f8f8f8;
+        } */
+        .product-container {
+            width: 350px;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            margin-left: 400px;
+            margin-top: 100px;
+        }
+        .main-product img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .sub-products {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+        .sub-products img {
+            width: 60px;
+            height: 60px;
+            margin: 5px;
+            cursor: pointer;
+            border-radius: 5px;
+            border: 2px solid transparent;
+            transition: 0.3s;
+        }
+        .sub-products img:hover {
+            border: 2px solid #007bff;
+        }
         
+
     </style>
 </head>
 <body>
@@ -53,7 +93,7 @@
     <div class="quiz-container">
         <!-- Math Quiz -->
         <div>
-            <a href="math_learn.html">
+            <a href="../secondary-education-quiz/math/math_game.html">
                 <img src="./../../images/math2.jpg" alt="Math Quiz">
             </a>
             <a class="btn" href="../secondary-education-quiz/math/math_game.html">Play Quiz</a>
@@ -61,7 +101,7 @@
 
         <!-- Science Quiz -->
         <div>
-            <a href="science_learn.html">
+            <a href="../secondary-education-quiz/science/science_quiz.html">
                 <img src="./../../images/sci.jpg" alt="Science Quiz">
             </a>
             <a class="btn" href="../secondary-education-quiz/science/science_quiz.html">Play Quiz</a>
@@ -69,7 +109,7 @@
 
         <!-- General Knowledge Quiz -->
         <div>
-            <a href="gk_learn.html">
+            <a href="../secondary-education-quiz/general-knowledge/GK.html">
                 <img src="./../../images/gk.jpg" alt="General Knowledge Quiz">
             </a>
             <a class="btn" href="../secondary-education-quiz/general-knowledge/GK.html">Play Quiz</a>
@@ -81,9 +121,20 @@
       <a href="../secondary-education-quiz/funny-game/funny_game.html">
           <img src="./../../images/dice.jpg" alt="General Knowledge Quiz">
       </a>
-      <a class="btn" href="../secondary-education-quiz/funny-game/funny_game.html">Play Quiz</a>
+      <a class="btn" href="../secondary-education-quiz/funny-game/funny_game.html">Play Game</a>
   </div>
 </div>
 </div>
+
+</div>
+<script>
+    function changeImage(imageSrc) {
+        document.getElementById('mainImage').src = imageSrc;
+    }
+   
+          </script>
+   
+
 </body>
 </html>
+
