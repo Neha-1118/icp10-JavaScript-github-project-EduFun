@@ -22,7 +22,7 @@
     width: 400px;
     padding-bottom: 5px;
 }
-quiz-heading {
+.quiz-heading {
     display: flex;
     align-items: center;
     gap: 10px;
@@ -30,6 +30,25 @@ quiz-heading {
     text-align: left;
     position: relative;
     
+}
+.heading-icon {
+    width: 70px; 
+    height: 70px;
+    display: flex;
+    text-align: left;
+    align-items: center;
+    justify-content: center;
+    padding-left: 70px;
+}
+.heading-icon img {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    text-align: left;
+}
+.heading-icon:hover {
+    transform: scale(1.1);
+    opacity: 0.8;
 }
 .quiz-text {
     font-size: 1.7rem;
@@ -136,7 +155,7 @@ option:hover {
         
     <div class="quiz-heading">
         <div class="heading-icon">
-            <img src="school.png" alt="Quiz Icon">
+            <img src="./../../../../icons/gk_quiz.png" alt="Quiz Icon">
             <span class="quiz-text">Gk Quiz</span>
             
         </div>
