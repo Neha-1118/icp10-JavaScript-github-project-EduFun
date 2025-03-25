@@ -13,7 +13,7 @@ function addData() {
   }
 
   // Check if user already exists
-  if (userInfo.some(user => user.name === userName)) {
+  if (userInfo.some((user) => user.name === userName)) {
     alert("Username already taken. Please choose another.");
     return;
   }
@@ -54,7 +54,7 @@ function login() {
   if (userFind) {
     alert("Login successful!");
     localStorage.setItem("loggedInUser", logInName); // Save the logged-in user
-    window.location.href = "/index.html"; // Redirect after login
+    window.location.href = "../index.html"; // Redirect after login
   } else {
     alert("Login failed. Incorrect username or password.");
   }
@@ -63,10 +63,20 @@ function login() {
   logInUserPassword.value = "";
 }
 
-// Display logged-in user
-const presentUser = document.getElementById("UserlogIn");
-const savedUsername = localStorage.getItem("loggedInUser");
+// Run this function when the page fully loads
+window.onload = function () {
+  const presentUserDesktop = document.getElementById("UserlogIn");
+  const presentUserMobile = document.getElementById("pn-UserlogIn");
+  const savedUsername = localStorage.getItem("loggedInUser");
 
-if (savedUsername) {
-  presentUser.innerText = `Welcome, ${savedUsername}`;
-}
+  if (savedUsername) {
+    if (presentUserDesktop) {
+      //for the desktop
+      presentUserDesktop.innerText = `${savedUsername}`;
+    }
+    if (presentUserMobile) {
+      //for the mobile
+      presentUserMobile.innerText = `${savedUsername}`;
+    }
+  }
+};
