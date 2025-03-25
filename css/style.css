@@ -14,8 +14,6 @@ body {
     justify-content: space-between;
     height: 70px;
     box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.24);
-    
-    
     position:fixed;
     top:0px;
     width:100%;
@@ -26,6 +24,10 @@ body {
     flex-direction: row;
     flex-wrap: wrap;
     margin-right: 10px;
+    
+  }
+  .navbar a{
+    text-decoration: none;
   }
   .navbar li {
     font-size: 20px;
@@ -33,7 +35,7 @@ body {
     list-style-type: none;
     font-weight: 600;
     color: rgba(0, 0, 0, 0.71);
-    text-decoration: none;
+    text-decoration:none;
     cursor: pointer;
     transition: underline 0.7s ease-in-out, color;
   }
@@ -62,6 +64,9 @@ body {
     top:65px;
     position: absolute;
     box-shadow: 0 10px 10px -5px rgba(0, 0, 0, 0.24);
+  }
+  .ham-nav a{
+    text-decoration:none;
   }
   .ham-nav ul {
     border: 2px solid gray;

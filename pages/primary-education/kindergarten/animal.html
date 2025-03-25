@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jungle Animal Info</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #2c3e50;
+            color: white;
+        }
+        .exit {
+        background-color:red;
+        border: none;
+        height: 40px;
+        width: 80px;
+        font-size: 18px;
+        font-weight: 400;
+        position: absolute;
+        left: 25px;
+        top: 25px;
+        color: white;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: all 0.3s;
+        border: 2px solid white;
+        outline: 2px solid red;
+        
+      }
+      .exit:hover {
+        background-color: #ff000047;
+        color: black;
+      }
+      .exit img {
+        height: 15px;
+        width: 15px;
+        padding-left: 10px;
+      }
+
+        .game-container {
+            margin-top: 50px;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+        }
+        .button {
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            background-color: #e67e22;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .button:hover {
+            background-color: #d35400;
+        }
+        .info {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+        .animal-img {
+            margin-top: 20px;
+            width: 400px;
+            height:auto;
+            object-fit: contain;
+            display:none;
+            border-radius: 10px;
+            
+        }
+
+        @media screen and (max-width: 600px) {
+        .game-container {
+         margin-top: 40px;
+         }
+          h1{
+                margin-top: 50px;
+            }
+         .exit{
+        background-color:red;
+        border: none;
+        height: 30px;
+        width: 50px;
+        font-size: 12px;
+        font-weight: 200;
+        position: absolute;
+        left: 5px;
+        top: 10px;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all 0.3s;
+        border: 2px solid white;
+        outline: 2px solid red;
+      }
+      .exit:hover {
+        background-color: #ff000047;
+        color: black;
+      }
+      .exit img {
+        height: 10px;
+        width: 10px;
+        
+        
+      }
+        }
+    </style>
+</head>
+<body>
+    <a href="./../.././primary-education/kindergarten/kindergarden.html"
+        ><button class="exit" onclick="confirmExit()">
+          Exit<img src="./../../../images/exit.png" /></button
+      ></a>
+
+    <h1>Enter an Animal Name to Get Information</h1>
+    <div class="game-container">
+        <input type="text" id="animalInput" placeholder="Enter animal name">
+        <button class="button" onclick="getAnimalInfo()">Get Info</button>
+        <div class="info" id="animalInfo"></div>
+        <img id="animalImage" class="animal-img" src="" alt="Animal Image">
+    </div>
+    <script>
+        const animals = {
+            "tiger": { info: "Tigers are the largest wild cats in the world.", image: "./../../../images/wildtiger.jpg" },
+            "elephant": { info: "Elephants have a great memory and can recognize humans.", image: "./../../../images/wildelephant.jpg" },
+            "monkey": { info: "Monkeys are known for their intelligence and playfulness.", image: "./../../../images/monkey.jpg" },
+            "lion": { info: "Lions are known as the king of the jungle.", image: "./../../../images/wildlion.jpg" },
+            "giraffe": { info: "Giraffes are the tallest land animals with long necks.", image: "./../../../images/giraaf.jpg" },
+            "zebra": { info: "Zebras have unique black and white stripes.", image: "./../../../images/wildzebra.jpg" },
+            "cheetah": { info: "Cheetahs are the fastest land animals, reaching speeds up to 70 mph.", image: "./../../../images/cheetah.jpg" },
+            "panda": { info: "Pandas mainly eat bamboo and are native to China.", image: "./../../../images/panda.jpg" },
+            "wolf": { info: "Wolves live and hunt in packs with a strong social structure.", image: "./../../../images/wolf.webp" },
+            "bear": { info: "Bears are powerful mammals that hibernate during the winter.", image: "./../../../images/bear.jpg" },
+            "kangaroo": { info: "Kangaroos use their strong hind legs to hop and cover long distances.", image: "./../../../images/kangaroo.webp" }
+        };
+           
+        function getAnimalInfo() {
+            let animalName = document.getElementById("animalInput").value.toLowerCase();
+            let animal = animals[animalName];
+            
+            if (animal) {
+                document.getElementById("animalInfo").innerText = animal.info;
+                document.getElementById("animalImage").src = animal.image;
+                document.getElementById("animalImage").style.display = "block";
+            } else {
+                document.getElementById("animalInfo").innerText = "Sorry, information not available for this animal.";
+                document.getElementById("animalImage").style.display = "none";
+            }
+        }
+        function confirmExit() {
+            let exitConfirm = confirm("Are you sure you want to exit?");
+            if (exitConfirm) {
+                window.location.href = "./../.././primary-education/kindergarten/kindergarden.html";
+            }
+        }
+
+
+        
+    </script>
+</body>
+</html>

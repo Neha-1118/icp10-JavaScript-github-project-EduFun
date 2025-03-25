@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colour Recognition game</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #ff9a9e, #fadad1);
+            color: #333;
+        }
+        .exit {
+        background-color:red;
+        border: none;
+        height: 40px;
+        width: 80px;
+        font-size: 18px;
+        font-weight: 400;
+        position: absolute;
+        left: 25px;
+        top: 25px;
+        color: white;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: all 0.3s;
+        border: 2px solid white;
+        outline: 2px solid red;
+        
+      }
+      .exit:hover {
+        background-color: #ff000047;
+        color: black;
+      }
+      .exit img {
+        height: 15px;
+        width: 15px;
+        padding-left: 10px;
+      }
+
+        h1 {
+            font-size: 32px;
+            color:darkslategrey;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            margin-top: 30px;
+        }
+        .color-box {
+            width: 200px;
+            height: 200px;
+            margin: 20px auto;
+            border: 4px solid #fff;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease-in-out;
+        }
+        .color-box:hover {
+            transform: scale(1.1);
+        }
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        button {
+            padding: 12px 20px;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+            background-color: #fff;
+            color: #333;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        button:hover {
+            transform: scale(1.1);
+            background-color: #f1c40f;
+            color: #fff;
+        }
+        p {
+            font-size: 22px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        @media screen and (max-width: 768px) {
+        h1{
+            margin-top: 40px;
+        }
+         .exit{
+        background-color:red;
+        border: none;
+        height: 30px;
+        width: 50px;
+        font-size: 12px;
+        font-weight: 200;
+        left: 5px;
+        top: 10px;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all 0.3s;
+        border: 2px solid white;
+        outline: 2px solid red;
+      }
+      .exit:hover {
+        background-color: #ff000047;
+        color: black;
+      }
+      .exit img {
+        height: 10px;
+        width: 10px;
+        
+        
+      }
+        }
+    </style>
+</head>
+<body>
+    <a href="./../.././primary-education/kindergarten/kindergarden.html"
+        ><button class="exit" onclick="confirmExit()">
+          Exit<img src="./../../../images/exit.png" /></button
+      ></a>
+
+    <h1>Color Recognition Game</h1>
+    <div class="color-box" id="colorBox"></div>
+    <div class="buttons" id="buttonContainer"></div>
+    <p id="result"></p>
+
+    <script>
+        const colors = ["Red", "Blue", "Green", "Yellow", "Orange", "Purple"];
+        let correctColor = "";
+         
+        function shuffleArray(array) {
+            return array.sort(() => Math.random() - 0.5);
+        }
+
+        function setGame() {
+            correctColor = colors[Math.floor(Math.random() * colors.length)];
+            document.getElementById("colorBox").style.backgroundColor = correctColor.toLowerCase();
+            const buttonContainer = document.getElementById("buttonContainer");
+            buttonContainer.innerHTML = "";
+            
+            let shuffledColors = shuffleArray([...colors]);
+            shuffledColors.forEach(color => {
+                const button = document.createElement("button");
+                button.textContent = color;
+                button.style.backgroundColor = "#ddd"; 
+                button.style.color = "#333";
+                button.onclick = () => checkAnswer(color);
+                buttonContainer.appendChild(button);
+            });
+        }
+
+        function checkAnswer(selectedColor) {
+            document.getElementById("result").textContent = selectedColor === correctColor ? "Correct!" : "Try Again!";
+            document.getElementById("result").style.color = selectedColor === correctColor ? "green" : "red";
+            setTimeout(setGame, 1000);
+        }
+
+        function confirmExit() {
+            let exitConfirm = confirm("Are you sure you want to exit?");
+            if (exitConfirm) {
+                window.location.href = "./../.././primary-education/kindergarten/kindergarden.html";
+            }
+        }
+
+        setGame();
+
+        
+    </script>
+    
+    
+</body>
+</html>

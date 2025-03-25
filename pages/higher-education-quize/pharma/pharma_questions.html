@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pharma quiz</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+      }
+      body {
+        background-color: #001e4d;
+      }
+      .app {
+        background: #fff;
+        width: 90%;
+        max-width: 600px;
+        margin: 100px auto 0;
+        border-radius: 10px;
+        padding: 30px;
+        position: relative;
+      }
+      .app h1 {
+        font-size: 25px;
+        color: #001e4d;
+        font-weight: 600;
+        border-bottom: 1px solid #333;
+        padding-bottom: 30px;
+      }
+      .quiz {
+        padding: 20px 0;
+      }
+      .quiz h2 {
+        font-size: 18px;
+        color: #001e4d;
+        font-weight: 600;
+      }
+      .btn {
+        background: #fff;
+        color: #222;
+        font-weight: 500;
+        width: 100%;
+        border: 1px solid #222;
+        padding: 10px;
+        margin: 10px 0;
+        text-align: left;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: all 0.3s;
+      }
+      .btn:hover:not([disabled]) {
+        background-color: #222;
+        color: #fff;
+      }
+      .btn:disabled {
+        cursor: no-drop;
+      }
+      #next-btn {
+        background-color: #001e4d;
+        color: #fff;
+        font-weight: 500;
+        width: 150px;
+        border: 0;
+        padding: 10px;
+        margin: 10px auto 0;
+        border-radius: 4px;
+        cursor: pointer;
+        display: none;
+      }
+      .correct {
+        background-color: #9aeabc;
+      }
+      .incorrect {
+        background-color: #ff9393;
+      }
+      .exit {
+        background-color:red;
+        border: none;
+        height: 40px;
+        width: 80px;
+        font-size: 18px;
+        font-weight: 400;
+        position: absolute;
+        right: 25px;
+        top: 25px;
+        color: white;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: all 0.3s;
+        border: 2px solid white;
+        outline: 2px solid red;
+      }
+      .exit:hover {
+        background-color: #ff000047;
+        color: black;
+      }
+      .exit img {
+        height: 15px;
+        width: 15px;
+        padding-left: 10px;
+      }
+      #timer {
+        background-color: rgba(34, 139, 34, 0.769);
+        width: 100px;
+        height: 35px;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 25px;
+        left: 40%;
+        border-radius: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="app">
+      <h1>IT industry</h1>
+      <a href="./../higher_education.html"
+        ><button class="exit">
+          Exit<img src="./../../../images/exit.png" /></button
+      ></a>
+      <div class="quiz">
+        <h2 id="question">questions goes here</h2>
+        <div id="answer-buttons">
+          <button class="btn">Answer 1</button>
+          <button class="btn">Answer 2</button>
+          <button class="btn">Answer 3</button>
+          <button class="btn">Answer 4</button>
+        </div>
+        <button id="next-btn">Next</button>
+      </div>
+      <div class="timer">
+        <h2 id="timer">10:00</h2>
+      </div>
+    </div>
+
+    <script>
+      //timer
+      const comeDownTimer = document.getElementById("timer");
+      let statrtingMin = 10;
+      let time = statrtingMin * 60;
+      setInterval(updateComedown, 1000);
+      function updateComedown() {
+        const min = Math.floor(time / 60);
+        const sec = time % 60;
+
+        const minText = min < 10 ? `0${min}` : min;
+        const secText = sec < 10 ? `0${sec}` : sec;
+
+        comeDownTimer.innerText = `${minText}:${secText}`;
+        if (time > 0) {
+          time--;
+        }
+        const timeInt = Math.floor(parseInt(time/60));
+        const secInt = Math.floor(parentInt(time % 60));
+        if(timeInt <=5)
+        {
+          timer.style.backgroundColor="yellow";
+        }
+        else if(timeInt <=3)
+        {
+          timer.style.backgroundColor="tomato";
+        }
+        else if (timeInt == 9 && secInt == 0) {
+          alert("Time is over, Try Next Time");
+          window.location.href = `./../higher_education.html`;
+        }
+      
+      }
+      //create object for the questions
+      const questions = [
+        {
+          question: "what is the output of this code console.log(5<10>6) ?",
+          answers: [
+            { text: "1", correct: false },
+            { text: "flase", correct: true },
+            { text: "0", correct: false },
+            { text: "undefine", correct: false },
+          ],
+        },
+        {
+          question:
+            "Which of the following is NOT an example of an operating system ?",
+          answers: [
+            { text: "Microsoft Office", correct: true },
+            { text: "Windows", correct: false },
+            { text: "Linux", correct: false },
+            { text: "macOS", correct: false },
+          ],
+        },
+        {
+          question: "Shortest Job Next (SJN) ?",
+          answers: [
+            { text: "Tree Model", correct: false },
+            { text: "Linear Model", correct: false },
+            { text: "Sequential Model", correct: false },
+            { text: " Hierarchical Model", correct: true },
+          ],
+        },
+        {
+          question: "what is the output of this code console.log(0 || 1) ?",
+          answers: [
+            { text: "1", correct: true },
+            { text: "true", correct: false },
+            { text: "0", correct: false },
+            { text: "false", correct: false },
+          ],
+        },
+        {
+          question:
+            "Which scheduling algorithm is based on the principle of executing the shortest job first ?",
+          answers: [
+            { text: "Shortest Job Next (SJN)", correct: true },
+            { text: " First-Come, First-Served (FCFS)", correct: false },
+            { text: "Round Robin (RR)v", correct: false },
+            { text: " Priority Scheduling", correct: false },
+          ],
+        },
+        {
+          question:
+            "Which SQL statement is used to retrieve data from a database ?",
+          answers: [
+            { text: "INSERT", correct: false },
+            { text: "SELECT", correct: true },
+            { text: "UPDATE", correct: false },
+            { text: "DELETE", correct: false },
+          ],
+        },
+        {
+          question:
+            "Which layer of the OSI model is responsible for end-to-end communication and error recovery ?",
+          answers: [
+            { text: "Network Layer", correct: false },
+            { text: "Transport Layer", correct: true },
+            { text: "Data Link Layer", correct: false },
+            { text: "Physical Layer", correct: false },
+          ],
+        },
+        {
+          question: `what is the output of this code console.log(1+2+"3") ?`,
+          answers: [
+            { text: "True", correct: false },
+            { text: "6", correct: false },
+            { text: "123", correct: false },
+            { text: "33", correct: true },
+          ],
+        },
+        {
+          question: "what is your name ?",
+          answers: [
+            { text: "HTTP", correct: false },
+            { text: "SMTP", correct: false },
+            { text: "FTP", correct: true },
+            { text: "DHCP", correct: false },
+          ],
+        },
+        {
+          question:
+            "Which of the following is an example of a network topology ?",
+          answers: [
+            { text: "HTTP", correct: false },
+            { text: "Star", correct: true },
+            { text: "IP Address", correct: false },
+            { text: "Router", correct: false },
+          ],
+        },
+      ];
+      const questionElement = document.getElementById("question");
+      const answerButton = document.getElementById("answer-buttons");
+      const nextButton = document.getElementById("next-btn");
+
+      let currentquestionIndex = 0;
+      let score = 0;
+
+      function startQuiz() {
+        currentquestionIndex = 0;
+        score = 0;
+        nextButton.innerHTML = "Next";
+        showQuestion();
+      }
+      function showQuestion() {
+        //reset the questions and options
+        resetState();
+        //display the question
+        let currentQuestion = questions[currentquestionIndex];
+        let questionNo = currentquestionIndex + 1;
+
+        questionElement.innerHTML = `${questionNo}. ${currentQuestion.question} `;
+        //display the answer
+        currentQuestion.answers.forEach((answers) => {
+          const button = document.createElement("button");
+          button.innerHTML = answers.text;
+          button.classList.add("btn");
+          answerButton.appendChild(button);
+          if (answers.correct) {
+            button.dataset.correct = answers.correct;
+          }
+          button.addEventListener("click", selectAnswer);
+        });
+      }
+      function resetState() {
+        nextButton.style.display = "none";
+        while (answerButton.firstChild) {
+          answerButton.removeChild(answerButton.firstChild);
+        }
+      }
+      function selectAnswer(e) {
+        const selectedBtn = e.target;
+        const isCorrect = selectedBtn.dataset.correct === "true";
+        if (isCorrect) {
+          selectedBtn.classList.add("correct");
+          score++;
+        } else {
+          selectedBtn.classList.add("incorrect");
+        }
+        Array.from(answerButton.children).forEach((button) => {
+          if (button.dataset.correct === "true") {
+            button.classList.add("correct");
+          }
+          button.disabled = true;
+        });
+        nextButton.style.display = "block";
+      }
+      function showScore() {
+        resetState();
+        questionElement.innerHTML = `You scored ${score} out of ${questions.length} !`;
+        nextButton.innerHTML = "play again";
+        nextButton.style.display = "block";
+      }
+      function handleNextButton() {
+        currentquestionIndex++;
+        if (currentquestionIndex < questions.length) {
+          showQuestion();
+        } else {
+          showScore();
+        }
+      }
+      nextButton.addEventListener("click", () => {
+        //check the length of the max questions to display the score
+        if (currentquestionIndex < questions.length) {
+          handleNextButton();
+        } else {
+          startQuiz();
+        }
+      });
+      startQuiz();
+    </script>
+  </body>
+</html>
