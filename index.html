@@ -32,22 +32,28 @@
         height: 50vh;
         width: 100%;
         background-color: blue;
-        display:flex;
+        display: flex;
         align-items: center;
-        flex-direction:row;
-        justify-content:space-evenly;
+        flex-direction: row;
+        justify-content: space-evenly;
       }
-      .bx-1
-      {
-           height:75%;
-           width:25%;
-           border:5px solid black;
+      .bx-1 {
+        height:100%;
+        width: 25%;
+        border: 5px solid black;
+        display:flex;
+        align-items:center;
+        justify-content:center;
       }
-      .bx-2
+      .bx-1 img
       {
-        height:90%;
-        width:70%;
-        border:5px solid black;
+        height:300px;
+        width:300px;
+      }
+      .bx-2 {
+        height:100%;
+        width: 70%;
+        border: 5px solid black;
       }
     </style>
   </head>
@@ -86,8 +92,8 @@
 
     <div class="container"><h1>Main poster</h1></div>
     <div class="mini-cards">
-      <div class="cards">
-        <div class="bx-1"></div>
+      <div class="cards" onmouseover="changeImg(`static-img-1`,`./images/brain-gif.gif`)" onmouseout="changeImg(`static-img-1`,`./images/static-brain.png`)">
+        <div class="bx-1"><img src="./images/static-brain.png"id="static-img-1"></div>
         <div class="bx-2"></div>
       </div>
       <div class="cards">
@@ -103,5 +109,13 @@
         <div class="bx-1"></div>
       </div>
     </div>
+
+    <script>
+      function changeImg(imgId, changeImg)
+       {
+        var changeMainImage= document.getElementById(imgId);
+        changeMainImage.src = changeImg;
+       }
+    </script>
   </body>
 </html>
