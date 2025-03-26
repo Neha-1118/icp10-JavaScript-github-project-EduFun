@@ -41,6 +41,7 @@ body {
 .input-box{
     margin: 15px auto;
     padding-left:20px auto ;
+    position: relative;
 }
 .input{
    
@@ -48,6 +49,14 @@ body {
     height: 38px;
     border: 1px solid black;
     border-radius: 20px;
-
+    outline: none;
+}
+.input-head{
+position: absolute;
+top: -13px;
+left: 65px;
+font-size: 16px;
+background-color:white ;
+padding: 2px;
 }
 
