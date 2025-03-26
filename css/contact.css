@@ -36,6 +36,7 @@ body {
     position: absolute;
     height: 300px;
     left: 35px;
+    top: 54px;
 }
 .right {
     border-left: 1px solid grey;
