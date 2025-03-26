@@ -11,29 +11,43 @@
     <style>
       .container {
         font-size: 100px;
-        background-color:red;
+        background-color: red;
         margin-top: 20px;
         padding: 20px;
         height: 600px;
-        display:flex;
-        align-items:center;
-        justify-content:center;
-        margin-bottom:25px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 25px;
       }
-      .mini-cards
-      {
-        height:auto;
-        width:100%;
-        display:flex;
-        flex-direction:column;
-        justify-content:space-around;
-        gap:35px;
+      .mini-cards {
+        height: auto;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        gap: 35px;
       }
-      .cards
+      .cards {
+        height: 50vh;
+        width: 100%;
+        background-color: blue;
+        display:flex;
+        align-items: center;
+        flex-direction:row;
+        justify-content:space-evenly;
+      }
+      .bx-1
       {
-        height:50vh;
-        width:100%;
-        background-color:blue;
+           height:75%;
+           width:25%;
+           border:5px solid black;
+      }
+      .bx-2
+      {
+        height:90%;
+        width:70%;
+        border:5px solid black;
       }
     </style>
   </head>
@@ -70,14 +84,24 @@
       </ul>
     </nav>
 
-    <div class="container"> <h1>Main poster</h1></div>
+    <div class="container"><h1>Main poster</h1></div>
     <div class="mini-cards">
-      <div class="cards"></div>
-      <div class="cards"></div>
-      <div class="cards"></div>
-      <div class="cards"></div>
+      <div class="cards">
+        <div class="bx-1"></div>
+        <div class="bx-2"></div>
+      </div>
+      <div class="cards">
+        <div class="bx-2"></div>
+        <div class="bx-1"></div>
+      </div>
+      <div class="cards">
+        <div class="bx-1"></div>
+        <div class="bx-2"></div>
+      </div>
+      <div class="cards">
+        <div class="bx-2"></div>
+        <div class="bx-1"></div>
+      </div>
     </div>
-  
-   
   </body>
 </html>
