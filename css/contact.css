@@ -50,8 +50,10 @@ body {
     border: 1px solid black;
     border-radius: 20px;
     outline: none;
-    font-size: 20px;
-    padding: 4px;
+    font-size: 17px;
+    font-weight:400 ;
+    /* font-family: ""; */
+    padding: 2px;
 }
 .input-head{
 position: absolute;
