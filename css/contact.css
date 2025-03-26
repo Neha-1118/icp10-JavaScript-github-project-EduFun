@@ -16,11 +16,12 @@ body {
 .container {
     /* position: relative; */
     display: flex;
-    border: 1px solid grey;
+    border: px solid grey;
     border-radius: 20px;
     height: 470px;
     width: 800px;
     text-align: center;
+    box-shadow: 0px 0px 20px 8px grey;  
 
 
 
