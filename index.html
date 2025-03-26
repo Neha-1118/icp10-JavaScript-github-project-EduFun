@@ -38,20 +38,23 @@
         justify-content: space-evenly;
       }
       .bx-1 {
-        height:100%;
+        height: 100%;
         width: 25%;
         border: 5px solid black;
-        display:flex;
-        align-items:center;
-        justify-content:center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
-      .bx-1 img
-      {
-        height:300px;
-        width:300px;
+      .bx-1 img {
+        height: 300px;
+        width: 300px;
+      }
+      .bx-2 img {
+        height: 300px;
+        width: 300px;
       }
       .bx-2 {
-        height:100%;
+        height: 100%;
         width: 70%;
         border: 5px solid black;
       }
@@ -92,13 +95,25 @@
 
     <div class="container"><h1>Main poster</h1></div>
     <div class="mini-cards">
-      <div class="cards" onmouseover="changeImg(`static-img-1`,`./images/brain-gif.gif`)" onmouseout="changeImg(`static-img-1`,`./images/static-brain.png`)">
-        <div class="bx-1"><img src="./images/static-brain.png"id="static-img-1"></div>
+      <div
+        class="cards"
+        onmouseover="changeImg(`static-img-1`,`./images/brain-gif.gif`)"
+        onmouseout="changeImg(`static-img-1`,`./images/static-brain.png`)"
+      >
+        <div class="bx-1">
+          <img src="./images/static-brain.png" id="static-img-1" />
+        </div>
         <div class="bx-2"></div>
       </div>
-      <div class="cards">
+      <div
+        class="cards"
+        onmouseover="changeImg(`static-img-2`,`./images/book-gif.gif`)"
+        onmouseout="changeImg(`static-img-2`,`./images/static-book.png`)"
+      >
         <div class="bx-2"></div>
-        <div class="bx-1"></div>
+        <div class="bx-1">
+          <img src="./images/static-book.png" id="static-img-2" />
+        </div>
       </div>
       <div class="cards">
         <div class="bx-1"></div>
@@ -111,11 +126,10 @@
     </div>
 
     <script>
-      function changeImg(imgId, changeImg)
-       {
-        var changeMainImage= document.getElementById(imgId);
+      function changeImg(imgId, changeImg) {
+        var changeMainImage = document.getElementById(imgId);
         changeMainImage.src = changeImg;
-       }
+      }
     </script>
   </body>
 </html>
