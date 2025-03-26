@@ -29,9 +29,9 @@ body {
 .left {
     border-right: 1px solid grey;
     width: 50%;
+    
 
 }
-
 .right {
     border-left: 1px solid grey;
     width: 50%;
