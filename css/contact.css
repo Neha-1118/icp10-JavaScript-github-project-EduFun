@@ -29,8 +29,13 @@ body {
 .left {
     border-right: 1px solid grey;
     width: 50%;
-    
+    position: relative;
 
+}
+.main-img{
+    position: absolute;
+    height: 300px;
+    left: 35px;
 }
 .right {
     border-left: 1px solid grey;
