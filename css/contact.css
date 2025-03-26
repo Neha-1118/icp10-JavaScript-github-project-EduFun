@@ -54,6 +54,13 @@ body {
     font-weight:400 ;
     /* font-family: ""; */
     padding: 2px;
+    margin: 1px;
+}
+textarea.input{
+    resize:none;
+    height:80px;
+    padding: 15px 1px;
+    
 }
 .input-head{
 position: absolute;
