@@ -34,6 +34,7 @@ background-color: #445b9c;
     font-family: "Poppins", sans-serif;
     font-weight: 800;
     font-style: normal;
+    padding: 15px;
   
 }
 .left-head{
@@ -41,6 +42,7 @@ background-color: #445b9c;
     font-family: "Poppins", sans-serif;
     font-weight: 800;
     font-style: normal;
+    padding: 15px;
   
     
 }
@@ -60,7 +62,7 @@ background-color: #445b9c;
     top: 54px;
 }
 .right {
-    border-left: 1px solid white;
+    border-left: 1px solid #4665b9;
     width: 50%;
     background-color: #4665b9;
     border-radius: 20px;
