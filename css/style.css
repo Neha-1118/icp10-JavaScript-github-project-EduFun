@@ -64,6 +64,7 @@ body {
     top:65px;
     position: absolute;
     box-shadow: 0 10px 10px -5px rgba(0, 0, 0, 0.24);
+    position:fixed;
   }
   .ham-nav a{
     text-decoration:none;
