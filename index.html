@@ -7,38 +7,6 @@
     <link rel="stylesheet" href="./css/style.css" />
     <script src="./js/script.js"></script>
     <script src="./js/login_and_signin.js"></script>
-    
-    <style>
-      .container {
-        font-size: 100px;
-        background-color:red;
-        margin-top:20px; 
-        padding: 20px; 
-        height:600px;
-      }
-      .container-2 {
-        width:100%;
-        height:250px;
-        display:flex;
-        align-items:center;
-        justify-content:space-evenly;
-    
-      }
-      .bx
-      {
-        height:200px;
-        width:200px;
-        border-radius:10px;
-        background-color:rgba(128, 128, 128, 0.135);
-        border:2px solid rgba(0, 0, 0, 0.42);
-        
-      }
-      .bx img{
-        height:100%;
-        width:100%;
-        
-      }
-    </style>
   </head>
   <body>
     <nav class="navbar" id="navbar">
@@ -50,12 +18,12 @@
           alt="logo-heading"
         />
       </div>
-       <ul>
+      <ul>
         <a href="./../../index.html"><li>Home</li></a>
         <a href="./../../pages/notes.html"><li>Spaceship</li></a>
-       <a href="./../../pages/about_us.html"><li>About</li></a>
+        <a href="./../../pages/about_us.html"><li>About</li></a>
         <a href="./../../pages/contact.html"><li>contact</li></a>
-       <a href="./../../pages/login.html"><li id="pn-UserlogIn">Log In</li></a>
+        <a href="./../../pages/login.html"><li id="pn-UserlogIn">Log In</li></a>
       </ul>
       <div class="hamburger">
         <button type="button" id="hamburger-btn" onclick="hamburgerMenu()">
@@ -67,19 +35,70 @@
       <ul>
         <a href="./../../index.html"><li>Home</li></a>
         <a href="./../../pages/notes.html"><li>Spaceship</li></a>
-       <a href="./../../pages/about_us.html"><li>About</li></a>
+        <a href="./../../pages/about_us.html"><li>About</li></a>
         <a href="./../../pages/contact.html"><li>contact</li></a>
-       <a href="./../../pages/login.html"><li id="UserlogIn">Log In</li></a>
+        <a href="./../../pages/login.html"><li id="UserlogIn">Log In</li></a>
       </ul>
     </nav>
 
-    <div class="container">
-  
+    <div class="container"><h1>Main poster</h1></div>
+    <div class="educational-cards">educational-cards</div>
+    <div class="mini-cards">
+      <div
+        class="cards"
+        onmouseover="changeImg(`static-img-1`,`./images/brain-gif.gif`)"
+        onmouseout="changeImg(`static-img-1`,`./images/static-brain.png`)"
+      >
+        <div class="bx-1">
+          <img src="./images/static-brain.png" id="static-img-1" />
+        </div>
+        <div class="bx-2"></div>
+      </div>
+      <div
+        class="cards"
+        onmouseover="changeImg(`static-img-2`,`./images/book-gif.gif`)"
+        onmouseout="changeImg(`static-img-2`,`./images/static-book.png`)"
+      >
+        <div class="bx-2"></div>
+        <div class="bx-1">
+          <img src="./images/static-book.png" id="static-img-2" />
+        </div>
+      </div>
+      <div
+        class="cards"
+        onmouseover="changeImg(`static-img-3`,`./images/chess-gif.gif`)"
+        onmouseout="changeImg(`static-img-3`,`./images/static-chess.png`)"
+      >
+        <div class="bx-1">
+          <img src="./images/static-chess.png" id="static-img-3" />
+        </div>
+        <div class="bx-2"></div>
+      </div>
+      <div
+        class="cards"
+        onmouseover="changeImg(`static-img-4`,`./images/degree-gif.gif`)"
+        onmouseout="changeImg(`static-img-4`,`./images/static-degree.png`)"
+      >
+        <div class="bx-2"></div>
+        <div class="bx-1">
+          <img src="./images/static-degree.png" id="static-img-4" />
+        </div>
+      </div>
     </div>
-    <div class="container-2">
-      <div class="bx"><img src="././images/primary image.png"></div>
-      <div class="bx"><img src="././images/secondary student.png"></div>
-      <div class="bx"><img src="././images/graduate image.png"></div>
-    </div>
+    <!--why coice us -->
+<div class="trusties">
+<h1>Trusties</h1>
+</div>
+    <!--Fotter-->
+    
+    <div class="footer">
+      <div class="social-media-logo">
+      <img src="./images/static-github.png" id="logo1"onmouseover="mainImgChange(`logo1`,`./images/github.png`)" onmouseout="mainImgChange(`logo1`,`./images/static-github.png`)">
+      <img src="./images/static-instagram.png" id="logo2"onmouseover="mainImgChange(`logo2`,`./images/instagram.png`)" onmouseout="mainImgChange(`logo2`,`./images/static-instagram.png`)">
+      <img src="./images/static-facebook.png" id="logo3" onmouseover="mainImgChange(`logo3`,`./images/facebook.png`)" onmouseout="mainImgChange(`logo3`,`./images/static-facebook.png`)">
+      <img src="./images/static-linkedin.png"  id="logo4" onmouseover="mainImgChange(`logo4`,`./images/linkedin.png`)" onmouseout="mainImgChange(`logo4`,`./images/static-linkedin.png`)">
+      
+      </div>
+          </div>
   </body>
 </html>

@@ -12,32 +12,38 @@
             color: #333;
         }
         .exit {
-        background-color:red;
-        border: none;
-        height: 40px;
-        width: 80px;
-        font-size: 18px;
-        font-weight: 400;
-        position: absolute;
-        left: 25px;
-        top: 25px;
-        color: white;
-        border-radius: 10px;
-        cursor: pointer;
-        transition: all 0.3s;
-        border: 2px solid white;
-        outline: 2px solid red;
-        
-      }
-      .exit:hover {
-        background-color: #ff000047;
-        color: black;
-      }
-      .exit img {
-        height: 15px;
-        width: 15px;
-        padding-left: 10px;
-      }
+    background-color: red;
+    border: none;
+    height: 40px;
+    width: 100px;
+    font-size: 18px;
+    font-weight: bold;
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    border: 2px solid white;
+    outline: 2px solid red;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.exit img {
+    height: 20px;
+    width: 20px;
+}
+
+.exit:hover {
+    background-color: #ff000047;
+   color: black;
+}
+
 
         h1 {
             font-size: 32px;
@@ -114,6 +120,7 @@
       .exit img {
         height: 10px;
         width: 10px;
+       
         
         
       }
@@ -123,7 +130,7 @@
 <body>
     <a href="./../.././primary-education/kindergarten/kindergarden.html"
         ><button class="exit" onclick="confirmExit()">
-          Exit<img src="./../../../images/exit.png" /></button
+          Exit<img src="./../../../images/exit.png" alt="exit-icon" /></button
       ></a>
 
     <h1>Color Recognition Game</h1>
