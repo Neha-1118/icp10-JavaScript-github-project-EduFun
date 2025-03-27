@@ -10,9 +10,7 @@ body {
     font-family: "Poppins", sans-serif;
     font-weight: 100;
     font-style: normal;
-    
-background-color: #445b9c;
-    ;
+    background-color: #445b9c;
 }
 
 .container {
@@ -23,28 +21,26 @@ background-color: #445b9c;
     height: 470px;
     width: 800px;
     text-align: center;
-    box-shadow: 0px 0px 9px 5px rgb(81, 88, 148);  
-    
-
-
-
+    box-shadow: 0px 0px 9px 5px rgb(81, 88, 148);
 }
-.right-head{
+
+.right-head {
     color: white;
     font-family: "Poppins", sans-serif;
     font-weight: 800;
     font-style: normal;
     padding: 15px;
-  
+
 }
-.left-head{
+
+.left-head {
     color: #4665b9;
     font-family: "Poppins", sans-serif;
     font-weight: 800;
     font-style: normal;
     padding: 15px;
-  
-    
+
+
 }
 
 .left {
@@ -53,30 +49,38 @@ background-color: #445b9c;
     position: relative;
     background-color: white;
     border-radius: 20px;
+    
 
+}
+.image{
+    position: relative;
 }
 .main-img{
     position: absolute;
     height: 300px;
-    left: 35px;
-    top: 54px;
+    left: 50px;
+    top: -20px;
+
 }
+
 .right {
     border-left: 1px solid #4665b9;
     width: 50%;
     background-color: #4665b9;
     border-radius: 20px;
-    
+
 
 }
-.input-box{
+
+.input-box {
     margin: 15px auto;
-    padding-left:20px auto ;
+    padding-left: 20px auto;
     position: relative;
     color: white;
 }
-.input{
-   
+
+.input {
+
     width: 75%;
     height: 38px;
     border: 1px solid white;
@@ -84,39 +88,41 @@ background-color: #445b9c;
     border-radius: 20px;
     outline: none;
     font-size: 17px;
-    font-weight:400 ;
+    font-weight: 400;
     background-color: transparent;
     /* font-family: ""; */
     padding: 2px;
     margin: 1px;
 }
-textarea.input{
-    resize:none;
-    height:80px;
+
+textarea.input {
+    resize: none;
+    height: 80px;
     padding: 15px 1px;
-    
-}
-.input-head{
-position: absolute;
-top: -13px;
-left: 65px;
-font-size: 16px;
-background-color:#4665b9 ;
-padding: 1px;
 
 }
-.btn{
+
+.input-head {
+    position: absolute;
+    top: -13px;
+    left: 65px;
+    font-size: 16px;
+    background-color: #4665b9;
+    padding: 1px;
+
+}
+
+.btn {
     font-family: "poppins";
-    font-weight:700 ;
+    font-weight: 700;
     border-radius: 20px;
     border: white solid 1px;
     color: white;
     width: 30%;
-    padding: 10px 10px ;
+    padding: 10px 10px;
     position: relative;
     top: -7px;
     left: -86px;
     outline: none;
     background-color: transparent;
 }
-
