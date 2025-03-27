@@ -122,39 +122,106 @@
         <img id="animalImage" class="animal-img" src="" alt="Animal Image">
     </div>
     <script>
-        const animals = {
-            "tiger": { info: "Tigers are the largest wild cats in the world.", image: "./../../../images/wildtiger.jpg" },
-            "elephant": { info: "Elephants have a great memory and can recognize humans.", image: "./../../../images/wildelephant.jpg" },
-            "monkey": { info: "Monkeys are known for their intelligence and playfulness.", image: "./../../../images/monkey.jpg" },
-            "lion": { info: "Lions are known as the king of the jungle.", image: "./../../../images/wildlion.jpg" },
-            "giraffe": { info: "Giraffes are the tallest land animals with long necks.", image: "./../../../images/giraaf.jpg" },
-            "zebra": { info: "Zebras have unique black and white stripes.", image: "./../../../images/wildzebra.jpg" },
-            "cheetah": { info: "Cheetahs are the fastest land animals, reaching speeds up to 70 mph.", image: "./../../../images/cheetah.jpg" },
-            "panda": { info: "Pandas mainly eat bamboo and are native to China.", image: "./../../../images/panda.jpg" },
-            "wolf": { info: "Wolves live and hunt in packs with a strong social structure.", image: "./../../../images/wolf.webp" },
-            "bear": { info: "Bears are powerful mammals that hibernate during the winter.", image: "./../../../images/bear.jpg" },
-            "kangaroo": { info: "Kangaroos use their strong hind legs to hop and cover long distances.", image: "./../../../images/kangaroo.webp" }
-        };
-           
-        function getAnimalInfo() {
-            let animalName = document.getElementById("animalInput").value.toLowerCase();
-            let animal = animals[animalName];
-            
-            if (animal) {
-                document.getElementById("animalInfo").innerText = animal.info;
-                document.getElementById("animalImage").src = animal.image;
-                document.getElementById("animalImage").style.display = "block";
-            } else {
-                document.getElementById("animalInfo").innerText = "Sorry, information not available for this animal.";
-                document.getElementById("animalImage").style.display = "none";
-            }
-        }
-        function confirmExit() {
-            let exitConfirm = confirm("Are you sure you want to exit?");
-            if (exitConfirm) {
-                window.location.href = "./../.././primary-education/kindergarten/kindergarden.html";
-            }
-        }
+       const animals = {
+    "tiger": { 
+        info: "Tigers are the largest wild cats in the world.", 
+        habitat: "Forests, grasslands, and mangrove swamps.",
+        diet: "Carnivorous - mainly deer, wild boars, and buffalo.",
+        lifespan: "10-15 years in the wild, up to 25 years in captivity.",
+        image: "./../../../images/wildtiger.jpg" 
+    },
+    "elephant": { 
+        info: "Elephants have a great memory and can recognize humans.", 
+        habitat: "Grasslands, forests, and savannas.",
+        diet: "Herbivorous - grasses, fruits, and bark.",
+        lifespan: "50-70 years.",
+        image: "./../../../images/wildelephant.jpg" 
+    },
+    "monkey": { 
+        info: "Monkeys are known for their intelligence and playfulness.", 
+        habitat: "Tropical forests, grasslands, and mountains.",
+        diet: "Omnivorous - fruits, nuts, insects, and small animals.",
+        lifespan: "10-50 years depending on the species.",
+        image: "./../../../images/monkey.jpg" 
+    },
+    "lion": { 
+        info: "Lions are known as the king of the jungle.", 
+        habitat: "Savannas, grasslands, and open woodlands.",
+        diet: "Carnivorous - primarily large herbivores like zebras and antelopes.",
+        lifespan: "10-14 years in the wild, up to 20 years in captivity.",
+        image: "./../../../images/wildlion.jpg" 
+    },
+    "giraffe": { 
+        info: "Giraffes are the tallest land animals with long necks.", 
+        habitat: "Savannas and open woodlands.",
+        diet: "Herbivorous - mainly leaves from acacia trees.",
+        lifespan: "20-25 years.",
+        image: "./../../../images/giraffe.jpg" 
+    },
+    "zebra": { 
+        info: "Zebras have unique black and white stripes.", 
+        habitat: "Grasslands and savannas.",
+        diet: "Herbivorous - grass and shrubs.",
+        lifespan: "20-25 years.",
+        image: "./../../../images/wildzebra.jpg" 
+    },
+    "cheetah": { 
+        info: "Cheetahs are the fastest land animals, reaching speeds up to 70 mph.", 
+        habitat: "Grasslands and savannas.",
+        diet: "Carnivorous - mainly gazelles and small antelopes.",
+        lifespan: "10-12 years in the wild, up to 17 years in captivity.",
+        image: "./../../../images/cheetah.jpg" 
+    },
+    "panda": { 
+        info: "Pandas mainly eat bamboo and are native to China.", 
+        habitat: "Mountainous bamboo forests in China.",
+        diet: "Herbivorous - primarily bamboo, but also fruits and small animals occasionally.",
+        lifespan: "20 years in the wild, up to 30 years in captivity.",
+        image: "./../../../images/panda.jpg" 
+    },
+    "wolf": { 
+        info: "Wolves live and hunt in packs with a strong social structure.", 
+        habitat: "Forests, tundras, grasslands, and mountains.",
+        diet: "Carnivorous - deer, elk, and small mammals.",
+        lifespan: "6-8 years in the wild, up to 15 years in captivity.",
+        image: "./../../../images/wolf.webp" 
+    },
+    "bear": { 
+        info: "Bears are powerful mammals that hibernate during the winter.", 
+        habitat: "Forests, mountains, and tundras.",
+        diet: "Omnivorous - fish, berries, honey, and small animals.",
+        lifespan: "20-30 years.",
+        image: "./../../../images/bear.jpg" 
+    },
+    "kangaroo": { 
+        info: "Kangaroos use their strong hind legs to hop and cover long distances.", 
+        habitat: "Grasslands and open woodlands in Australia.",
+        diet: "Herbivorous - grass and leaves.",
+        lifespan: "6-8 years in the wild, up to 20 years in captivity.",
+        image: "./../../../images/kangaroo.webp" 
+    },
+    
+};
+
+function getAnimalInfo() {
+    let animalName = document.getElementById("animalInput").value.toLowerCase();
+    let animal = animals[animalName];
+    
+    if (animal) {
+        document.getElementById("animalInfo").innerHTML = `
+            <strong>Information:</strong> ${animal.info} <br>
+            <strong>Habitat:</strong> ${animal.habitat} <br>
+            <strong>Diet:</strong> ${animal.diet} <br>
+            <strong>Lifespan:</strong> ${animal.lifespan} <br>
+        `;
+        document.getElementById("animalImage").src = animal.image;
+        document.getElementById("animalImage").style.display = "block";
+    } else {
+        document.getElementById("animalInfo").innerText = "Sorry, information not available for this animal.";
+        document.getElementById("animalImage").style.display = "none";
+    }
+}
+
 
 
         
