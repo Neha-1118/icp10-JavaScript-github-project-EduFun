@@ -55,10 +55,20 @@ body {
     position: absolute;
     height: 300px;
     left: 50px;
-    top: 50px;
+    top: 40px;
 
 }
-.main-para{}
+.main-para{
+    font-family: "poppins";
+    font-size: 16px;
+    text-align:justify;
+    padding: 0 30px;
+    position: relative;
+    bottom: -250px;
+    color:black;
+    font-weight: 800;
+    font-stretch: ultra-expanded;
+}
 .font-awesome{
     /* position: relative; */
     display: flex;
@@ -69,7 +79,7 @@ body {
     position: relative;
     text-align: center;
     font-size: 35px;
-    bottom: -300px;  
+    bottom: -280px;  
     
     
 }
