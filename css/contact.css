@@ -47,62 +47,66 @@ body {
     border-right: 1px solid white;
     width: 50%;
     background-color: white;
-    border-radius: 20px 0px 0px 20px  ;
+    border-radius: 20px 0px 0px 20px;
     position: relative;
 }
 
-.main-img{
+.main-img {
     position: absolute;
     height: 300px;
     left: 50px;
     top: 40px;
 
 }
-.main-para{
+
+.main-para {
     font-family: "poppins";
     font-size: 16px;
-    text-align:justify;
+    text-align: justify;
     padding: 0 30px;
     position: relative;
     bottom: -237px;
-    color:black;
+    color: black;
     font-weight: 800;
     font-stretch: ultra-expanded;
 }
-.font-awesome{
-  
+
+.font-awesome {
+
     display: flex;
-     justify-content: center; 
+    justify-content: center;
     align-items: center;
     gap: 30px;
-    
+
+
 }
-.social-icons{
+
+.social-icons {
     position: relative;
     font-size: 35px;
     bottom: -270px;
     height: 20px;
-    width:  43px;
-    transform: none;
-    padding: 1px;
-    
-    
+    width: 43px;
+    padding: px;
+    cursor: pointer;
+
 }
-.social-icons :hover { 
+
+.social-icons :hover {
     border: 7px solid var(--accent-color);
-    box-shadow: 0 5px 10px  rgb(0 , 0, 0, 0.05);
-    border-radius: 50%; 
+    box-shadow: 0 5px 10px rgb(0, 0, 0, 0.05);
+    border-radius: 50%;
     background-color: var(--accent-color);
     color: white;
-    
-    
+
+
 }
 
 .right {
     border-left: 1px solid #4665b9;
     width: 50%;
     background-color: #4665b9;
-    border-radius: 0px 20px 20px 0px ;
+    border-radius: 0px 20px 20px 0px;
 
 
 }
@@ -144,7 +148,7 @@ textarea.input {
     font-size: 16px;
     background-color: #4665b9;
     padding: 1px;
-   
+
 
 }
 
@@ -163,4 +167,5 @@ textarea.input {
     left: -86px;
     outline: none;
     background-color: transparent;
+    cursor: pointer;
 }
