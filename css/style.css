@@ -97,6 +97,55 @@ body {
   .show {
     display: flex;
   }
+  .container {
+    font-size: 100px;
+    background-color: red;
+    margin-top: 20px;
+    padding: 20px;
+    height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+  }
+  .mini-cards {
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    gap: 35px;
+  }
+  .cards {
+    height: 50vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+  }
+  .bx-1 {
+    height: 100%;
+    width: 25%;
+    border: 5px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .bx-1 img {
+    height: 300px;
+    width: 300px;
+  }
+  .bx-2 img {
+    height: 300px;
+    width: 300px;
+  }
+  .bx-2 {
+    height: 100%;
+    width: 70%;
+    border: 5px solid black;
+  }
   @media (max-width: 700px) {
     .edufun-logo img {
       height: 50px;
@@ -126,6 +175,7 @@ body {
       width: 35px;
       margin-top: 5px;
     }
+    
   }
   @media (min-width: 701px) and (max-width: 880px) {
     .hamburger {
