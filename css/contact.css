@@ -89,7 +89,11 @@ body {
     width: 43px;
     padding: px;
     cursor: pointer;
+    
 
+}
+.social-icons a {
+    color: black;
 }
 
 .social-icons :hover {
