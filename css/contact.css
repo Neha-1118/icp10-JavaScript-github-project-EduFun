@@ -46,11 +46,9 @@ body {
 .left {
     border-right: 1px solid white;
     width: 50%;
-    position: relative;
     background-color: white;
-    border-radius: 20px;
+    border-radius: 20px 0px 0px 20px  ;
     
-
 }
 .image{
     position: relative;
@@ -67,7 +65,7 @@ body {
     border-left: 1px solid #4665b9;
     width: 50%;
     background-color: #4665b9;
-    border-radius: 20px;
+    border-radius: 0px 20px 20px 0px ;
 
 
 }
