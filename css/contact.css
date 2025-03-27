@@ -64,7 +64,14 @@ body {
     justify-content: space-evenly;
     align-items: center;
 }
-
+.social-icons{
+    position: relative;
+    text-align: center;
+    font-size: 35px;
+    bottom: -300px;  
+    
+    
+}
 
 .right {
     border-left: 1px solid #4665b9;
