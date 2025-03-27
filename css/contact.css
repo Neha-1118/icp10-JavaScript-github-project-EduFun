@@ -48,19 +48,20 @@ body {
     width: 50%;
     background-color: white;
     border-radius: 20px 0px 0px 20px  ;
-    
-}
-.image{
     position: relative;
 }
+
 .main-img{
     position: absolute;
     height: 300px;
     left: 50px;
-    top: -20px;
+    top: 50px;
 
 }
-
+.social-icons{
+    position: absolute;
+    bottom: 20px;
+}
 .right {
     border-left: 1px solid #4665b9;
     width: 50%;
