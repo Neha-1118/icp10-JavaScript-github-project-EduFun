@@ -96,7 +96,7 @@ body {
 .show {
   display: flex;
 }
-.container {
+.main-container {
   font-size: 100px;
   background-color: red;
   margin-top: 20px;
