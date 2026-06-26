@@ -3,9 +3,400 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>Basic Education</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fff;
+            display: flex;
+           flex-direction: column;
+            align-items: center;
+            margin: 0;
+            padding: 20px;
+        }
+        .exit {
+        background-color:red;
+        border: none;
+        height: 40px;
+        width: 80px;
+        font-size: 18px;
+        font-weight: 400;
+        position: absolute;
+        left: 25px;
+        top: 25px;
+        color: white;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: all 0.3s;
+        border: 2px solid white;
+        outline: 2px solid red;
+      }
+      .exit:hover {
+        background-color: #ff000047;
+        color: black;
+      }
+      .exit img {
+        height: 15px;
+        width: 15px;
+        padding-left: 10px;
+      }
+
+        .container {
+            display:flex;
+            gap: 40px;
+            justify-content: center;
+            flex-wrap: nowrap;
+            padding: 10px;
+            width: 100%;
+        }
+        .card {
+            width: 280px;
+            height: 270px;
+            border-radius: 15px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            flex: 0 0 auto;
+            display: flex;
+            align-items:center;
+            justify-content: center;
+            padding: 0px;
+        }
+        .card img {
+            width: 100%;
+            height: 100%;
+            border-radius: 15px;
+        
+        }
+        .card:hover {
+            transform: scale(1.05);
+            
+        }
+        .products-section {
+            margin-top: 50px;
+            text-align: center;
+            width: 100%;
+        }
+        .search-bar {
+            margin-bottom: 20px;
+            text-align:center;
+            padding-left: 35px;
+        }
+        .search-bar input {
+            width: 170px;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 7px;
+            border: 1px solid #ccc;
+        }
+        .products-container {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 20px;
+            
+        }
+        .product-heading{
+            font-size: 30px;
+            font-weight: bold;
+            color:#cc6600;
+            text-align: center;
+            margin-top: 40px;
+        }
+        .product-card {
+            width: 300px;
+            border-radius: 10px;   
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            background: #f9ebd2;
+            object-fit: cover;
+            text-align: center;
+            padding: 15px;
+            cursor:pointer;
+            
+        }
+        
+        .product-image{
+           object-fit: cover;
+            flex-direction: row;
+            gap: 10px;
+           
+        }
+        .product-card img {
+            width: 85%;
+            height: auto;
+            border-radius: 10px;
+            object-fit: cover;
+            margin-bottom: 15px;
+        } 
+        .product-images img {
+            width: 50px;
+            height: 50px;
+            border-radius: 5px;
+            cursor: pointer;
+            border: 1px solid #ccc;
+        
+        }
+        .heading{
+            font-size: 36px;
+            font-weight: bold;
+            color: #333;
+            letter-spacing: 2px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .button{
+            padding: 10px 15px;
+             margin-top: 10px;
+            border: none;
+            border-radius: 18px;
+            color: white;
+            background-color: orange;
+            cursor: pointer;
+        }
+        .cart-section {
+            margin-top: 30px;
+            width: 80%;
+            text-align: center;
+            padding: 20px;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            background: #f9ebd2;
+            border:none;
+        }
+        .cart-items {
+            list-style: none;
+            padding: 0;
+        }
+        .cart-items li {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+        .checkout-btn {
+            margin-top: 15px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #b35900;
+            color: white;
+            border: none;
+            border-radius: 208px;
+            cursor: pointer;
+        }
+        .checkout-btn:hover {
+            background-color: #e55e00;
+        }
+
+/*mobile (max-width: 600px)*/
+@media only screen and (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+    .container {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+    .card{
+        width: 50%;
+        height: auto;
+    }
+    .product-images img {
+        width: 40px; 
+        height: 40px;
+    }
+    .search-bar input {
+        width: 90%;
+        font-size: 14px;
+    }
+    .cart-section {
+        width: 100%;
+        padding: 15px;
+    }
+    .button{
+        width: 100%; 
+    }
+    
+    .checkout-btn {
+        width: 60%; 
+    }
+}
+/*tablet (min-width:601px)-(max-width:1024px)*/
+@media only screen and (max-width: 1024px) {
+    .container {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+    }
+    .card {
+        width: 45%;
+        height: auto;
+    }
+    .product-card {
+        width: 45%;
+    }
+    .product-images img {
+        width: 45px;
+        height: 45px;
+    }
+    .cart-section {
+        width: 90%;
+        padding: 15px;
+    }
+    .button{
+        width: 100%; 
+    }
+    
+    .checkout-btn {
+        width: 60%; 
+    }
+       }
+  @media only screen and (min-width: 1025px) { 
+        .container {
+        flex-wrap: nowrap; 
+        gap: 40px;
+    }
+    .card {
+        width: 280px;
+        height: 270px;
+    }
+    .product-card {
+        width: 300px;
+    }
+}   
+
+    </style>
 </head>
 <body>
+
+    <a href="./../secondary_education.html"
+    ><button class="exit">
+      Exit<img src="./../../../images/exit.png" /></button
+  ></a>
+  <h1 class="heading">Brain Boosters..🧠</h1>
+
+    <div class="container">
+        <div class="card">
+            <a href="./../../../pages/secondary_education_quize/basic_education/maths_quiz/maths_quiz.html">
+            <img src="./../../../images/maths.jpg" alt="Maths">
+        </a>
+        </div>
     
+        <div class="card">
+            <a href="./../../../pages/secondary_education_quize/basic_education/gk_quiz/gk.html">
+            <img src="./../../../images/gk.jpg" alt="GK">
+        </a>
+        </div>
+    
+        <div class="card">
+            <a href="./../../../pages/secondary_education_quize/basic_education/english_quiz/english.html">
+            <img src="./../../../images/english.jpg" alt="English">
+
+        </a>
+        </div>
+        <div class="card">
+            <a href="./../../../pages/secondary_education_quize/basic_education/science_quiz/science.html">
+            <img src="./../../../images/science1.jpg" alt="Science">
+
+        </a>
+        
+        </div>
+        
+    </div>
+    <div class="products-section">
+        <h2 class="product-heading">Our Products</h2>
+        <div class="search-bar">
+            <input type="text" id="searchInput"  placeholder="Search products..." onkeyup="searchProducts()">
+        </div>
+        
+        <div class="products-container">
+               <div class="product-card">
+                <img src="./../../../images/maths_spy.jpg"  alt="Math Spy Board Game" id="product1">
+                
+                <div class="product-images">
+                    <img src="./../../../images/maths_spy.jpg"  onclick="changeImage(event, 'product1')"/>
+                    <img src="./../../../images/spy_card1.jpg"  onclick="changeImage(event, 'product1')"/>
+                    <img src="./../../../images/spy_card2.jpg"  onclick="changeImage(event, 'product1')"/>
+                    <img src="./../../../images/spy_card3.jpg"  onclick="changeImage(event, 'product1')"/>
+                </div>
+
+                <h3>Math Spy Board Game</h3>
+                <p>Master precision and creativity with our geometry box!</p>
+                <b> <p>₹1000/-</p> </b>  
+               <button class="button" onclick="addToCart('Math Spy Board Game - ₹1000/- ',)">Add to Cart</button>
+               </div>
+        
+            <div class="product-card">
+                <img src="./../../../images/gk_quiz.jpg" alt="GK Flashcards" id="product2">
+            
+                <div class="product-images">
+                    <img src="./../../../images/gk_quiz.jpg" class="product-image" onclick="changeImage(event, 'product2')"/>
+                    <img src="./../../../images/card1.jpg" class="product-image" onclick="changeImage(event, 'product2')"/>
+                    <img src="./../../../images/card2.jpg" class="product-image" onclick="changeImage(event, 'product2')"/>
+                    <img src="./../../../images/card3.jpg" class="product-image" onclick="changeImage(event, 'product2')"/>
+                </div>
+                <h3>GK Flashcards</h3>
+                <p>Boost your knowledge with our engaging GK flashcards!</p>
+                <b> <p>₹800/-</p> </b>  
+               <button class="button" onclick="addToCart('GK Flashcards - ₹800/- ',)">Add to Cart</button>
+               </div>
+         
+            <div class="product-card">
+                <img src="./../../../images/science_kit.jpg" alt="Science Explorer Kit" id="product3">
+            
+                <div class="product-images">
+                    <img src="./../../../images/science_kit.jpg" class="product-image" onclick="changeImage(event, 'product3')"/>
+                    <img src="./../../../images/kit1.jpg" class="product-image" onclick="changeImage(event, 'product3')"/>
+                    <img src="./../../../images/kit2.jpg" class="product-image" onclick="changeImage(event, 'product3')"/>
+                    <img src="./../../../images/kit3.jpg" class="product-image" onclick="changeImage(event, 'product3')"/>
+                </div>
+                <h3>Science Explorer Kit</h3>
+                <p>Discover the wonders of science with our fun and exciting Science Explorer Kit!</p>
+                <b> <p>₹2500/-</p> </b>  
+               <button class="button" onclick="addToCart('Science Explorer Kit - ₹2500/- ',)">Add to Cart</button>
+               </div>
+        </div>
+        
+        </div>
+        <div class="cart-section">
+            <h2 class="product-heading">Your Cart</h2>
+            <ul id="cart-list" class="cart-items"></ul>
+            <button class="checkout-btn" onclick="checkout()">Checkout</button>
+        </div>
+    </div>
+    </div>
+    <script>
+       
+       function changeImage(event, mainImageId) {
+            let newSrc = event.target.src;
+            let card = event.target.closest('.product-card');
+            let mainImage = card.querySelector('img:first-of-type');
+            
+            if (mainImage) {
+            mainImage.src = newSrc;
+            }
+        }
+        function addToCart(productName) {
+            let cartList = document.getElementById("cart-list");
+            let listItem = document.createElement("li");
+            listItem.textContent = productName;
+            cartList.appendChild(listItem);
+        }
+        function checkout() {
+            alert("Checkout functionality will be implemented soon!");
+        }
+        
+        function searchProducts() {
+            let input = document.getElementById('searchInput').value.toLowerCase();
+            let products = document.querySelectorAll('.product-card');
+            
+            products.forEach(product => {
+                let productName = product.querySelector('h3').innerText.toLowerCase();
+                if (productName.includes(input)) {
+                    product.style.display = "block";
+                } else {
+                    product.style.display = "none";
+                }
+            });
+        }
+    </script>
 </body>
 </html>

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home Page</title>
     <link rel="stylesheet" href="./css/style.css" />
-    <link rel="stylesheet" href="./css/home.css">
+    <link rel="stylesheet" href="./css/home.css" />
     <script src="./js/script.js"></script>
     <script src="./js/login_and_signin.js"></script>
   </head>
@@ -24,7 +24,7 @@
         <a href="./../../pages/notes.html"><li>Spaceship</li></a>
         <a href="./../../pages/about_us.html"><li>About</li></a>
         <a href="./../../pages/contact.html"><li>contact</li></a>
-        <a href="./../../pages/login.html"><li id="pn-UserlogIn">Log In</li></a>
+        <a href="./../../pages/login.html" id="account-page"><li id="pn-UserlogIn">Log In</li></a>
       </ul>
       <div class="hamburger">
         <button type="button" id="hamburger-btn" onclick="hamburgerMenu()">
@@ -38,12 +38,81 @@
         <a href="./../../pages/notes.html"><li>Spaceship</li></a>
         <a href="./../../pages/about_us.html"><li>About</li></a>
         <a href="./../../pages/contact.html"><li>contact</li></a>
-        <a href="./../../pages/login.html"><li id="UserlogIn">Log In</li></a>
+        <a href="./../../pages/login.html" id="account-page-phn"><li id="UserlogIn">Log In</li></a>
       </ul>
     </nav>
-
-    <div class="main-container"><h1>Main poster</h1></div>
-    <div class="educational-cards">educational-cards</div>
+    <!--main poster-->
+    <div class="main-container">
+      <div class="m1-box">
+        <span><h3>One Of The Best learning platform</h3></span>
+      </div>
+      <div class="m2-box">
+        <img src="./icons/head-logo.png" /><img
+          src="./icons/nav-heading.png"
+          id="main-heaidng1"
+        />
+      </div>
+    </div>
+    <!--educational cards-->
+    <div class="educational-cards">
+      <div class="edu-cards">
+        <div class="edu-box-1"><img src="./images/edu-card-1img.avif" /></div>
+        <div class="edu-box-2">
+          <h2>Kidergarder</h2>
+          <ul>
+            <li>Alphabets 🔠</li>
+            <li>Animal 🦁</li>
+            <li>Color 🧡🤍💚</li>
+            <li>Fun Quiz ⁉️</li>
+            <li>Kidergarder Shop 🛒</li>
+          </ul>
+          <a href="./pages/primary-education/primary.html" target="new"
+            ><button class="get-started" type="button">Visit</button></a
+          >
+        </div>
+      </div>
+      <div class="edu-cards">
+        <div class="edu-box-1"><img src="./images/edu-card-2img.jpg" /></div>
+        <div class="edu-box-2">
+          <h2>Secondary Education</h2>
+          <ul>
+            <li class="ed-p-2">
+              Basic Education [6<sup>th</sup> to 8<sup>th</sup>]👦🏻
+            </li>
+            <li class="ed-p-2">
+              Junior Secondary Studies <br />
+              [9<sup>th</sup> to 10<sup>th</sup>]👱🏻‍♂️
+            </li>
+            <li class="ed-p-2">
+              Advanced Studies [11<sup>th</sup> to 12<sup>th</sup>]🧔🏻
+            </li>
+          </ul>
+          <a
+            href="./pages/secondary_education_quize/secondary_education.html"
+            target="new"
+            ><button class="get-started" type="button">Visit</button></a
+          >
+        </div>
+      </div>
+      <div class="edu-cards">
+        <div class="edu-box-1"><img src="./images/edu-card-3img.png" /></div>
+        <div class="edu-box-2">
+          <h2>Higher Education</h2>
+          <ul>
+            <li>IT Industry👨🏻‍💻</li>
+            <li>Finance 💸</li>
+            <li>Law ⚖️</li>
+            <li>Civil Services 👮🏻</li>
+            <li>Pharma 👨🏻‍⚕️</li>
+          </ul>
+          <a
+            href="./pages/higher-education-quize/higher_education.html"
+            target="new"
+            ><button class="get-started" type="button">Visit</button></a
+          >
+        </div>
+      </div>
+    </div>
     <div class="mini-cards">
       <div
         class="cards"
@@ -53,14 +122,45 @@
         <div class="bx-1">
           <img src="./images/static-brain.png" id="static-img-1" />
         </div>
-        <div class="bx-2"></div>
+        <div class="bx-2">
+          <h1>🧠 How Quizzes Improve Brain Power 🎯</h1>
+          <p>
+            Quizzes play a crucial role in enhancing cognitive abilities by
+            promoting active recall 🔄, strengthening memory 🏋️‍♂️, and improving
+            problem-solving skills 🤔. Engaging with quizzes regularly boosts
+            concentration 🎯, encourages logical thinking 🧩, and enhances
+            decision-making abilities ⚡. They make learning interactive and
+            enjoyable 🎮, reducing stress 😌 and increasing motivation 🚀 to
+            acquire new knowledge. Additionally, quizzes stimulate brain
+            activity ⚙️, reinforce information 📚, and improve long-term
+            retention 🔁.
+            <a href="https://en.wikipedia.org/wiki/Brain_training" target="new"
+              >learn More</a
+            >
+          </p>
+        </div>
       </div>
       <div
         class="cards"
         onmouseover="changeImg(`static-img-2`,`./images/book-gif.gif`)"
         onmouseout="changeImg(`static-img-2`,`./images/static-book.png`)"
       >
-        <div class="bx-2"></div>
+        <div class="bx-2">
+          <h1>📖 Importance of Book Reading in Studies 🎓</h1>
+          <p>
+            Reading books plays a vital role in academic success by enhancing
+            comprehension 🧠, improving vocabulary 📚, and strengthening
+            concentration 🎯. It helps students grasp complex concepts more
+            effectively, boosting critical thinking 🤔 and analytical skills 🧩.
+            Regular reading enhances memory retention 🔁, reduces stress 😌, and
+            fosters creativity 🎨, making learning more engaging and efficient.
+            <a
+              href="https://en.wikipedia.org/wiki/Reading#:~:text=Sustained%20high%20volume%20lifetime%20reading,life%20and%20the%20senior%20years."
+              target="new"
+              >Learn More</a
+            >
+          </p>
+        </div>
         <div class="bx-1">
           <img src="./images/static-book.png" id="static-img-2" />
         </div>
@@ -73,33 +173,125 @@
         <div class="bx-1">
           <img src="./images/static-chess.png" id="static-img-3" />
         </div>
-        <div class="bx-2"></div>
+        <div class="bx-2">
+          <h1>🏆 Importance of Daily Tasks in Boosting Brain Power 🧠</h1>
+          <p>
+            Performing daily tasks plays a crucial role in enhancing brain
+            function ⚡, memory retention 🔁, and problem-solving skills 🤔.
+            Engaging in structured activities improves focus 🎯, boosts
+            cognitive flexibility 🔄, and enhances decision-making abilities ⚖️.
+            Routine tasks like reading 📖, solving puzzles 🧩, or learning new
+            skills 🚀 stimulate the brain, keeping it active and sharp.
+            Completing daily challenges builds discipline ⏳, reduces stress 😌,
+            and strengthens neural connections 🔗, leading to better
+            adaptability and mental agility.
+            <a
+              href="https://en.wikipedia.org/wiki/Memory_improvement"
+              target="new"
+              >Learn More</a
+            >
+          </p>
+        </div>
       </div>
       <div
         class="cards"
         onmouseover="changeImg(`static-img-4`,`./images/degree-gif.gif`)"
         onmouseout="changeImg(`static-img-4`,`./images/static-degree.png`)"
       >
-        <div class="bx-2"></div>
+        <div class="bx-2">
+          <h1>🌟 Why Choose Us? 🚀</h1>
+          <p>
+            EduFun is a complete learning platform for primary 📚, secondary 🏫,
+            and higher education 🎓. We offer quizzes 🧩, notes 📖, and
+            interactive games 🎮 to make learning fun and engaging. Covering all
+            subjects 🔬💻➕, EduFun ensures easy access to quality education for
+            everyone. With a user-friendly interface 🎯, learning becomes
+            simple, effective ✅, and enjoyable 😃. Start your journey with
+            EduFun and boost your knowledge today! 🚀 EduFun is designed to make
+            education accessible anytime, anywhere 🌍, ensuring that students
+            can learn at their own pace. Whether you're revising for exams.
+          </p>
+        </div>
+
         <div class="bx-1">
           <img src="./images/static-degree.png" id="static-img-4" />
         </div>
       </div>
     </div>
-    <!--why coice us -->
-<div class="trusties">
-<h1>Trusties</h1>
-</div>
+
     <!--Fotter-->
-    
+
     <div class="footer">
-      <div class="social-media-logo">
-      <img src="./images/static-github.png" id="logo1"onmouseover="mainImgChange(`logo1`,`./images/github.png`)" onmouseout="mainImgChange(`logo1`,`./images/static-github.png`)">
-      <img src="./images/static-instagram.png" id="logo2"onmouseover="mainImgChange(`logo2`,`./images/instagram.png`)" onmouseout="mainImgChange(`logo2`,`./images/static-instagram.png`)">
-      <img src="./images/static-facebook.png" id="logo3" onmouseover="mainImgChange(`logo3`,`./images/facebook.png`)" onmouseout="mainImgChange(`logo3`,`./images/static-facebook.png`)">
-      <img src="./images/static-linkedin.png"  id="logo4" onmouseover="mainImgChange(`logo4`,`./images/linkedin.png`)" onmouseout="mainImgChange(`logo4`,`./images/static-linkedin.png`)">
-      
-      </div>
+      <div class="footer-container">
+        <!-- About EduFun -->
+        <div class="footer-section about">
+          <h3>About EduFun</h3>
+          <p>
+            EduFun is an interactive learning platform that offers quizzes,
+            notes, and engaging games to make learning fun and effective.
+            Explore various subjects and enhance your knowledge with our dynamic
+            content.
+          </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-section links">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="./pages/higher-education-quize/">Quizzes</a></li>
+            <li><a href="./pages/notes.html">Notes</a></li>
+            <li><a href="./pages/contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="footer-section contact">
+          <h3>Contact Us</h3>
+          <p>
+            Email: <a href="mailto:support@edufun.com">support@edufun.com</a>
+          </p>
+          <p>Phone: +91 98765 43210</p>
+          <p>Location: Pune, India</p>
+        </div>
+
+        <!-- Social Media -->
+        <div class="footer-section social">
+          <h3>Follow Us</h3>
+          <div class="social-media-logo">
+            <img
+              src="./images/static-github.png"
+              id="logo1"
+              onmouseover="mainImgChange(`logo1`,`./images/github.png`)"
+              onmouseout="mainImgChange(`logo1`,`./images/static-github.png`)"
+            />
+            <img
+              src="./images/static-instagram.png"
+              id="logo2"
+              onmouseover="mainImgChange(`logo2`,`./images/instagram.png`)"
+              onmouseout="mainImgChange(`logo2`,`./images/static-instagram.png`)"
+            />
+            <img
+              src="./images/static-facebook.png"
+              id="logo3"
+              onmouseover="mainImgChange(`logo3`,`./images/facebook.png`)"
+              onmouseout="mainImgChange(`logo3`,`./images/static-facebook.png`)"
+            />
+            <img
+              src="./images/static-linkedin.png"
+              id="logo4"
+              onmouseover="mainImgChange(`logo4`,`./images/linkedin.png`)"
+              onmouseout="mainImgChange(`logo4`,`./images/static-linkedin.png`)"
+            />
           </div>
+          <img src="./icons/nav-heading.png" id="f-head" />
+        </div>
+      </div>
+
+      <!-- Footer Copyright -->
+      <div class="footer-bottom">
+        <p>© 2025 EduFun. All Rights Reserved.</p>
+      </div>
+    </div>
   </body>
 </html>

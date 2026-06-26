@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Account</title>
+    <style>
+       * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+      }
+    
+      body {
+        background-color: black;
+        color: white;
+        text-align: center;
+      }
+      .account-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 90%;
+        max-width: 500px;
+        margin: auto;
+        padding: 20px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+      }
+      .ac-img {
+        background-color: white;
+        border-radius: 50%;
+        width: 150px;
+        height: 150px;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 15px;
+      }
+      .ac-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .information-container {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+      }
+      .info {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        background-color: rgba(255, 255, 255, 0.1);
+        cursor:pointer;
+      }
+      input{
+        color:white; 
+      }
+      .btn-container {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 10px;
+      }
+      .btn {
+        flex: 1;
+        padding: 10px;
+        margin: 5px;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+      .submit {
+        background: green;
+        color: white;
+      }
+      .edit {
+        background: orange;
+        color: white;
+      }
+      .btn:hover {
+        opacity: 0.8;
+      }
+      @media (max-width: 500px) {
+        .ac-img {
+          width: 120px;
+          height: 120px;
+        }
+        .info {
+          font-size: 14px;
+        }
+        .btn {
+          font-size: 14px;
+          padding: 8px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Account</h1>
+    <div class="account-container">
+      <div class="account-info">
+        <div class="ac-img">
+          <img
+            src="./../images/account-black.png"
+            alt="account-image"
+            id="userAccountImage"
+          />
+        </div>
+        <h1 id="userName">user</h1>
+        <form class="information-container">
+          <label>Name</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Enter a Name"
+            class="info"
+            value=""
+          />
+          <label>Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Enter a Email"
+            class="info"
+            value=""
+          />
+          <label>Phone Number</label>
+          <input
+            type="tel"
+            id="phone-number"
+            name="phone-number"
+            placeholder="Enter a phone number"
+            class="info"
+            value=""
+          />
+          <label>Education</label>
+          <input
+            type="text"
+            id="education"
+            name="education"
+            placeholder="Enter Educational Status"
+            class="info"
+            value=""
+          />
+          <button type="button" onclick="infoSubmit()" class="submit">
+            Save
+          </button>
+          <button type="button" onclick="edit()" class="edit">Edit</button>
+        </form>
+      </div>
+    </div>
+
+    <script>
+      const primaryImage = document.getElementById("userAccountImage");
+      const userImage = document.getElementById("userImage");
+
+      // Load image from localStorage if available but it not working
+      const savedImage = localStorage.getItem("profileImage");
+      if (savedImage) {
+        primaryImage.src = savedImage;
+      }
+
+      //other data saving
+      //usernam display from local storage
+      let mainName = document.getElementById("userName");
+      const savedUsername = localStorage.getItem("loggedInUser");
+      if (savedUsername) {
+        mainName.innerHTML = `${savedUsername}`;
+      }
+      //other information
+
+      //submit button and button
+      let submitBtn = document.getElementById("submit");
+      let editBtn = document.getElementById("edit");
+      // Save user information in localStorage
+      function infoSubmit() {
+        let name = document.getElementById("name").value;
+        let email = document.getElementById("email").value;
+        let phone = document.getElementById("phone-number").value;
+        let education = document.getElementById("education").value;
+
+        // Store values in localStorage
+        localStorage.setItem("PresentName", name);
+        localStorage.setItem("PresentEmail", email);
+        localStorage.setItem("PresentPhone", phone);
+        localStorage.setItem("PresentEducation", education);
+
+        //disable the input to edit
+        disableEdit();
+      }
+
+      //if student info is already present then display in infomation box
+      function save() {
+        let presentUserNameDisplay = localStorage.getItem("PresentName");
+        let presentUserEmailDisplay = localStorage.getItem("PresentEmail");
+        let presentUserPhoneDisplay = localStorage.getItem("PresentPhone");
+        let presentEducationDisplay = localStorage.getItem("PresentEducation");
+
+        if (presentUserNameDisplay) {
+          document.getElementById("name").value = presentUserNameDisplay;
+        }
+        if (presentUserEmailDisplay) {
+          document.getElementById("email").value = presentUserEmailDisplay;
+        }
+        if (presentUserPhoneDisplay) {
+          document.getElementById("phone-number").value =
+            presentUserPhoneDisplay;
+        }
+        if (presentEducationDisplay) {
+          document.getElementById("education").value = presentEducationDisplay;
+        }
+        if (
+          presentUserNameDisplay == null &&
+          presentUserEmailDisplay == null &&
+          presentUserPhoneDisplay == null &&
+          presentEducationDisplay == null
+        ) {
+          enableEdit();
+        } else {
+          //disable the input to edit
+          disableEdit();
+
+        }
+      }
+      //disables the editing
+      function disableEdit() {
+        document.getElementById("name").disabled = true;
+        document.getElementById("email").disabled = true;
+        document.getElementById("phone-number").disabled = true;
+        document.getElementById("education").disabled = true;
+       let cursor= document.getElementsByClassName("info")
+       for(let i=0; i<cursor.length;i++)
+       {
+        cursor[i].style.cursor="not-allowed";
+       }
+      }
+      //enable edit
+      function enableEdit() {
+        document.getElementById("name").disabled = false;
+        document.getElementById("email").disabled = false;
+        document.getElementById("phone-number").disabled = false;
+        document.getElementById("education").disabled = false;
+      }
+      function edit() {
+        let cursor= document.getElementsByClassName("info")
+       for(let i=0; i<cursor.length;i++)
+       {
+        cursor[i].style.cursor="pointer";
+       }
+        enableEdit();
+      }
+      // Automatically load saved data when the page reloads
+      window.onload = function () {
+        save();
+      };
+    </script>
+  </body>
+</html>

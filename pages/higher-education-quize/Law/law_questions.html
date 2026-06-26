@@ -76,7 +76,7 @@
         background-color: #ff9393;
       }
       .exit {
-        background-color:red;
+        background-color: red;
         border: none;
         height: 40px;
         width: 80px;
@@ -155,120 +155,116 @@
         if (time > 0) {
           time--;
         }
-        const timeInt = Math.floor(parseInt(time/60));
+        const timeInt = Math.floor(parseInt(time / 60));
         const secInt = Math.floor(parentInt(time % 60));
-        if(timeInt <=5)
-        {
-          timer.style.backgroundColor="yellow";
-        }
-        else if(timeInt <=3)
-        {
-          timer.style.backgroundColor="tomato";
-        }
-        else if (timeInt == 9 && secInt == 0) {
+        if (timeInt <= 5) {
+          timer.style.backgroundColor = "yellow";
+        } else if (timeInt <= 3) {
+          timer.style.backgroundColor = "tomato";
+        } else if (timeInt == 9 && secInt == 0) {
           alert("Time is over, Try Next Time");
           window.location.href = `./../higher_education.html`;
         }
-      
       }
       //create object for the questions
       const questions = [
         {
-          question: "what is the output of this code console.log(5<10>6) ?",
+          question: "What is the supreme law of the land in most countries?",
           answers: [
-            { text: "1", correct: false },
-            { text: "flase", correct: true },
-            { text: "0", correct: false },
-            { text: "undefine", correct: false },
+            { text: "Statutory Law", correct: false },
+            { text: "Constitution", correct: true },
+            { text: "Common Law", correct: false },
+            { text: "Regulations", correct: false },
+          ],
+        },
+        {
+          question: "Which of the following is NOT a type of contract?",
+          answers: [
+            { text: "Unilateral Contract", correct: false },
+            { text: "Bilateral Contract", correct: false },
+            { text: "Criminal Contract", correct: true },
+            { text: "Express Contract", correct: false },
           ],
         },
         {
           question:
-            "Which of the following is NOT an example of an operating system ?",
+            "Which legal principle states that a person is innocent until proven guilty?",
           answers: [
-            { text: "Microsoft Office", correct: true },
-            { text: "Windows", correct: false },
-            { text: "Linux", correct: false },
-            { text: "macOS", correct: false },
+            { text: "Habeas Corpus", correct: false },
+            { text: "Presumption of Innocence", correct: true },
+            { text: "Stare Decisis", correct: false },
+            { text: "Burden of Proof", correct: false },
           ],
         },
         {
-          question: "Shortest Job Next (SJN) ?",
+          question: "What is the main purpose of Tort Law?",
           answers: [
-            { text: "Tree Model", correct: false },
-            { text: "Linear Model", correct: false },
-            { text: "Sequential Model", correct: false },
-            { text: " Hierarchical Model", correct: true },
-          ],
-        },
-        {
-          question: "what is the output of this code console.log(0 || 1) ?",
-          answers: [
-            { text: "1", correct: true },
-            { text: "true", correct: false },
-            { text: "0", correct: false },
-            { text: "false", correct: false },
+            { text: "To punish criminal offenses", correct: false },
+            { text: "To resolve disputes between states", correct: false },
+            { text: "To provide remedies for civil wrongs", correct: true },
+            { text: "To regulate corporate finance", correct: false },
           ],
         },
         {
           question:
-            "Which scheduling algorithm is based on the principle of executing the shortest job first ?",
+            "Which branch of law deals with the interpretation of statutes and legal documents?",
           answers: [
-            { text: "Shortest Job Next (SJN)", correct: true },
-            { text: " First-Come, First-Served (FCFS)", correct: false },
-            { text: "Round Robin (RR)v", correct: false },
-            { text: " Priority Scheduling", correct: false },
+            { text: "Criminal Law", correct: false },
+            { text: "Tort Law", correct: false },
+            { text: "Legal Reasoning & Interpretation", correct: true },
+            { text: "International Law", correct: false },
           ],
         },
         {
           question:
-            "Which SQL statement is used to retrieve data from a database ?",
+            "What is a fundamental right protected by most constitutions?",
           answers: [
-            { text: "INSERT", correct: false },
-            { text: "SELECT", correct: true },
-            { text: "UPDATE", correct: false },
-            { text: "DELETE", correct: false },
+            { text: "Right to Infringe", correct: false },
+            { text: "Freedom of Speech", correct: true },
+            { text: "Right to Evade Taxes", correct: false },
+            { text: "Unlimited Power to Government", correct: false },
           ],
         },
         {
           question:
-            "Which layer of the OSI model is responsible for end-to-end communication and error recovery ?",
+            "Which contract law principle states that agreements must be honored?",
           answers: [
-            { text: "Network Layer", correct: false },
-            { text: "Transport Layer", correct: true },
-            { text: "Data Link Layer", correct: false },
-            { text: "Physical Layer", correct: false },
-          ],
-        },
-        {
-          question: `what is the output of this code console.log(1+2+"3") ?`,
-          answers: [
-            { text: "True", correct: false },
-            { text: "6", correct: false },
-            { text: "123", correct: false },
-            { text: "33", correct: true },
-          ],
-        },
-        {
-          question: "what is your name ?",
-          answers: [
-            { text: "HTTP", correct: false },
-            { text: "SMTP", correct: false },
-            { text: "FTP", correct: true },
-            { text: "DHCP", correct: false },
+            { text: "Force Majeure", correct: false },
+            { text: "Pacta Sunt Servanda", correct: true },
+            { text: "Actus Reus", correct: false },
+            { text: "Mens Rea", correct: false },
           ],
         },
         {
           question:
-            "Which of the following is an example of a network topology ?",
+            "Which legal principle prevents a person from being tried twice for the same crime?",
           answers: [
-            { text: "HTTP", correct: false },
-            { text: "Star", correct: true },
-            { text: "IP Address", correct: false },
-            { text: "Router", correct: false },
+            { text: "Double Jeopardy", correct: true },
+            { text: "Habeas Corpus", correct: false },
+            { text: "Ex Post Facto", correct: false },
+            { text: "Mens Rea", correct: false },
+          ],
+        },
+        {
+          question: "What is the primary function of Criminal Law?",
+          answers: [
+            { text: "To regulate corporate behavior", correct: false },
+            { text: "To establish penalties for crimes", correct: true },
+            { text: "To interpret civil contracts", correct: false },
+            { text: "To enforce constitutional rights", correct: false },
+          ],
+        },
+        {
+          question: "Which of the following is an example of a tort?",
+          answers: [
+            { text: "Breach of Contract", correct: false },
+            { text: "Negligence", correct: true },
+            { text: "Tax Evasion", correct: false },
+            { text: "Forgery", correct: false },
           ],
         },
       ];
+
       const questionElement = document.getElementById("question");
       const answerButton = document.getElementById("answer-buttons");
       const nextButton = document.getElementById("next-btn");

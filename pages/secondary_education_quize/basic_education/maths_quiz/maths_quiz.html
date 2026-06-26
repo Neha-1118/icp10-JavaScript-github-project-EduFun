@@ -14,7 +14,7 @@
     background: #fff;
 }
 .quiz-container {
-    background: #aa80ff;
+    background: #cceeff;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
@@ -30,6 +30,12 @@
     text-align: left;
     position: relative;
     
+}
+.timer {
+    font-size: 20px;
+    font-weight: bold;
+    color: red;
+    margin-bottom: 10px;
 }
 .heading-icon {
     width: 70px; 
@@ -86,12 +92,12 @@ h2 {
     color: #333;
 }
 .correct {
-    background: #4CAF50 !important;
+    background: #4CAF50 ;
     color: white;
 }
 
 .wrong {
-    background: #f44336 !important;
+    background: #f44336;
     color: white;
 }
 .next-btn, .submit-btn, .restart {
@@ -99,7 +105,7 @@ h2 {
     padding: 10px 20px;
     margin-top: 10px;
     border: none;
-    background: #4c00e6;
+    background: #008080;
     color: white;
     cursor: pointer;
     border-radius: 20px;
@@ -107,7 +113,7 @@ h2 {
 }
 
 .next-btn:hover, .submit-btn:hover, .restart:hover {
-    background: #0056b3;
+    background: #005599;
 }
 .result-box {
     text-align: center;
@@ -152,18 +158,19 @@ h2 {
             <div class="heading-icon">
                 <img src="./../../../../icons/calculator.png" alt="Quiz Icon">
                 <span class="quiz-text">Maths Quiz</span>
-                
-            </div>
+        </div>
             </div>
             <hr>
+
+            <div class="timer">Time Left: <span id="timer">30</span>s</div>
+
     <div class="quiz-content">
         <h2 id="question"></h2>
-        
         <div class="options" id="options"></div>
         <hr>
         <button class="next-btn" onclick="nextQuestion()">Next</button>
         <button class="submit-btn" onclick="submitQuiz()">Submit</button>
-        <button class="restart" onclick="restartQuiz()">Restart</button>
+        <button class="restart" onclick="restartQuiz()">🔄 Restart</button>
     </div>
     </div>
     <script>
@@ -196,15 +203,32 @@ h2 {
 ];
 let currentQuestionIndex = 0;
 let score = 0;
+let timer;
+let timeLeft = 30;
+
+function startTimer() {
+    timeLeft = 30;
+    document.getElementById("timer").textContent = timeLeft;
+    timer = setInterval(() => {
+        timeLeft--;
+        document.getElementById("timer").textContent = timeLeft;
+        if (timeLeft === 0) {
+            clearInterval(timer);
+            nextQuestion();
+        }
+    }, 1000);
+}
 
 function loadQuestion() {
+    clearInterval(timer);
+    startTimer();
     const questionEl = document.getElementById("question");
     const optionsEl = document.getElementById("options");
     const nextBtn = document.querySelector(".next-btn");
     const submitBtn = document.querySelector(".submit-btn");
 
     
-    questionEl.innerHTML = `<span class="question-number">${currentQuestionIndex + 1}.</span> ${quizData[currentQuestionIndex].question}`;
+    questionEl.innerHTML = `${currentQuestionIndex + 1}. ${quizData[currentQuestionIndex].question}`;
     
     optionsEl.innerHTML = "";
 
@@ -221,6 +245,7 @@ function loadQuestion() {
 }
 
 function checkAnswer(button, selectedIndex) {
+    clearInterval(timer);
     const correctIndex = quizData[currentQuestionIndex].answer;
     const options = document.querySelectorAll(".option");
 
@@ -260,34 +285,29 @@ function submitQuiz() {
     `;
 }
 function restartQuiz() {
-    currentQuestionIndex = 0;
-    score = 0;
-
-    
-    document.querySelector(".quiz-container").innerHTML = `
-        <div class="quiz-heading">
-            <div class="heading-icon">
-                <img src="./../../../../icons/calculator.png" alt="Quiz Icon">
+        currentQuestionIndex = 0;
+        score = 0;
+        document.querySelector(".quiz-container").innerHTML = `
+            <div class="quiz-heading">
+                <div class="heading-icon">
+                    <img src="./../../../../icons/calculator.png" alt="Quiz Icon">
+                
                 <span class="quiz-text">Maths Quiz</span>
+                </div>
             </div>
-        </div>
-        <hr>
-        <div class="quiz-content">
-            <h2 id="question"></h2>
-            <div class="options" id="options"></div>
             <hr>
-            <button class="next-btn" onclick="nextQuestion()">Next</button>
-            <button class="submit-btn" onclick="submitQuiz()">Submit</button>
-        </div>
-    `;
-
-    loadQuestion(); 
-}
-function exitQuiz() {
-
-window.location.reload(); 
-}
-
+            <div class="timer">Time Left: <span id="timer">30</span>s</div>
+            <div class="quiz-content">
+                <h2 id="question"></h2>
+                <div class="options" id="options"></div>
+                <hr>
+                <button class="next-btn" onclick="nextQuestion()">Next</button>
+                <button class="submit-btn" onclick="submitQuiz()">Submit</button>
+                <button class="restart" onclick="restartQuiz()">🔄 Restart</button>
+            </div>
+        `;
+        loadQuestion();
+    }
 
 document.addEventListener("DOMContentLoaded", loadQuestion);
     </script>

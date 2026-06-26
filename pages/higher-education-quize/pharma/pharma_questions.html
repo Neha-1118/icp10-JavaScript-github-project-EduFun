@@ -76,7 +76,7 @@
         background-color: #ff9393;
       }
       .exit {
-        background-color:red;
+        background-color: red;
         border: none;
         height: 40px;
         width: 80px;
@@ -155,120 +155,131 @@
         if (time > 0) {
           time--;
         }
-        const timeInt = Math.floor(parseInt(time/60));
+        const timeInt = Math.floor(parseInt(time / 60));
         const secInt = Math.floor(parentInt(time % 60));
-        if(timeInt <=5)
-        {
-          timer.style.backgroundColor="yellow";
-        }
-        else if(timeInt <=3)
-        {
-          timer.style.backgroundColor="tomato";
-        }
-        else if (timeInt == 9 && secInt == 0) {
+        if (timeInt <= 5) {
+          timer.style.backgroundColor = "yellow";
+        } else if (timeInt <= 3) {
+          timer.style.backgroundColor = "tomato";
+        } else if (timeInt == 9 && secInt == 0) {
           alert("Time is over, Try Next Time");
           window.location.href = `./../higher_education.html`;
         }
-      
       }
       //create object for the questions
       const questions = [
         {
-          question: "what is the output of this code console.log(5<10>6) ?",
+          question:
+            "What is the study of drugs and their effects on the human body called?",
           answers: [
-            { text: "1", correct: false },
-            { text: "flase", correct: true },
-            { text: "0", correct: false },
-            { text: "undefine", correct: false },
+            { text: "Pharmacology", correct: true },
+            { text: "Pharmaceutics", correct: false },
+            { text: "Pharmacognosy", correct: false },
+            { text: "Toxicology", correct: false },
           ],
         },
         {
           question:
-            "Which of the following is NOT an example of an operating system ?",
+            "Which dosage form is designed for controlled drug release?",
           answers: [
-            { text: "Microsoft Office", correct: true },
-            { text: "Windows", correct: false },
-            { text: "Linux", correct: false },
-            { text: "macOS", correct: false },
-          ],
-        },
-        {
-          question: "Shortest Job Next (SJN) ?",
-          answers: [
-            { text: "Tree Model", correct: false },
-            { text: "Linear Model", correct: false },
-            { text: "Sequential Model", correct: false },
-            { text: " Hierarchical Model", correct: true },
-          ],
-        },
-        {
-          question: "what is the output of this code console.log(0 || 1) ?",
-          answers: [
-            { text: "1", correct: true },
-            { text: "true", correct: false },
-            { text: "0", correct: false },
-            { text: "false", correct: false },
+            { text: "Tablet", correct: false },
+            { text: "Capsule", correct: false },
+            { text: "Sustained-release tablet", correct: true },
+            { text: "Solution", correct: false },
           ],
         },
         {
           question:
-            "Which scheduling algorithm is based on the principle of executing the shortest job first ?",
+            "Which branch of chemistry deals with the study of carbon compounds?",
           answers: [
-            { text: "Shortest Job Next (SJN)", correct: true },
-            { text: " First-Come, First-Served (FCFS)", correct: false },
-            { text: "Round Robin (RR)v", correct: false },
-            { text: " Priority Scheduling", correct: false },
+            { text: "Inorganic Chemistry", correct: false },
+            { text: "Organic Chemistry", correct: true },
+            { text: "Physical Chemistry", correct: false },
+            { text: "Analytical Chemistry", correct: false },
           ],
         },
         {
           question:
-            "Which SQL statement is used to retrieve data from a database ?",
+            "Which plant is the primary source of quinine, used to treat malaria?",
           answers: [
-            { text: "INSERT", correct: false },
-            { text: "SELECT", correct: true },
-            { text: "UPDATE", correct: false },
-            { text: "DELETE", correct: false },
+            { text: "Cinchona", correct: true },
+            { text: "Digitalis", correct: false },
+            { text: "Ephedra", correct: false },
+            { text: "Atropa belladonna", correct: false },
+          ],
+        },
+        {
+          question: "What is the primary function of a hospital pharmacy?",
+          answers: [
+            { text: "Manufacturing drugs", correct: false },
+            {
+              text: "Providing and managing medications for patients",
+              correct: true,
+            },
+            { text: "Conducting research", correct: false },
+            { text: "Regulating drug laws", correct: false },
           ],
         },
         {
           question:
-            "Which layer of the OSI model is responsible for end-to-end communication and error recovery ?",
+            "Which route of drug administration ensures the fastest absorption?",
           answers: [
-            { text: "Network Layer", correct: false },
-            { text: "Transport Layer", correct: true },
-            { text: "Data Link Layer", correct: false },
-            { text: "Physical Layer", correct: false },
+            { text: "Oral", correct: false },
+            { text: "Intravenous", correct: true },
+            { text: "Topical", correct: false },
+            { text: "Subcutaneous", correct: false },
           ],
         },
         {
-          question: `what is the output of this code console.log(1+2+"3") ?`,
+          question: "What is the primary role of clinical pharmacists?",
           answers: [
-            { text: "True", correct: false },
-            { text: "6", correct: false },
-            { text: "123", correct: false },
-            { text: "33", correct: true },
-          ],
-        },
-        {
-          question: "what is your name ?",
-          answers: [
-            { text: "HTTP", correct: false },
-            { text: "SMTP", correct: false },
-            { text: "FTP", correct: true },
-            { text: "DHCP", correct: false },
+            { text: "Dispensing medications only", correct: false },
+            {
+              text: "Providing drug information and patient care",
+              correct: true,
+            },
+            { text: "Selling medicines", correct: false },
+            { text: "Manufacturing drugs", correct: false },
           ],
         },
         {
           question:
-            "Which of the following is an example of a network topology ?",
+            "Which law regulates drug manufacturing and distribution in India?",
           answers: [
-            { text: "HTTP", correct: false },
-            { text: "Star", correct: true },
-            { text: "IP Address", correct: false },
-            { text: "Router", correct: false },
+            { text: "Drugs and Cosmetics Act, 1940", correct: true },
+            { text: "Pharmacy Act, 1948", correct: false },
+            {
+              text: "Narcotic Drugs and Psychotropic Substances Act, 1985",
+              correct: false,
+            },
+            {
+              text: "Medicinal and Toilet Preparations Act, 1955",
+              correct: false,
+            },
+          ],
+        },
+        {
+          question:
+            "Which of the following is an example of an analgesic drug?",
+          answers: [
+            { text: "Paracetamol", correct: true },
+            { text: "Insulin", correct: false },
+            { text: "Aspirin", correct: false },
+            { text: "Ciprofloxacin", correct: false },
+          ],
+        },
+        {
+          question:
+            "Which term refers to the study of medicinal drugs derived from natural sources?",
+          answers: [
+            { text: "Pharmacognosy", correct: true },
+            { text: "Pharmacology", correct: false },
+            { text: "Pharmaceutics", correct: false },
+            { text: "Toxicology", correct: false },
           ],
         },
       ];
+
       const questionElement = document.getElementById("question");
       const answerButton = document.getElementById("answer-buttons");
       const nextButton = document.getElementById("next-btn");

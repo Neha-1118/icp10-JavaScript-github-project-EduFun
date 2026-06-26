@@ -30,6 +30,7 @@ function addData() {
   userNameInput.value = "";
   passWordInput.value = "";
   alert("Sign-up successful! You can now log in.");
+  window.location.href = ".././pages/login.html"; // Redirect after sign
 }
 
 // Log-in functionality
@@ -68,15 +69,18 @@ window.onload = function () {
   const presentUserDesktop = document.getElementById("UserlogIn");
   const presentUserMobile = document.getElementById("pn-UserlogIn");
   const savedUsername = localStorage.getItem("loggedInUser");
-
+  const account = document.getElementById("account-page");
+  const accounPhn = document.getElementById("account-page-phn");
   if (savedUsername) {
     if (presentUserDesktop) {
       //for the desktop
       presentUserDesktop.innerText = `${savedUsername}`;
+      account.href=`.././pages/account.html`
     }
     if (presentUserMobile) {
       //for the mobile
       presentUserMobile.innerText = `${savedUsername}`;
+      accounPhn.href=`.././pages/account.html`
     }
   }
 };

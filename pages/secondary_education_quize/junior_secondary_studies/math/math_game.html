@@ -13,6 +13,33 @@
             margin: 0;
             padding: 0;
         }
+        .exit {
+        background-color:red;
+        border: none;
+        height: 40px;
+        width: 80px;
+        font-size: 18px;
+        font-weight: 400;
+        position: absolute;
+        left: 25px;
+        top: 25px;
+        color: white;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: all 0.3s;
+        border: 2px solid white;
+        outline: 2px solid red;
+      }
+      .exit:hover {
+        background-color: #ff000047;
+        color: black;
+      }
+      .exit img {
+        height: 15px;
+        width: 20px;
+        padding-left: 15px;
+        margin-top:5
+      }
         .container {
             background: white;
             color: black;
@@ -102,9 +129,16 @@
             background: rgba(255, 255, 255, 0.2);
             border-radius: 5px;
         }
+      
+  
     </style>
 </head>
 <body>
+    <a href="./../secondary_education.html"
+    ><button class="exit">
+      Exit</button
+  ></a>
+    <h2>
     <div class="container">
         <h2>Advanced Math Quiz</h2>
         <h3>Score: <span id="score">0</span></h3>

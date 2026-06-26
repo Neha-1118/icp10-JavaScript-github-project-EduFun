@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>12th Standard Biology Formula Quiz</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+        .exit {
+        background-color:red;
+        border: none;
+        height: 40px;
+        width: 80px;
+        font-size: 18px;
+        font-weight: 400;
+        position: absolute;
+        left: 25px;
+        top: 25px;
+        color: white;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: all 0.3s;
+        border: 2px solid white;
+        outline: 2px solid red;
+      }
+      .exit:hover {
+        background-color: #ff000047;
+        color: black;
+      }
+      .exit img {
+        height: 15px;
+        width: 15px;
+        padding-left: 10px;
+      }
+        .quiz-container {
+            width: 50%;
+            margin: 50px auto;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        }
+        .question {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+        .options button {
+            display: block;
+            width: 100%;
+            margin: 8px 0;
+            padding: 12px;
+            font-size: 18px;
+            border: none;
+            cursor: pointer;
+            background: #ff9800;
+            color: white;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+        .options button:hover {
+            background: #e68900;
+        }
+        #result {
+            font-size: 20px;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+        #timer {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 10px;
+            color: #ffeb3b;
+        }
+        
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            background: #000000;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right:1200px;
+        }
+        button:hover {
+            background: #218838;
+        }
+    </style>
+</head>
+<body>
+    <a href="./../secondary_education.html"
+    ><button class="exit">
+      Exit</button
+  ></a>
+    <div class="quiz-container">
+        <h2>12th Standard Biology Formula Quiz</h2>
+        <div id="quiz">
+            <p id="timer">Time Left: 30s</p>
+            <p class="question" id="question-text"></p>
+            <div class="options" id="options"></div>
+            <p id="result"></p>
+            <button onclick="nextQuestion()" style="display:none;" id="next-btn">Next</button>
+        </div>
+    </div>
+
+    <script>
+        const questions = [
+            { question: "What is the formula for photosynthesis?", options: ["6CO2 + 6H2O → C6H12O6 + 6O2", "C6H12O6 + 6O2 → 6CO2 + 6H2O", "H2O + CO2 → H2CO3", "ATP + H2O → ADP + Pi"], correct: "6CO2 + 6H2O → C6H12O6 + 6O2" },
+            { question: "What is the formula for aerobic respiration?", options: ["C6H12O6 + 6O2 → 6CO2 + 6H2O", "6CO2 + 6H2O → C6H12O6 + 6O2", "H2O + CO2 → H2CO3", "ATP + H2O → ADP + Pi"], correct: "C6H12O6 + 6O2 → 6CO2 + 6H2O" },
+            { question: "What is the molecular formula of glucose?", options: ["C6H12O6", "C12H22O11", "C5H10O5", "CH4"], correct: "C6H12O6" },
+            { question: "What is the formula for ATP hydrolysis?", options: ["ATP + H2O → ADP + Pi", "ADP + Pi → ATP + H2O", "C6H12O6 + 6O2 → 6CO2 + 6H2O", "6CO2 + 6H2O → C6H12O6 + 6O2"], correct: "ATP + H2O → ADP + Pi" },
+            { question: "Which of the following is the nitrogenous base found in DNA?", options: ["Adenine", "Cytosine", "Guanine", "All of the above"], correct: "All of the above" }
+        ];
+        
+        let currentQuestionIndex = 0;
+        let timeLeft = 30;
+        let timer;
+
+        function startTimer() {
+            timeLeft = 30;
+            document.getElementById("timer").innerText = `Time Left: ${timeLeft}s`;
+            timer = setInterval(() => {
+                timeLeft--;
+                document.getElementById("timer").innerText = `Time Left: ${timeLeft}s`;
+                if (timeLeft === 0) {
+                    clearInterval(timer);
+                    checkAnswer(null);
+                }
+            }, 1000);
+        }
+
+        function loadQuestion() {
+            clearInterval(timer);
+            startTimer();
+            let q = questions[currentQuestionIndex];
+            document.getElementById("question-text").innerText = q.question;
+            let optionsDiv = document.getElementById("options");
+            optionsDiv.innerHTML = "";
+            q.options.forEach(option => {
+                let btn = document.createElement("button");
+                btn.innerText = option;
+                btn.onclick = () => checkAnswer(option);
+                optionsDiv.appendChild(btn);
+            });
+        }
+
+        function checkAnswer(selected) {
+            clearInterval(timer);
+            let resultText = document.getElementById("result");
+            let nextBtn = document.getElementById("next-btn");
+            
+            if (selected === questions[currentQuestionIndex].correct) {
+                resultText.innerText = "Correct! ✅";
+                resultText.style.color = "green";
+            } else {
+                resultText.innerText = `Wrong! ❌ The correct answer is ${questions[currentQuestionIndex].correct}`;
+                resultText.style.color = "red";
+            }
+            nextBtn.style.display = "block";
+        }
+
+        function nextQuestion() {
+            currentQuestionIndex++;
+            let resultText = document.getElementById("result");
+            let nextBtn = document.getElementById("next-btn");
+            
+            if (currentQuestionIndex < questions.length) {
+                resultText.innerText = "";
+                nextBtn.style.display = "none";
+                loadQuestion();
+            } else {
+                document.getElementById("quiz").innerHTML = "<h3>Quiz Completed!</h3>";
+            }
+        }
+
+        loadQuestion();
+    </script>
+</body>
+</html>

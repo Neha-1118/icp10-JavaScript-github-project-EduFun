@@ -173,102 +173,97 @@
       }
       //create object for the questions
       const questions = [
-        {
-          question: "what is the output of this code console.log(5<10>6) ?",
-          answers: [
-            { text: "1", correct: false },
-            { text: "flase", correct: true },
-            { text: "0", correct: false },
-            { text: "undefine", correct: false },
-          ],
-        },
-        {
-          question:
-            "Which of the following is NOT an example of an operating system ?",
-          answers: [
-            { text: "Microsoft Office", correct: true },
-            { text: "Windows", correct: false },
-            { text: "Linux", correct: false },
-            { text: "macOS", correct: false },
-          ],
-        },
-        {
-          question: "Shortest Job Next (SJN) ?",
-          answers: [
-            { text: "Tree Model", correct: false },
-            { text: "Linear Model", correct: false },
-            { text: "Sequential Model", correct: false },
-            { text: " Hierarchical Model", correct: true },
-          ],
-        },
-        {
-          question: "what is the output of this code console.log(0 || 1) ?",
-          answers: [
-            { text: "1", correct: true },
-            { text: "true", correct: false },
-            { text: "0", correct: false },
-            { text: "false", correct: false },
-          ],
-        },
-        {
-          question:
-            "Which scheduling algorithm is based on the principle of executing the shortest job first ?",
-          answers: [
-            { text: "Shortest Job Next (SJN)", correct: true },
-            { text: " First-Come, First-Served (FCFS)", correct: false },
-            { text: "Round Robin (RR)v", correct: false },
-            { text: " Priority Scheduling", correct: false },
-          ],
-        },
-        {
-          question:
-            "Which SQL statement is used to retrieve data from a database ?",
-          answers: [
-            { text: "INSERT", correct: false },
-            { text: "SELECT", correct: true },
-            { text: "UPDATE", correct: false },
-            { text: "DELETE", correct: false },
-          ],
-        },
-        {
-          question:
-            "Which layer of the OSI model is responsible for end-to-end communication and error recovery ?",
-          answers: [
-            { text: "Network Layer", correct: false },
-            { text: "Transport Layer", correct: true },
-            { text: "Data Link Layer", correct: false },
-            { text: "Physical Layer", correct: false },
-          ],
-        },
-        {
-          question: `what is the output of this code console.log(1+2+"3") ?`,
-          answers: [
-            { text: "True", correct: false },
-            { text: "6", correct: false },
-            { text: "123", correct: false },
-            { text: "33", correct: true },
-          ],
-        },
-        {
-          question: "what is your name ?",
-          answers: [
-            { text: "HTTP", correct: false },
-            { text: "SMTP", correct: false },
-            { text: "FTP", correct: true },
-            { text: "DHCP", correct: false },
-          ],
-        },
-        {
-          question:
-            "Which of the following is an example of a network topology ?",
-          answers: [
-            { text: "HTTP", correct: false },
-            { text: "Star", correct: true },
-            { text: "IP Address", correct: false },
-            { text: "Router", correct: false },
-          ],
-        },
-      ];
+  {
+    question: "What is the primary function of a stock exchange?",
+    answers: [
+      { text: "Facilitate currency exchange", correct: false },
+      { text: "Provide a platform for buying and selling securities", correct: true },
+      { text: "Control inflation rates", correct: false },
+      { text: "Regulate banking policies", correct: false },
+    ],
+  },
+  {
+    question: "Which of the following is NOT a financial derivative?",
+    answers: [
+      { text: "Options", correct: false },
+      { text: "Futures", correct: false },
+      { text: "Bonds", correct: true },
+      { text: "Swaps", correct: false },
+    ],
+  },
+  {
+    question: "Which financial ratio is used to measure a company's profitability?",
+    answers: [
+      { text: "Current Ratio", correct: false },
+      { text: "Debt-to-Equity Ratio", correct: false },
+      { text: "Return on Assets (ROA)", correct: true },
+      { text: "Quick Ratio", correct: false },
+    ],
+  },
+  {
+    question: "What does diversification in investment aim to do?",
+    answers: [
+      { text: "Increase risk", correct: false },
+      { text: "Maximize losses", correct: false },
+      { text: "Reduce risk", correct: true },
+      { text: "Eliminate all risk", correct: false },
+    ],
+  },
+  {
+    question: "Which investment strategy focuses on buying undervalued stocks?",
+    answers: [
+      { text: "Growth Investing", correct: false },
+      { text: "Momentum Investing", correct: false },
+      { text: "Value Investing", correct: true },
+      { text: "Day Trading", correct: false },
+    ],
+  },
+  {
+    question: "Which financial statement provides a snapshot of a company's assets and liabilities?",
+    answers: [
+      { text: "Income Statement", correct: false },
+      { text: "Balance Sheet", correct: true },
+      { text: "Cash Flow Statement", correct: false },
+      { text: "Equity Statement", correct: false },
+    ],
+  },
+  {
+    question: "Which of the following is considered a low-risk investment?",
+    answers: [
+      { text: "Penny Stocks", correct: false },
+      { text: "Government Bonds", correct: true },
+      { text: "Cryptocurrency", correct: false },
+      { text: "Venture Capital", correct: false },
+    ],
+  },
+  {
+    question: "What does the term 'liquidity' refer to in finance?",
+    answers: [
+      { text: "How fast an asset can be converted into cash", correct: true },
+      { text: "The ability to earn high returns", correct: false },
+      { text: "A company's total revenue", correct: false },
+      { text: "A measure of financial leverage", correct: false },
+    ],
+  },
+  {
+    question: "Which banking institution is responsible for regulating the money supply in an economy?",
+    answers: [
+      { text: "Investment Bank", correct: false },
+      { text: "Commercial Bank", correct: false },
+      { text: "Central Bank", correct: true },
+      { text: "Retail Bank", correct: false },
+    ],
+  },
+  {
+    question: "Which type of risk is associated with changes in interest rates?",
+    answers: [
+      { text: "Credit Risk", correct: false },
+      { text: "Liquidity Risk", correct: false },
+      { text: "Interest Rate Risk", correct: true },
+      { text: "Operational Risk", correct: false },
+    ],
+  },
+];
       const questionElement = document.getElementById("question");
       const answerButton = document.getElementById("answer-buttons");
       const nextButton = document.getElementById("next-btn");

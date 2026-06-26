@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="./../../css/style.css"/>
     <link rel="stylesheet" href="./../../css/secondary_education.css"/>
     <script src="./../../js/script.js"></script>
+    <script src="./../../js/login_and_signin.js"></script>
 
 </head>
 <body>
@@ -20,11 +21,11 @@
           />
         </div>
         <ul>
-          <li>Home</li>
-          <li>Spaceship</li>
-          <li>About</li>
-          <li>contact</li>
-          <li>Log In</li>
+          <a href="./../../index.html"><li>Home</li></a>
+          <a href="./../../pages/notes.html"><li>Spaceship</li></a>
+          <a href="./../../pages/about_us.html"><li>About</li></a>
+          <a href="./../../pages/contact.html"><li>contact</li></a>
+          <a href="./../../pages/login.html"><li id="UserlogIn">Log In</li></a>
         </ul>
         <div class="hamburger">
           <button type="button" id="hamburger-btn" onclick="hamburgerMenu()">
@@ -55,13 +56,89 @@
             <h2>9th-10th</h2>
             <p>Junior Secondary Studies</p>
             <img src="./../../images/9th-10th grade.webp" alt="9th-10th grade quiz">
-            <button class="btn" onclick="alert('You clicked 9th-10th!')">Explore</button>
+            <a href="./junior_secondary_studies/junior_secondary_studies.html"><button class="btn">Explore</button></a>
 
         </div>
-        <div class="card">
-            <h2>11th-12th</h2>
-            <p>Advanced Studies</p>
-            <img src="./../../images/11th-12th grade.webp" alt="11th-12th grade quiz">
-            <button class="btn"  onclick="alert('You clicked 11th-12th!')">Explore</button>
+       <div class="card">
+        <h2>11th-12th</h2>
+        <p>Advanced Studies</p>
+        <img src="./../../images/11th-12th grade.webp" alt="11th-12th grade quiz">
+        <a href="./advanced_studies/advanced_studies.html"><button class="btn">Explore</button></a>
+
+       
+       </div>
+</div>
+<div class="footer">
+  <div class="footer-container">
+    <!-- About EduFun -->
+    <div class="footer-section about">
+      <h3>About EduFun</h3>
+      <p>
+        EduFun is an interactive learning platform that offers quizzes,
+        notes, and engaging games to make learning fun and effective.
+        Explore various subjects and enhance your knowledge with our dynamic
+        content.
+      </p>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="footer-section links">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="./../../index.html">Home</a></li>
+        <li><a href="./../../pages/higher-education-quize/">Quizzes</a></li>
+        <li><a href="./../../pages/notes/">Notes</a></li>
+        <li><a href="./../../pages/contact.html">Contact Us</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact Info -->
+    <div class="footer-section contact">
+      <h3>Contact Us</h3>
+      <p>
+        Email: <a href="mailto:support@edufun.com">support@edufun.com</a>
+      </p>
+      <p>Phone: +91 98765 43210</p>
+      <p>Location: Pune, India</p>
+    </div>
+
+    <!-- Social Media -->
+    <div class="footer-section social">
+      <h3>Follow Us</h3>
+      <div class="social-media-logo">
+        <img
+          src="./../../images/static-github.png"
+          id="logo1"
+          onmouseover="mainImgChange(logo1,'./../../images/github.png')"
+          onmouseout="mainImgChange(logo1,'./../../images/static-github.png')"
+        />
+        <img
+          src="./../../images/static-instagram.png"
+          id="logo2"
+          onmouseover="mainImgChange(logo2,'./../../images/instagram.png')"
+          onmouseout="mainImgChange(logo2,'./../../images/static-instagram.png')"
+        />
+        <img
+          src="./../../images/static-facebook.png"
+          id="logo3"
+          onmouseover="mainImgChange(logo3,'./../../images/facebook.png')"
+          onmouseout="mainImgChange(logo3,'./../../images/static-facebook.png')"
+        />
+        <img
+          src="./../../images/static-linkedin.png"
+          id="logo4"
+          onmouseover="mainImgChange(logo4,'./../../images/linkedin.png')"
+          onmouseout="mainImgChange(logo4,'./../../images/static-linkedin.png')"
+        />
+      </div>
+    </div>
+    <img src="./../../icons/nav-heading.png" id="f-head" />
+  </div>
+
+  <!-- Footer Copyright -->
+  <div class="footer-bottom">
+    <p>© 2025 EduFun. All Rights Reserved.</p>
+  </div>
+</div>
 </body>
 </html>
